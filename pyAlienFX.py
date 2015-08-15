@@ -992,7 +992,7 @@ class pyAlienFX_GUI():
     def on_Configuration_New(self, widget):
         if os.path.isfile(self.actual_conf_file):
             if not self.configuration.Check(self.actual_conf_file):
-                messagedialog = gtk.Dialog("The configuration has changed ! Do you want to save it before creating a new one?", None, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, (gtk.STOCK_NO, gtk.RESPONSE_NO, gtk.STOCK_SAVE, gtk.RESPONSE_OK))
+                messagedialog = gtk.Dialog("The configuration has changed ! Do you want to save it before creating a new one?", None, gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT, (gtk.STOCK_NO, gtk.RESPONSE_NO, gtk.STOCK_SAVE, gtk.RESPONSE_OK))
                 response = messagedialog.run()
                 if response == gtk.RESPONSE_OK:
                     self.configuration.Save(self.actual_conf_file)
@@ -1108,7 +1108,7 @@ class pyAlienFX_GUI():
         self.lights = True
 
     def Not_Yet(self, widget):
-        messagedialog = gtk.MessageDialog(None, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_INFO, gtk.BUTTONS_OK, "This feature is not yet available !")
+        messagedialog = gtk.MessageDialog(None, gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_INFO, gtk.BUTTONS_OK, "This feature is not yet available !")
         messagedialog.run()
         messagedialog.destroy()
 
