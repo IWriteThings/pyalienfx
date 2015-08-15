@@ -177,7 +177,8 @@ def _load_library():
     candidates = ('usb-0.1', 'usb', 'libusb0')
     for candidate in candidates:
         libname = ctypes.util.find_library(candidate)
-        if libname is not None: break
+        if libname is not None:
+            break
     else:
         # corner cases
         # cygwin predefines library names with 'cyg' instead of 'lib'
