@@ -1193,7 +1193,7 @@ class Daemon_Controller:
         packet = ["Set_Loop", str(action)]
         self.request.append(packet)
 
-    def Set_Loop_Conf(self, Save=False, block = 0x01):
+    def Set_Loop_Conf(self, Save=False, block=0x01):
         packet = ["Set_Loop_Conf", str(Save), str(block)]
         self.request.append(packet)
 
@@ -1201,7 +1201,7 @@ class Daemon_Controller:
         packet = ["Add_Loop_Conf", str(hex(area)).replace('0x', ''), str(mode), str(color1), str(color2)]
         self.request.append(packet)
 
-    def Add_Speed_Conf(self, speed = 0xc800):
+    def Add_Speed_Conf(self, speed=0xc800):
         packet = ["Add_Speed_Conf", str(speed)]
         self.request.append(packet)
 
@@ -1218,17 +1218,17 @@ class Daemon_Controller:
         self.request.append(packet)
         self.Send_Packet()
 
-    def Set_Color(self, Area, Color, Save = False, Apply = False, block = 0x01):
+    def Set_Color(self, Area, Color, Save=False, Apply=False, block=0x01):
         packet = ["Set_Color", str(hex(Area)).replace('0x', ''), str(Color), str(Save), str(Apply), str(block)]
         self.request.append(packet)
         self.Send_Packet()
 
-    def Set_Color_Blink(self, Area, Color, Save = False, Apply = False, block = 0x01):
+    def Set_Color_Blink(self, Area, Color, Save=False, Apply=False, block=0x01):
         packet = ["Set_Color_Blink", str(hex(Area)).replace('0x', ''), str(Color), str(Save), str(Apply), str(block)]
         self.request.append(packet)
         self.Send_Packet()
 
-    def Set_Color_Morph(self, Area, Color1, Color2, Save = False, Apply = False, block = 0x01):
+    def Set_Color_Morph(self, Area, Color1, Color2, Save=False, Apply=False, block=0x01):
         packet = ["Set_Color_Morph", str(hex(Area)).replace('0x', ''), str(Color1), str(Color2), str(Save), str(Apply), str(block)]
         self.request.append(packet)
         self.Send_Packet()
