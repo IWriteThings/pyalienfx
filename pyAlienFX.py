@@ -1096,10 +1096,10 @@ class pyAlienFX_GUI():
         if self.lights:
             self.controller.Reset(self.computer.RESET_ALL_LIGHTS_OFF)
             try:
-        self.controller.Send_Packet()
-      except:
-        pass
-        self.lights = False
+                self.controller.Send_Packet()
+            except:
+                pass
+            self.lights = False
 
     def on_AlienFX_Menu_Light_On(self,widget):
         #print "ON"
