@@ -178,7 +178,7 @@ class pyAlienFX_GUI():
         self.AlienFX_Tempo_Label = gtk.Label()
         self.AlienFX_Tempo_Label.set_label(" Tempo ")
         self.AlienFX_Tempo_Label.modify_fg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.text_color))
-        ajustement = gtk.Adjustment((self.configuration.speed/256), 1, 255, 1, 16)
+        ajustement = gtk.Adjustment((self.configuration.speed / 256), 1, 255, 1, 16)
         self.AlienFX_Tempo_Ruler = gtk.VScale(ajustement)
         self.AlienFX_Tempo_Ruler.set_size_request(-1, 110)
         self.AlienFX_Tempo_Ruler.set_digits(0)
@@ -247,9 +247,9 @@ class pyAlienFX_GUI():
             UL2.add(UL2i)
             UL2.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.background_color))
             if len(Label)<11:
-                Title_width = (11)*9
+                Title_width = (11) * 9
             else:
-                Title_width = (len(Label)*9)
+                Title_width = (len(Label) * 9)
             UMbg = gtk.gdk.pixbuf_new_from_file_at_scale(self.Image_DB.AlienFX_Cadre_0_Up_Middle, width=Title_width, height=31, preserve_aspect_ratio=False)
             #print "LEN ======>>>>>%s >> %s"%(Label,Title_width)
             UM = gtk.EventBox()
@@ -291,9 +291,9 @@ class pyAlienFX_GUI():
             BL2.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.background_color))
             BM = gtk.EventBox()
             BMi = gtk.Image()
-            BMbg = gtk.gdk.pixbuf_new_from_file_at_scale(self.Image_DB.AlienFX_Cadre_0_Bottom_Middle, width=((81+Title_width)-165), height=16, preserve_aspect_ratio=False)
+            BMbg = gtk.gdk.pixbuf_new_from_file_at_scale(self.Image_DB.AlienFX_Cadre_0_Bottom_Middle, width=((81 + Title_width) - 165), height=16, preserve_aspect_ratio=False)
             BMi.set_from_pixbuf(BMbg)
-            BMi.set_size_request(width=((81+Title_width)-165), height=-1)
+            BMi.set_size_request(width=((81 + Title_width) - 165), height=-1)
             BM.add(BMi)
             BM.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.background_color))
             BR2 = gtk.EventBox()
@@ -306,7 +306,7 @@ class pyAlienFX_GUI():
             BRi.set_from_file(self.Image_DB.AlienFX_Cadre_0_Bottom_Right)
             BR.add(BRi)
             BR.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.background_color))
-            Inside.set_size_request(width=(81+Title_width)- 33, height=-1)
+            Inside.set_size_request(width=(81 + Title_width) - 33, height=-1)
             TopBox.pack_start(UL, gtk.SHRINK)
             TopBox.pack_start(UL2, gtk.SHRINK)
             TopBox.pack_start(UM, gtk.SHRINK)
@@ -425,9 +425,9 @@ class pyAlienFX_GUI():
 
     def color_mean(self, color1, color2):
         cf = [0, 0, 0]
-        cf[0] = ((color1[0] + color2[0])/2.0)
-        cf[1] = ((color1[1] + color2[1])/2.0)
-        cf[2] = ((color1[2] + color2[2])/2.0)
+        cf[0] = ((color1[0] + color2[0]) / 2.0)
+        cf[1] = ((color1[1] + color2[1]) / 2.0)
+        cf[2] = ((color1[2] + color2[2]) / 2.0)
         #print "Color1 : %s\nColor2 : %s\nColor F : %s"%(color1,color2,cf)
         return cf
 
@@ -437,7 +437,7 @@ class pyAlienFX_GUI():
             if i > 1:
                 doit = True
         for i in range(0, len(color)):
-            color[i] = color[i]/255.0
+            color[i] = color[i] / 255.0
         return color
 
     def expose_gradient(self, widget, event, zone, color1, color2, cm, width):
@@ -513,20 +513,20 @@ class pyAlienFX_GUI():
         Label = None
         height = 40
         if not zone.power_button:
-            width = (180-33-28)/2
+            width = (180 - 33 - 28) / 2
         else:
-            width = (180-33)/2
+            width = (180 - 33) / 2
         if not line:
             set_type = 0
             Label = zone.description
             if len(Label)<11:
-                Title_width = (11)*9
+                Title_width = (11) * 9
             else:
-                Title_width = (len(Label)*9)
+                Title_width = (len(Label) * 9)
             if not zone.power_button:
-                width = ((81+Title_width)- 33 -28)/2
+                width = ((81 + Title_width) - 33 - 28) / 2
             else:
-                width = ((81+Title_width)- 33)/2
+                width = ((81 + Title_width) - 33) / 2
             #title = gtk.Label(zone.description)
             #Zone_VBox.pack_start(title, expand=False)
         #color = gtk.EventBox()
@@ -534,13 +534,13 @@ class pyAlienFX_GUI():
 
         #color_hbox.pack_start(color2)
         #print self.configuration.Show_Configuration()
-        c1 = gtk.gdk.Color('#'+self.configuration.area[zone.name][confId].color1)
+        c1 = gtk.gdk.Color('#' + self.configuration.area[zone.name][confId].color1)
         if zone.power_button:
-            c2 = gtk.gdk.Color('#'+self.configuration.area[zone.name][confId].color2)
+            c2 = gtk.gdk.Color('#' + self.configuration.area[zone.name][confId].color2)
         elif self.configuration.area[zone.name][confId].mode != "morph":
-            c2 = gtk.gdk.Color('#'+self.configuration.area[zone.name][confId].color1)
+            c2 = gtk.gdk.Color('#' + self.configuration.area[zone.name][confId].color1)
         else:
-            c2 = gtk.gdk.Color('#'+self.configuration.area[zone.name][confId].color2)
+            c2 = gtk.gdk.Color('#' + self.configuration.area[zone.name][confId].color2)
 
         grad1, grad2 = self.gradient_box(width, height, [c1.red_float, c1.green_float, c1.blue_float], [c2.red_float, c2.green_float, c2.blue_float], zone.power_button)
         cm = self.color_mean([c1.red_float, c1.green_float, c1.blue_float], [c2.red_float, c2.green_float, c2.blue_float])
@@ -642,7 +642,7 @@ class pyAlienFX_GUI():
         for zone in self.configuration.area.keys():
             new = len(self.configuration.area[zone])
             old = max(old, new)
-            self.AlienFX_Configurator_Table.resize(old+1, l)
+            self.AlienFX_Configurator_Table.resize(old + 1, l)
             self.Widget_Line(self.computer.regions[zone], l)
             l += 1
         self.AlienFX_Configurator_Eventbox = gtk.EventBox()
@@ -657,15 +657,15 @@ class pyAlienFX_GUI():
         #print "Creating : ",zone.description
         title = gtk.Label(zone.description)
         title.modify_fg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.text_color))
-        self.AlienFX_Configurator_Table.attach(title, 0, 1, l-1, l, xoptions=gtk.SHRINK)#,xoptions=gtk.EXPAND
+        self.AlienFX_Configurator_Table.attach(title, 0, 1, l - 1, l, xoptions=gtk.SHRINK)#,xoptions=gtk.EXPAND
         for conf in range(len(self.configuration.area[zone.name])):
             confBox = self.Widget_Zone(zone, conf, line=True)
-            self.AlienFX_Configurator_Table.attach(confBox, int(conf)+1, int(conf)+2, l-1, l, xoptions=gtk.SHRINK, yoptions=gtk.SHRINK)
+            self.AlienFX_Configurator_Table.attach(confBox, int(conf) + 1, int(conf) + 2, l - 1, l, xoptions=gtk.SHRINK, yoptions=gtk.SHRINK)
         if not zone.power_button:
             AddConf = gtk.Button()
             AddConf.set_label("Add")
             AddConf.connect("clicked", self.on_Line_AddConf_pressed, zone, conf)
-            self.AlienFX_Configurator_Table.attach(AddConf, int(conf)+2, int(conf)+3, l-1, l, xoptions=gtk.SHRINK, yoptions=gtk.SHRINK)
+            self.AlienFX_Configurator_Table.attach(AddConf, int(conf) + 2, int(conf) + 3, l - 1, l, xoptions=gtk.SHRINK, yoptions=gtk.SHRINK)
 
     def Set_Conf(self, Save=False):
         Id = 0x00
@@ -792,7 +792,7 @@ class pyAlienFX_GUI():
                 fixed = gtk.Fixed()
                 color_EventBox = gtk.EventBox()
                 color_EventBox.set_size_request(35, 37)
-                color_EventBox.modify_bg(gtk.STATE_NORMAL, gtk.gdk.Color('#'+c))
+                color_EventBox.modify_bg(gtk.STATE_NORMAL, gtk.gdk.Color('#' + c))
                 color_EventBox.connect("button-press-event", self.on_AlienFX_Color_Panel_Clicked, c)
                 fixed.add(color_EventBox)
                 box = self.Create_Border(2, fixed)
@@ -815,7 +815,7 @@ class pyAlienFX_GUI():
             filter.add_pattern("*.cfg")
             chooser.add_filter(filter)
             chooser.set_current_folder(os.path.join('.', "Profiles"))
-            chooser.set_current_name(self.new_title+".cfg")
+            chooser.set_current_name(self.new_title + ".cfg")
             response = chooser.run()
             if response == gtk.RESPONSE_OK:
                 self.actual_conf_file = chooser.get_filename()
@@ -863,7 +863,7 @@ class pyAlienFX_GUI():
             f = open(os.path.join('.', 'Profiles', "last"), 'w')
             f.write(self.Profiles[choosed_profile])
             self.speed = self.configuration.speed
-            self.AlienFX_Tempo_Ruler.set_value(int(self.speed/256))
+            self.AlienFX_Tempo_Ruler.set_value(int(self.speed / 256))
             self.Create_zones()
             self.Create_Line()
 
@@ -893,16 +893,16 @@ class pyAlienFX_GUI():
             self.AlienFX_Main_Windows.resize(800, 600)
 
     def on_AlienFX_Tempo_Changed(self, widget, scroll, value):
-        self.speed = int(value*256)
+        self.speed = int(value * 256)
         self.configuration.speed = self.speed
         #print self.speed
 
     def on_AlienFX_ColorSelection_Dialog_Ok(self, widget):
         colorsel = self.AlienFX_ColorSelection_Window.colorsel
         color = colorsel.get_current_color()
-        r = color.red/256
-        g = color.green/256
-        b = color.blue/256
+        r = color.red / 256
+        g = color.green / 256
+        b = color.blue / 256
         if r == 0:
             r = "00"
         else:
