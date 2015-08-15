@@ -306,7 +306,7 @@ class AlienFX_Controller:
             request.Get_Status()
             request.Reset(res_cmd)
             self.driver.WriteDevice(request)
-            msg =  self.driver.ReadDevice(request)
+            msg = self.driver.ReadDevice(request)
             #print msg
             if msg[0] == 0x10:
                 break
