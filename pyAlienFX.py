@@ -495,7 +495,7 @@ class pyAlienFX_GUI():
             #print "Destroy"
         except:
             pass
-        if self.Advanced_Mode == False:
+        if self.Advanced_Mode is False:
             self.AlienFX_Preview_Hbox = gtk.HBox()
             self.AlienFX_Preview_Hbox.set_spacing(20)
             for zone in self.computer.regions.keys():
