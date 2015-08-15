@@ -22,7 +22,8 @@
 
 import usb
 import platform
-import sys, os
+import sys
+import os
 from copy import *
 import time
 

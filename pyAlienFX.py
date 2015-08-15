@@ -25,7 +25,8 @@ from AlienFX.AlienFXEngine import *
 from AlienFX.AlienFXConfiguration import *
 import pygtk
 #pygtk.require("2.0")
-import gtk, gobject
+import gtk
+import gobject
 import cairo
 
 from socket import *
