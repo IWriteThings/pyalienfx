@@ -21,7 +21,8 @@
 #    to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 #
 
-import os, sys
+import os
+import sys
 import platform
 dist = platform.dist()[0]
 
