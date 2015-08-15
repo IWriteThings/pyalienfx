@@ -83,7 +83,7 @@ class _ResourceManager(object):
             cfg = device[0]
         elif isinstance(config, Configuration):
             cfg = config
-        elif config == 0: # unconfigured state
+        elif config == 0:  # unconfigured state
             class FakeConfiguration(object):
 
                 def __init__(self):

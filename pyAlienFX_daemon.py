@@ -36,7 +36,7 @@ import os
 
 BUFSIZ = 4096
 HOST = 'localhost'
-PORT = 25436 #ALIEN port as if you typed ALIEN on your phone ;)
+PORT = 25436  # ALIEN port as if you typed ALIEN on your phone ;)
 ADDR = (HOST, PORT)
 #LOGFILE = '/var/log/pydaemon.log'
 #PIDFILE = '/var/run/pydaemon.pid'
