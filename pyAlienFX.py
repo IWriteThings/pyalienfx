@@ -246,7 +246,7 @@ class pyAlienFX_GUI():
             UL2i.set_from_file(self.Image_DB.AlienFX_Cadre_0_Up_Left2)
             UL2.add(UL2i)
             UL2.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.background_color))
-            if len(Label)<11:
+            if len(Label) < 11:
                 Title_width = (11) * 9
             else:
                 Title_width = (len(Label) * 9)
@@ -519,7 +519,7 @@ class pyAlienFX_GUI():
         if not line:
             set_type = 0
             Label = zone.description
-            if len(Label)<11:
+            if len(Label) < 11:
                 Title_width = (11) * 9
             else:
                 Title_width = (len(Label) * 9)
