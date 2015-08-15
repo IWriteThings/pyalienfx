@@ -61,20 +61,20 @@ _LIBUSB_ERROR_OTHER = -99
 
 # map return codes to strings
 _str_error = {
-    _LIBUSB_SUCCESS:'Success (no error)',
-    _LIBUSB_ERROR_IO:'Input/output error',
-    _LIBUSB_ERROR_INVALID_PARAM:'Invalid parameter',
-    _LIBUSB_ERROR_ACCESS:'Access denied (insufficient permissions)',
-    _LIBUSB_ERROR_NO_DEVICE:'No such device (it may have been disconnected)',
-    _LIBUSB_ERROR_NOT_FOUND:'Entity not found',
-    _LIBUSB_ERROR_BUSY:'Resource busy',
-    _LIBUSB_ERROR_TIMEOUT:'Operation timed out',
-    _LIBUSB_ERROR_OVERFLOW:'Overflow',
-    _LIBUSB_ERROR_PIPE:'Pipe error',
-    _LIBUSB_ERROR_INTERRUPTED:'System call interrupted (perhaps due to signal)',
-    _LIBUSB_ERROR_NO_MEM:'Insufficient memory',
-    _LIBUSB_ERROR_NOT_SUPPORTED:'Operation not supported or unimplemented on this platform',
-    _LIBUSB_ERROR_OTHER:'Unknown error'
+    _LIBUSB_SUCCESS: 'Success (no error)',
+    _LIBUSB_ERROR_IO: 'Input/output error',
+    _LIBUSB_ERROR_INVALID_PARAM: 'Invalid parameter',
+    _LIBUSB_ERROR_ACCESS: 'Access denied (insufficient permissions)',
+    _LIBUSB_ERROR_NO_DEVICE: 'No such device (it may have been disconnected)',
+    _LIBUSB_ERROR_NOT_FOUND: 'Entity not found',
+    _LIBUSB_ERROR_BUSY: 'Resource busy',
+    _LIBUSB_ERROR_TIMEOUT: 'Operation timed out',
+    _LIBUSB_ERROR_OVERFLOW: 'Overflow',
+    _LIBUSB_ERROR_PIPE: 'Pipe error',
+    _LIBUSB_ERROR_INTERRUPTED: 'System call interrupted (perhaps due to signal)',
+    _LIBUSB_ERROR_NO_MEM: 'Insufficient memory',
+    _LIBUSB_ERROR_NOT_SUPPORTED: 'Operation not supported or unimplemented on this platform',
+    _LIBUSB_ERROR_OTHER: 'Unknown error'
 }
 
 # Data structures

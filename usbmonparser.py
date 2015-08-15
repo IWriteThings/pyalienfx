@@ -5,7 +5,7 @@ import sys
 
 class parser:
 
-    def __init__(self,path):
+    def __init__(self, path):
         f = open(path)
         self.string = f.readlines()
         self.clean()
@@ -31,7 +31,7 @@ class parser:
         tmp = []
         for l in self.string:
             try:
-                int(l,16)
+                int(l, 16)
                 tmp.append(l)
             except:
                 pass

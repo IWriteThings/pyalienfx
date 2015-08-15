@@ -40,7 +40,7 @@ class pyAlienFX_Indicator:
     """The indicator class that takes care of creating the menu then loading it throught the appindicator library on ubuntu Unity ! To do : Gnome !"""
     def __init__(self):
         """Init creation of the gtk.Menu and binding to the appindicator"""
-        self.colormap = {"White":"FFFFFF","Yellow":"FFFF00","Purple":"FF00FF","Cyan":"00FFFF","Red":"FF0000","Green":"00FF00","Blue":"0000FF"}
+        self.colormap = {"White": "FFFFFF", "Yellow": "FFFF00", "Purple": "FF00FF", "Cyan": "00FFFF", "Red": "FF0000", "Green": "00FF00", "Blue": "0000FF"}
         self.ind = appindicator.Indicator("pyAlienFX",
                                         "/home/xqua/Documents/Work/Coding/Python/pyalienfx/images/indicator_off.png",
                                         appindicator.CATEGORY_APPLICATION_STATUS)
@@ -75,22 +75,22 @@ class pyAlienFX_Indicator:
         self.menu.append(self.quit_item)
         self.menu.show_all()
 
-    def launch_editor(self,widget):
+    def launch_editor(self, widget):
         """Launch the configuration editor window !"""
         self.gui.main()
 
-    def on_AlienFX_Color_Clicked(self,widget,c):
+    def on_AlienFX_Color_Clicked(self, widget, c):
         """Applying a single color profile !"""
         #print "Color Click ! ",c
         self.configuration = AlienFXConfiguration()
-        self.configuration.Create("default",self.gui.computer.name,self.gui.selected_speed,"default.cfg")
+        self.configuration.Create("default", self.gui.computer.name, self.gui.selected_speed, "default.cfg")
         for zone in self.gui.computer.regions.keys():
             self.configuration.Add(self.gui.computer.regions[zone])
-            self.configuration.area[zone].append(self.gui.computer.default_mode,self.colormap[c],self.colormap[c])
+            self.configuration.area[zone].append(self.gui.computer.default_mode, self.colormap[c], self.colormap[c])
         self.gui.configuration = self.configuration
         self.gui.Set_Conf(Save=True)
 
-    def lights_on(self,widget):
+    def lights_on(self, widget):
         print "Light on"
         if not self.gui.lights:
             print "Re-Activating Lights"
@@ -98,7 +98,7 @@ class pyAlienFX_Indicator:
             self.gui.Set_Conf(Save=False)
         self.gui.lights = True
 
-    def lights_off(self,widget):
+    def lights_off(self, widget):
         print "Light off"
         if self.gui.lights:
             self.gui.controller.Reset(self.gui.computer.RESET_ALL_LIGHTS_OFF)

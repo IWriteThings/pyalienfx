@@ -107,7 +107,7 @@ class _ResourceManager(object):
         self.managed_open()
         if intf is None:
             cfg = self.get_active_configuration(device)
-            i = cfg[(0,0)].bInterfaceNumber
+            i = cfg[(0, 0)].bInterfaceNumber
         elif isinstance(intf, Interface):
             i = intf.bInterfaceNumber
         else:
@@ -119,7 +119,7 @@ class _ResourceManager(object):
     def managed_release_interface(self, device, intf):
         if intf is None:
             cfg = self.get_active_configuration(device)
-            i = cfg[(0,0)].bInterfaceNumber
+            i = cfg[(0, 0)].bInterfaceNumber
         elif isinstance(intf, Interface):
             i = intf.bInterfaceNumber
         else:
@@ -150,7 +150,7 @@ class _ResourceManager(object):
         # request when we don't have a alternate setting cached
         if intf is None:
             cfg = self.get_active_configuration(device)
-            return cfg[(0,0)]
+            return cfg[(0, 0)]
         elif isinstance(intf, Interface):
             return intf
         else:
@@ -600,9 +600,9 @@ class Device(object):
         backend = self._ctx.backend
 
         fn_map = {
-            util.ENDPOINT_TYPE_BULK:backend.bulk_write,
-            util.ENDPOINT_TYPE_INTR:backend.intr_write,
-            util.ENDPOINT_TYPE_ISO:backend.iso_write
+            util.ENDPOINT_TYPE_BULK: backend.bulk_write,
+            util.ENDPOINT_TYPE_INTR: backend.intr_write,
+            util.ENDPOINT_TYPE_ISO: backend.iso_write
             }
 
         intf = self._ctx.get_interface(self, interface)
@@ -635,9 +635,9 @@ class Device(object):
         backend = self._ctx.backend
 
         fn_map = {
-            util.ENDPOINT_TYPE_BULK:backend.bulk_read,
-            util.ENDPOINT_TYPE_INTR:backend.intr_read,
-            util.ENDPOINT_TYPE_ISO:backend.iso_read
+            util.ENDPOINT_TYPE_BULK: backend.bulk_read,
+            util.ENDPOINT_TYPE_INTR: backend.intr_read,
+            util.ENDPOINT_TYPE_ISO: backend.iso_read
             }
 
         intf = self._ctx.get_interface(self, interface)

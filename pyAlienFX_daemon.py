@@ -37,7 +37,7 @@ import os
 BUFSIZ = 4096
 HOST = 'localhost'
 PORT = 25436 #ALIEN port as if you typed ALIEN on your phone ;)
-ADDR = (HOST,PORT)
+ADDR = (HOST, PORT)
 #LOGFILE = '/var/log/pydaemon.log'
 #PIDFILE = '/var/run/pydaemon.pid'
 
@@ -73,7 +73,7 @@ class ServCmd:
         print "Initializing Controller ..."
         s.controller = AlienFX_Controller(s.driver)
         s.computer = s.driver.computer
-        s.__serv = socket( AF_INET,SOCK_STREAM)
+        s.__serv = socket( AF_INET, SOCK_STREAM)
         s.__serv.bind((ADDR))
         #s.__serv.settimeout(60)
         s.__cli = None
@@ -99,7 +99,7 @@ class ServCmd:
         s.__serv.listen(5)
         print '...listening'
         try:
-            cli,addr = s.__serv.accept()
+            cli, addr = s.__serv.accept()
         except KeyboardInterrupt:
             print "EXIT"
             s.__serv.close()
@@ -137,19 +137,19 @@ class ServCmd:
                         else:
                             block = None
                         if Save and block:
-                            s.controller.Set_Loop_Conf(Save,block)
+                            s.controller.Set_Loop_Conf(Save, block)
                         elif Save:
                             s.controller.Set_Loop_Conf(Save=Save)
                         elif block:
                             s.controller.Set_Loop_Conf(block=block)
                     elif command == "Add_Loop_Conf":
-                        area,mode,color1,color2 = arg[0],arg[1],arg[2],arg[3]
+                        area, mode, color1, color2 = arg[0], arg[1], arg[2], arg[3]
                         if not color2:
                             color2 = None
                         elif color2 == "None":
                             color2 = None
                         if area and mode and color1:
-                            s.controller.Add_Loop_Conf(area,mode,color1,color2)
+                            s.controller.Add_Loop_Conf(area, mode, color1, color2)
                     elif command == "Add_Speed_Conf":
                         if arg[0]:
                             speed = int(arg[0])
@@ -163,7 +163,7 @@ class ServCmd:
                     elif command == "Write_Conf":
                         s.controller.Write_Conf()
                     elif command == "Set_Color":
-                        Area,Color = arg[0],arg[1]
+                        Area, Color = arg[0], arg[1]
                         if arg[2]:
                             if arg[2] == "False":
                                 Save = False
@@ -201,7 +201,7 @@ class ServCmd:
                         elif block:
                             s.controller.Set_Color(Area, Color, block = block)
                     elif command == "Set_Color_Blink":
-                        Area,Color = arg[0],arg[1]
+                        Area, Color = arg[0], arg[1]
                         if arg[2]:
                             if arg[2] == "False":
                                 Save = False
@@ -239,7 +239,7 @@ class ServCmd:
                         elif block:
                             s.controller.Set_Color_Blink(Area, Color, block = block)
                     elif command == "Set_Color_Morph":
-                        Area,Color1,Color2 = arg[0],arg[1],arg[2]
+                        Area, Color1, Color2 = arg[0], arg[1], arg[2]
                         if arg[3]:
                             if arg[3] == "False":
                                 Save = False
@@ -263,25 +263,25 @@ class ServCmd:
                         else:
                             block = None
                         if Save and Apply and block:
-                            s.controller.Set_Color_Morph(Area,Color1,Color2, Save = Save, Apply = Apply, block = block)
+                            s.controller.Set_Color_Morph(Area, Color1, Color2, Save = Save, Apply = Apply, block = block)
                         elif Save and Apply:
-                            s.controller.Set_Color_Morph(Area,Color1,Color2, Save = Save, Apply = Apply)
+                            s.controller.Set_Color_Morph(Area, Color1, Color2, Save = Save, Apply = Apply)
                         elif Save and block:
-                            s.controller.Set_Color_Morph(Area,Color1,Color2, Save = Save, block = block)
+                            s.controller.Set_Color_Morph(Area, Color1, Color2, Save = Save, block = block)
                         elif Apply and block:
-                            s.controller.Set_Color_Morph(Area,Color1,Color2, Apply = Apply, block = block)
+                            s.controller.Set_Color_Morph(Area, Color1, Color2, Apply = Apply, block = block)
                         elif Save:
-                            s.controller.Set_Color_Morph(Area,Color1,Color2, Save = Save)
+                            s.controller.Set_Color_Morph(Area, Color1, Color2, Save = Save)
                         elif Apply:
-                            s.controller.Set_Color_Morph(Area,Color1,Color2, Apply = Apply)
+                            s.controller.Set_Color_Morph(Area, Color1, Color2, Apply = Apply)
                         elif block:
-                            s.controller.Set_Color_Morph(Area,Color1,Color2, block = block)
+                            s.controller.Set_Color_Morph(Area, Color1, Color2, block = block)
                     elif command == "WaitForOk":
                         s.controller.WaitForOk()
                     elif command == "Get_State":
                         s.controller.Get_State()
                     elif command == "Reset":
-                        res_cmd = int(arg[0],16)
+                        res_cmd = int(arg[0], 16)
                         s.controller.Reset(res_cmd)
                 s.__cli.send('executed')
             elif cmd == "PING":
@@ -289,7 +289,7 @@ class ServCmd:
                 s.__cli.send('PONG')
                 print "sent"
 
-    def __servCmd(s,cmd):
+    def __servCmd(s, cmd):
         cmd = cmd.strip()
         if cmd == 'BYE':
             s.__improcessing = 0

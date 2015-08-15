@@ -11,13 +11,13 @@ class AlienFXConfiguration:
         self.computer = ""
         self.AlienFXTexts = AlienFXTexts()
 
-    def Create(self,name,computer,speed,path):
+    def Create(self, name, computer, speed, path):
         self.name = name
         self.computer = computer
         self.speed = speed
         self.path = path
 
-    def Add(self,area):
+    def Add(self, area):
         if not self.area.has_key(area.name):
             self.area[area.name] = configuration(area)
         #else:
@@ -31,16 +31,16 @@ class AlienFXConfiguration:
             for element in self.area[area]:
                 print element.text
 
-    def Show_Area(self,area):
+    def Show_Area(self, area):
         print "      %s\n      =============      \n"%self.area[area].description
         if self.area.has_key(area):
             for element in self.area[area]:
                 print element.text
 
-    def Save(self,path=None):
+    def Save(self, path=None):
         if path:
             self.path = path
-        f = open(self.path,'w')
+        f = open(self.path, 'w')
         f.write("name=%s\n"%self.name)
         f.write("computer=%s\n"%self.computer)
         f.write("speed=%s\n"%self.speed)
@@ -52,7 +52,7 @@ class AlienFXConfiguration:
                 f.write("color2=%s\n"%element.color2)
         f.close()
 
-    def Load(self,path):
+    def Load(self, path):
         if path:
             self.path = path
         f = open(path)
@@ -76,7 +76,7 @@ class AlienFXConfiguration:
             elif split[0] == "color2":
                 self.area[area][-1].color2 = split[1]
 
-    def Check(self,path):
+    def Check(self, path):
         old = AlienFXConfiguration()
         old.Load(path)
         if self.name != old.name:
@@ -109,20 +109,20 @@ class AlienFXConfiguration:
         return True
 
 
-class configuration(list,AlienFXTexts):
+class configuration(list, AlienFXTexts):
 
-    def __init__(self,area):
+    def __init__(self, area):
         self.area = area.name
         self.description = area.description
         self.Id = 0x01
 
-    def append(self,Type, color = "", color2 = ""):
-        el = element(Type,color,color2)
+    def append(self, Type, color = "", color2 = ""):
+        el = element(Type, color, color2)
         el.Id = self.Id
         self += [el]
         self.Id += 1
 
-    def update_line(self,Id,mode=None,color1=None,color2=None):
+    def update_line(self, Id, mode=None, color1=None, color2=None):
         if len(self) > Id:
             if mode:
                 self[Id].mode = mode
@@ -133,8 +133,8 @@ class configuration(list,AlienFXTexts):
             return True
         return False
 
-    def remove(self,Id):
-        for i in range(Id,len(self)-1):
+    def remove(self, Id):
+        for i in range(Id, len(self)-1):
             self[i].Id -= 1
         del self[Id]
 
@@ -153,4 +153,4 @@ class element():
         "speed" : "Setting Speed to %s%s",
         "endloop" : "End of the loop%s%s"}
         #print "-%s-"%self.mode
-        self.text = self.Text_Conf_Type[self.mode]%(self.color1,self.color2)
+        self.text = self.Text_Conf_Type[self.mode]%(self.color1, self.color2)

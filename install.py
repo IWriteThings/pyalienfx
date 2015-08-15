@@ -21,7 +21,7 @@
 #    to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 #
 
-import os,sys
+import os, sys
 import platform
 dist = platform.dist()[0]
 
@@ -141,7 +141,7 @@ cd %s
 %spython ./pyAlienFX_daemon.py &
 %ssleep 5
 python ./pyAlienFX_Indicator.py &
-"""%(BasePath,optdeamon,optdeamon)
+"""%(BasePath, optdeamon, optdeamon)
 
 Unity = """[Desktop Entry]
 Name=pyAlienFX
@@ -155,11 +155,11 @@ StartupNotify=true
 OnlyShowIn=GNOME;Unity;
 """%(BasePath)
 try:
-    f = open('/usr/share/applications/pyAlienFX.desktop','w')
+    f = open('/usr/share/applications/pyAlienFX.desktop', 'w')
     f.write(Unity)
     f.close()
     if dist == "Ubuntu":
-        f = open('/etc/xdg/autostart/pyAlienFX.desktop','w')
+        f = open('/etc/xdg/autostart/pyAlienFX.desktop', 'w')
         f.write(Unity)
         f.close()
 except:
@@ -167,18 +167,18 @@ except:
 #os.setuid(1000)
 #os.setgid(1001)
 
-f = open('%s/pyAlienFX_Launcher.sh'%BasePath,'w')
+f = open('%s/pyAlienFX_Launcher.sh'%BasePath, 'w')
 f.write(Launcher)
 f.close()
 os.system('chmod 755 %s/pyAlienFX_Launcher.sh'%BasePath)
 
 try:
-    f = open('/usr/bin/pyAlienFX','w')
+    f = open('/usr/bin/pyAlienFX', 'w')
     f.write(Bin)
     f.close()
     os.system('chmod 755 /usr/bin/pyAlienFX')
 except:
-    f = open('%s/pyAlienFX'%BasePath,'w')
+    f = open('%s/pyAlienFX'%BasePath, 'w')
     f.write(Bin)
     f.close()
     os.system('chmod 755 %s/pyAlienFX'%BasePath)

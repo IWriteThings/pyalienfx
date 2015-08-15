@@ -21,7 +21,7 @@
 #
 
 import platform
-import sys,os
+import sys, os
 
 
 class AlienFXProperties:
