@@ -102,7 +102,6 @@ class AlienFX_Driver(AllComputers):
 			print msg
 		return msg
 		
-		
 	def Take_over(self):
 		try:
 			self.dev.detach_kernel_driver(0)
@@ -160,7 +159,6 @@ class AlienFX_Controller:
 		elif mode == "morph" and color2:
 			self.request.Set_Morph_Color(area,color1,color2)
 
-	
 	def Add_Speed_Conf(self,speed = 0xc800):
 		self.request.Set_Speed(speed)
 		
@@ -478,7 +476,6 @@ class AlienFX_Constructor(list):
 			self.append(Request(legend,cmd))
 		else:
 			print "ERROR : WRONG RESET COMMAND"
-	
 	
 	def End_Loop(self):
 		self.Save()

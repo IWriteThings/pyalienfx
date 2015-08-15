@@ -644,7 +644,6 @@ class Device(object):
                 self.__get_timeout(timeout)
             )
 
-
     def ctrl_transfer(self, bmRequestType, bRequest, wValue=0, wIndex=0,
             data_or_wLength = None, timeout = None):
         r"""Do a control transfer on the endpoint 0.

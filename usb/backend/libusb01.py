@@ -439,7 +439,6 @@ class _LibUSB(usb.backend.IBackend):
                                   100
                             )[0]
 
-
     @methodtrace(_logger)
     def claim_interface(self, dev_handle, intf):
         _check(_lib.usb_claim_interface(dev_handle, intf))

@@ -52,7 +52,6 @@ class AlienFXTexts:
 		self.HELP_TITLE = "Help"
 		self.RESET_TITLE = "Reset AlienFx"
 		
-		
 		#Events
 		self.EVENT_TURN_OFF_ALL = "Turn off AlienFX"
 		self.EVENT_TURN_OFF_ALL_BUT_KEYBOARD = "Turn off All but Keyboard"
@@ -82,7 +81,6 @@ class AlienFXTexts:
 		self.ACTION_BLINK_TEXT = "Blink"
 		self.ACTION_MORPH_TEXT = "Morph"
 		
-
 		self.DEFAULT_PROFILE_TEXT = "Default Profile"
 		
 		#Alienware devices:

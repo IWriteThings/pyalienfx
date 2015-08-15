@@ -21,8 +21,6 @@
 #
 
 
-
-
 from AlienFX.AlienFXProperties import *
 from AlienFX.AlienFXTexts import *
 
@@ -217,7 +215,6 @@ class M14XLight:
 		self.suportedMode["charging"] = AlienFXPowerMode(self.AlienFXProperties.CHARGING_ID, self.AlienFXTexts.CHARGING2_DESCRIPTION, self.BLOCK_CHARGING)
 		self.suportedMode["onBat"] = AlienFXPowerMode(self.AlienFXProperties.ON_BATTERY_ID, self.AlienFXTexts.ON_BATTERY_DESCRIPTION, self.BLOCK_BAT_POWER)
 
-
 		self.regions[self.AlienFXProperties.RIGHT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_KEYBOARD_ID,  self.AlienFXTexts.RIGHT_KEYBOARD_DESCRIPTION, self.REGION_RIGHT_KEYBOARD,self.SUPPORTED_COMMANDS,True,True,True, self.default_color , self.suportedMode)
 		self.regions[self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID, self.AlienFXTexts.RIGHT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_RIGHT_KEYBOARD,self.SUPPORTED_COMMANDS,True,True,True, self.default_color , self.suportedMode)
 		self.regions[self.AlienFXProperties.LEFT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_KEYBOARD_ID,  self.AlienFXTexts.LEFT_KEYBOARD_DESCRIPTION, self.REGION_LEFT_KEYBOARD,self.SUPPORTED_COMMANDS,True,True,True, self.default_color , self.suportedMode)
@@ -301,8 +298,6 @@ class M15XArea51:
 		self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON,1,False,False,True, self.default_color , self.suportedMode, power_button = True)
 		
 		
-		
-
 class M15XAllPowerfull:
 
 	def __init__(self):
@@ -371,7 +366,6 @@ class M15XAllPowerfull:
 		self.suportedMode["acPower"] = AlienFXPowerMode(self.AlienFXProperties.AC_POWER_ID, self.AlienFXTexts.AC_POWER_DESCRIPTION, self.BLOCK_AC_POWER)
 		self.suportedMode["charging"] = AlienFXPowerMode(self.AlienFXProperties.CHARGING_ID, self.AlienFXTexts.CHARGING2_DESCRIPTION, self.BLOCK_CHARGING)
 		self.suportedMode["onBat"] = AlienFXPowerMode(self.AlienFXProperties.ON_BATTERY_ID, self.AlienFXTexts.ON_BATTERY_DESCRIPTION, self.BLOCK_BAT_POWER)
-		
 		
 		self.regions[self.AlienFXProperties.RIGHT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_KEYBOARD_ID,  self.AlienFXTexts.RIGHT_KEYBOARD_DESCRIPTION, self.REGION_RIGHT_KEYBOARD,self.SUPPORTED_COMMANDS,True,True,True, self.default_color , self.suportedMode)
 		self.regions[self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID, self.AlienFXTexts.RIGHT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_RIGHT_KEYBOARD,self.SUPPORTED_COMMANDS,True,True,True, self.default_color , self.suportedMode)
@@ -456,7 +450,6 @@ class M17XR3:
 		self.suportedMode["acPower"] = AlienFXPowerMode(self.AlienFXProperties.AC_POWER_ID, self.AlienFXTexts.AC_POWER_DESCRIPTION, self.BLOCK_AC_POWER)
 		self.suportedMode["charging"] = AlienFXPowerMode(self.AlienFXProperties.CHARGING_ID, self.AlienFXTexts.CHARGING2_DESCRIPTION, self.BLOCK_CHARGING)
 		self.suportedMode["onBat"] = AlienFXPowerMode(self.AlienFXProperties.ON_BATTERY_ID, self.AlienFXTexts.ON_BATTERY_DESCRIPTION, self.BLOCK_BAT_POWER)
-		
 		
 		self.regions[self.AlienFXProperties.RIGHT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_KEYBOARD_ID,  self.AlienFXTexts.RIGHT_KEYBOARD_DESCRIPTION, self.REGION_RIGHT_KEYBOARD,self.SUPPORTED_COMMANDS,True,True,True, self.default_color , self.suportedMode)
 		self.regions[self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID, self.AlienFXTexts.RIGHT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_RIGHT_KEYBOARD,self.SUPPORTED_COMMANDS,True,True,True, self.default_color , self.suportedMode)
@@ -543,7 +536,6 @@ class M18XR2:
 		self.suportedMode["acPower"] = AlienFXPowerMode(self.AlienFXProperties.AC_POWER_ID, self.AlienFXTexts.AC_POWER_DESCRIPTION, self.BLOCK_AC_POWER)
 		self.suportedMode["charging"] = AlienFXPowerMode(self.AlienFXProperties.CHARGING_ID, self.AlienFXTexts.CHARGING2_DESCRIPTION, self.BLOCK_CHARGING)
 		self.suportedMode["onBat"] = AlienFXPowerMode(self.AlienFXProperties.ON_BATTERY_ID, self.AlienFXTexts.ON_BATTERY_DESCRIPTION, self.BLOCK_BAT_POWER)
-
 
 		self.regions[self.AlienFXProperties.RIGHT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_KEYBOARD_ID,  self.AlienFXTexts.RIGHT_KEYBOARD_DESCRIPTION, self.REGION_RIGHT_KEYBOARD,self.SUPPORTED_COMMANDS,True,True,True, self.default_color , self.suportedMode)
 		self.regions[self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID, self.AlienFXTexts.RIGHT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_RIGHT_KEYBOARD,self.SUPPORTED_COMMANDS,True,True,True, self.default_color , self.suportedMode)

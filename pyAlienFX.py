@@ -146,8 +146,6 @@ class pyAlienFX_GUI():
 		self.AlienFX_Choose_Profile_Name = self.gtk_AlienFX_Main.get_object("AlienFX_Choose_Profile_Name")
 		self.AlienFX_Tempo_EventBox = self.gtk_AlienFX_Main.get_object("AlienFX_Tempo_EventBox")
 
-
-
 		#Modification of the background and elements !
 		pixbuf = gtk.gdk.pixbuf_new_from_file(self.Image_DB.AlienFX_Main_Eventbox)
 		pixbuf = pixbuf.scale_simple(self.width, self.height, gtk.gdk.INTERP_BILINEAR)
@@ -158,7 +156,6 @@ class pyAlienFX_GUI():
 		self.AlienFX_Main_Windows.window.set_back_pixmap(pixmap, False)
 		self.AlienFX_ComputerName_Label.set_label(self.computer.name)
 		self.gtk_AlienFX_Main.connect_signals(self)
-		
 		
 		#Background Colors !
 		self.AlienFX_ComputerName_EventBox.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.background_color))
@@ -228,7 +225,6 @@ class pyAlienFX_GUI():
 			self.AlienFX_Profiles_Combobox.show_all()
 		except:
 			pass
-
 
 	def Create_Border(self,Type,Inside,Label = None,zone=None ,confId=None):
 		"""2 type of border Advanced (type == 1) and Normal (type == 0)
@@ -443,7 +439,6 @@ class pyAlienFX_GUI():
 			color[i] = color[i]/255.0
 		return color
 
-
 	def expose_gradient(self, widget, event, zone, color1, color2, cm, width):
 		#print "Exposing the gradient on Eventbox : ",widget
 		if zone == 1:
@@ -571,7 +566,6 @@ class pyAlienFX_GUI():
 		#color2.connect("enter-notify-event", self.on_color_focus_in, zone, confId)
 		#color2.connect("leave-notify-event", self.on_color_focus_out, zone, confId)
 
-
 		#color_hbox.pack_start(color1)
 		mode = gtk.VBox()
 		if not zone.power_button:
@@ -672,7 +666,6 @@ class pyAlienFX_GUI():
 			AddConf.connect("clicked", self.on_Line_AddConf_pressed, zone, conf)
 			self.AlienFX_Configurator_Table.attach(AddConf,int(conf)+2,int(conf)+3,l-1,l,xoptions=gtk.SHRINK,yoptions=gtk.SHRINK)
 		
-	
 	def Set_Conf(self,Save=False):
 		Id = 0x00
 		self.controller.Set_Loop_Conf(Save, self.computer.BLOCK_LOAD_ON_BOOT)
@@ -717,7 +710,6 @@ class pyAlienFX_GUI():
 			area = self.computer.regions[power].regionId
 			#Block = 0x02 ! Sleeping Mode !!!!!
 
-		
 			self.controller.Set_Loop_Conf(Save,self.computer.BLOCK_STANDBY)
 			self.controller.Add_Loop_Conf(area,"morph",color1,'000000')
 			self.controller.Add_Loop_Conf(area,"morph",'000000',color1)
@@ -783,7 +775,6 @@ class pyAlienFX_GUI():
 			#print "\n\n\n",self.selected_color2
 			self.controller.Set_Color_Morph(self.selected_area.regionId,self.selected_color1,self.selected_color2)
 		
-	
 	def AlienFX_Color_Panel(self):
 		default_color = ["FFFFFF","FFFF00","FF00FF","00FFFF","FF0000","00FF00","0000FF","000000","select"]
 		self.AlienFX_Color_Panel_VBox = gtk.VBox(spacing = 5)
@@ -843,7 +834,6 @@ class pyAlienFX_GUI():
 		self.Updtate_Profile_Combobox()
 		#self.Create_zones()
 		#self.Create_Line()
-	
 	
 	#================================
 	#Connect functions!
@@ -906,7 +896,6 @@ class pyAlienFX_GUI():
 		self.configuration.speed = self.speed
 		#print self.speed
 
-	
 	def on_AlienFX_ColorSelection_Dialog_Ok(self,widget):
 		colorsel = self.AlienFX_ColorSelection_Window.colorsel
 		color = colorsel.get_current_color()
@@ -998,7 +987,6 @@ class pyAlienFX_GUI():
 		
 	def on_AlienFX_Main_Window_destroy(self,widget):
 		gtk.main_quit()
-		
 		
 	def on_Configuration_New(self,widget):
 		if os.path.isfile(self.actual_conf_file):

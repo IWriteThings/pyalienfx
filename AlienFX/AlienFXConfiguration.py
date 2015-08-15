@@ -116,7 +116,6 @@ class configuration(list,AlienFXTexts):
 		self.description = area.description
 		self.Id = 0x01
 
-		
 	def append(self,Type, color = "", color2 = ""):
 		el = element(Type,color,color2)
 		el.Id = self.Id
