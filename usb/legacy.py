@@ -94,6 +94,7 @@ TYPE_STANDARD = 0
 TYPE_VENDOR = 64
 
 class Endpoint(object):
+
     r"""Endpoint descriptor object."""
     def __init__(self, ep):
         self.address = ep.bEndpointAddress
@@ -102,6 +103,7 @@ class Endpoint(object):
         self.type = util.endpoint_type(ep.bmAttributes)
 
 class Interface(object):
+
     r"""Interface descriptor object."""
     def __init__(self, intf):
         self.alternateSetting = intf.bAlternateSetting
@@ -113,6 +115,7 @@ class Interface(object):
         self.endpoints = [Endpoint(e) for e in intf]
 
 class Configuration(object):
+
     r"""Configuration descriptor object."""
     def __init__(self, cfg):
         self.iConfiguration = cfg.iConfiguration
@@ -131,6 +134,7 @@ class Configuration(object):
                         ]
 
 class DeviceHandle(object):
+
     def __init__(self, dev):
         self.dev = dev
         self.__claimed_interface = -1
@@ -293,6 +297,7 @@ class DeviceHandle(object):
         self.dev.detach_kernel_driver(interface)
 
 class Device(object):
+
     r"""Device descriptor object"""
     def __init__(self, dev):
         self.deviceClass = dev.bDeviceClass
@@ -319,6 +324,7 @@ class Device(object):
         return DeviceHandle(self.dev)
 
 class Bus(object):
+
     r"""Bus object."""
     def __init__(self):
         self.dirname = ''

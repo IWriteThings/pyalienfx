@@ -365,6 +365,7 @@ def _check(retval):
 
 # implementation of libusb 0.1.x backend
 class _LibUSB(usb.backend.IBackend):
+
     @methodtrace(_logger)
     def enumerate_devices(self):
         _check(_lib.usb_find_busses())

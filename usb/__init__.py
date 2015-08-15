@@ -72,6 +72,7 @@ def _setup_log():
         logger.addHandler(handler)
     else:
         class NullHandler(logging.Handler):
+
             def emit(self, record):
                 pass
 

@@ -21,6 +21,7 @@
 #
 
 class AlienFXTexts:
+
 	def __init__(self):
 		#errors:
 		self.ALIEN_FX_ERROR_TITLE_TEXT = "AlienFX error"

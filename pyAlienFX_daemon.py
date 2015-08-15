@@ -66,6 +66,7 @@ ADDR = (HOST,PORT)
 	#Daemon = ServCmd()
 
 class ServCmd:
+
 	def __init__(s):
 		print "Initializing Driver  ..."
 		s.driver = AlienFX_Driver()

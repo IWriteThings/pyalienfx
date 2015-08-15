@@ -35,6 +35,7 @@ from AlienFX.AlienFXConfiguration import *
 PING_FREQUENCY = 10 # seconds
 
 class pyAlienFX_Indicator:
+
 	"""The indicator class that takes care of creating the menu then loading it throught the appindicator library on ubuntu Unity ! To do : Gnome !"""
 	def __init__(self):
 		"""Init creation of the gtk.Menu and binding to the appindicator"""

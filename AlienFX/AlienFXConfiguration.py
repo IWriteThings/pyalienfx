@@ -4,6 +4,7 @@ from AlienFXComputers import *
 
 
 class AlienFXConfiguration:
+
 	def __init__(self):
 		self.name = "Default configuration"
 		self.area = {}
@@ -109,6 +110,7 @@ class AlienFXConfiguration:
 		
 		
 class configuration(list,AlienFXTexts):
+
 	def __init__(self,area):
 		self.area = area.name
 		self.description = area.description
@@ -138,6 +140,7 @@ class configuration(list,AlienFXTexts):
 		del self[Id]
 		
 class element():
+
 	def __init__(self, Type, color = "", color2 = ""):
 		self.mode = Type
 		self.Id = 0x00

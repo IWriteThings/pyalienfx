@@ -28,12 +28,14 @@ from AlienFX.AlienFXTexts import *
 
 	
 class AlienFXPowerMode:
+
 	def __init__(self, name, description, block):
 		self.description = description
 		#self.blockId = block
 		self.name = name
 
 class AlienFXRegion:
+
 	def __init__(self, name, description, regionId, maxCommands, canBlink, canMorph, canLight, default_color, supportedModes, default_mode = "fixed", power_button = False):
 		self.description = description
 		self.regionId = regionId
@@ -68,6 +70,7 @@ class AlienFXRegion:
 		return False
 	
 class AlienFXConfiguration:
+
 	def __init__(self,mode,color1,color2 = None):
 		self.mode = mode
 		self.color1 = color1
@@ -77,6 +80,7 @@ class AlienFXConfiguration:
 		return "Mode : %s\nColor1 : %s\nColor2 : %s"%(self.mode,self.color1,self.color2)
 		
 class M11XR3:
+
 	def __init__(self):
 		self.AlienFXProperties = AlienFXProperties()
 		self.AlienFXTexts = AlienFXTexts()
@@ -145,6 +149,7 @@ class M11XR3:
 
 #added by LightHash [start]
 class M14XLight:
+
 	def __init__(self):
 
 		self.AlienFXProperties = AlienFXProperties()
@@ -229,6 +234,7 @@ class M14XLight:
 
 		
 class M15XArea51:
+
 	def __init__(self):
 		self.AlienFXProperties = AlienFXProperties()
 		self.AlienFXTexts = AlienFXTexts()
@@ -298,6 +304,7 @@ class M15XArea51:
 		
 
 class M15XAllPowerfull:
+
 	def __init__(self):
 		
 		self.AlienFXProperties = AlienFXProperties()
@@ -382,6 +389,7 @@ class M15XAllPowerfull:
 #############################################################
 #added by niai (start)
 class M17XR3:
+
 	def __init__(self):
 		
 		self.AlienFXProperties = AlienFXProperties()
@@ -468,6 +476,7 @@ class M17XR3:
 #############################################################
 #added by SuperTool (start)
 class M18XR2:
+
 	def __init__(self):
 
 		self.AlienFXProperties = AlienFXProperties()
@@ -553,6 +562,7 @@ class M18XR2:
 ##############################################################################################
 
 class AlienFXComputer:
+
 	def __init__(self,name,vendorId,productId,computer):
 		self.name = name
 		self.vendorId = vendorId

@@ -359,6 +359,7 @@ def _check(retval):
 
 # wrap a device
 class _Device(object):
+
     def __init__(self, devid):
         self.devid = _lib.libusb_ref_device(devid)
     def __del__(self):
@@ -367,6 +368,7 @@ class _Device(object):
 # wrap a descriptor and keep a reference to another object
 # Thanks to Thomas Reitmayr.
 class _WrapDescriptor(object):
+
     def __init__(self, desc, obj = None):
         self.obj = obj
         self.desc = desc
@@ -375,6 +377,7 @@ class _WrapDescriptor(object):
 
 # wrap a configuration descriptor
 class _ConfigDescriptor(object):
+
     def __init__(self, desc):
         self.desc = desc
     def __del__(self):
@@ -384,6 +387,7 @@ class _ConfigDescriptor(object):
 
 # initialize and finalize the library
 class _Initializer(object):
+
     def __init__(self):
         _check(_lib.libusb_init(None))
     def __del__(self):
@@ -392,6 +396,7 @@ class _Initializer(object):
 
 # iterator for libusb devices
 class _DevIterator(object):
+
     def __init__(self):
         self.dev_list = POINTER(c_void_p)()
         self.num_devs = _check(_lib.libusb_get_device_list(
@@ -406,6 +411,7 @@ class _DevIterator(object):
 
 # implementation of libusb 1.0 backend
 class _LibUSB(usb.backend.IBackend):
+
     @methodtrace(_logger)
     def enumerate_devices(self):
         return _DevIterator()

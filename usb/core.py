@@ -56,6 +56,7 @@ def _set_attr(input, output, fields):
         setattr(output, f, int(getattr(input, f)))
 
 class _ResourceManager(object):
+
     def __init__(self, dev, backend):
         self.backend = backend
         self._active_cfg_index = None
@@ -82,6 +83,7 @@ class _ResourceManager(object):
             cfg = config
         elif config == 0: # unconfigured state
             class FakeConfiguration(object):
+
                 def __init__(self):
                     self.index = None
                     self.bConfigurationValue = 0
@@ -195,6 +197,7 @@ class _ResourceManager(object):
         self._active_cfg_index = None
 
 class USBError(IOError):
+
     r"""Exception class for USB errors.
 
     Backends must raise this exception when USB related errors occur.
@@ -202,6 +205,7 @@ class USBError(IOError):
     pass
 
 class Endpoint(object):
+
     r"""Represent an endpoint object.
 
     This class contains all fields of the Endpoint Descriptor
@@ -289,6 +293,7 @@ class Endpoint(object):
         return self.device.read(self.bEndpointAddress, size, self.interface, timeout)
 
 class Interface(object):
+
     r"""Represent an interface object.
 
     This class contains all fields of the Interface Descriptor
@@ -375,6 +380,7 @@ class Interface(object):
             )
 
 class Configuration(object):
+
     r"""Represent a configuration object.
 
     This class contains all fields of the Configuration Descriptor
@@ -448,6 +454,7 @@ class Configuration(object):
 
 
 class Device(object):
+
     r"""Device object.
 
     This class contains all fields of the Device Descriptor according

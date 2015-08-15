@@ -3,6 +3,7 @@
 import sys
 
 class parser:
+
 	def __init__(self,path):
 		f = open(path)
 		self.string = f.readlines()

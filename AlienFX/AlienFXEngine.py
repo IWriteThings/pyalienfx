@@ -32,6 +32,7 @@ from AlienFX.AlienFXComputers import AllComputers
 
 
 class AlienFX_Driver(AllComputers):
+
 	def __init__(self):
 		#Define I/O Reqquest types
 		self.SEND_REQUEST_TYPE = 0x21
@@ -126,6 +127,7 @@ class AlienFX_Driver(AllComputers):
 
 
 class AlienFX_Controller:
+
 	def __init__(self,driver):
 		self.driver = driver
 
@@ -313,6 +315,7 @@ class AlienFX_Controller:
 		return True
 	
 class AlienFX_Constructor(list):
+
 	def __init__(self,driver,save = False,block = 0x01):
 		self.raz()
 		self.computer = driver.computer
@@ -504,6 +507,7 @@ class AlienFX_Constructor(list):
 			
 
 class Request:
+
 	def __init__(self,legend,packet):
 		self.legend = legend
 		self.packet = packet

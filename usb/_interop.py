@@ -70,6 +70,7 @@ except (ImportError, AttributeError):
     class _groupby(object):
         # [k for k, g in groupby('AAAABBBCCDAABBB')] --> A B C D A B
         # [list(g) for k, g in groupby('AAAABBBCCD')] --> AAAA BBB CC D
+
         def __init__(self, iterable, key=None):
             if key is None:
                 key = lambda x: x
@@ -98,6 +99,7 @@ except NameError:
         # sort function on Python 2.3 does not
         # support 'key' parameter
         class KeyToCmp(object):
+
             def __init__(self, K):
                 self.key = K
             def __call__(self, x, y):

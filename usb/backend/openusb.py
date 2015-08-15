@@ -90,6 +90,7 @@ class _openusb_request_result(Structure):
                 ('transfered_bytes', c_uint32)]
 
 class _openusb_ctrl_request(Structure):
+
     class _openusb_ctrl_setup(Structure):
         _fields_ = [('bmRequestType', c_uint8),
                     ('bRequest', c_uint8),
@@ -120,6 +121,7 @@ class _openusb_bulk_request(Structure):
                 ('next', c_void_p)]
 
 class _openusb_isoc_pkts(Structure):
+
     class _openusb_isoc_packet(Structure):
         _fields_ = [('payload', POINTER(c_uint8)),
                     ('length', c_uint32)]
@@ -383,6 +385,7 @@ def _check(retval):
     return retval
 
 class _Context(object):
+
     def __init__(self):
         self.handle = _openusb_handle()
         _check(_lib.openusb_init(0, byref(self.handle)))
@@ -390,6 +393,7 @@ class _Context(object):
         _lib.openusb_fini(self.handle)
 
 class _BusIterator(object):
+
     def __init__(self):
         self.buslist = POINTER(openusb_busid)()
         num_busids = c_uint32()
@@ -404,6 +408,7 @@ class _BusIterator(object):
         _lib.openusb_free_busid_list(self.buslist)
 
 class _DevIterator(object):
+
     def __init__(self, busid):
         self.devlist = POINTER(_openusb_devid)()
         num_devids = c_uint32()
@@ -419,6 +424,7 @@ class _DevIterator(object):
         _lib.openusb_free_devid_list(self.devlist)
 
 class _OpenUSB(usb.backend.IBackend):
+
     @methodtrace(_logger)
     def enumerate_devices(self):
         for bus in _BusIterator():

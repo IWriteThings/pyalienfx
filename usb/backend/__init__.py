@@ -79,6 +79,7 @@ def _not_implemented(func):
     raise NotImplementedError(func.__name__)
 
 class IBackend(object):
+
     r"""Backend interface.
 
     IBackend is the basic interface for backend implementations. By default,
