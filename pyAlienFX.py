@@ -227,7 +227,7 @@ class pyAlienFX_GUI():
         except:
             pass
 
-    def Create_Border(self, Type, Inside, Label=None, zone=None , confId=None):
+    def Create_Border(self, Type, Inside, Label=None, zone=None, confId=None):
         """2 type of border Advanced (type == 1) and Normal (type == 0)
         That function creates the gtk Box that contains the images border that surround the zones."""
         if Type == 0:
@@ -554,7 +554,7 @@ class pyAlienFX_GUI():
         color1.add(grad1)
         color1.set_above_child(True)
         color1.set_size_request(width, 1)
-        color1.connect("buttonpress-event", self.on_AlienFX_Preview_Zone_Clicked , zone, confId, 1)
+        color1.connect("buttonpress-event", self.on_AlienFX_Preview_Zone_Clicked, zone, confId, 1)
         #color1.connect("enternotify-event", self.on_color_focus_in, zone, confId)
         #color1.connect("leavenotify-event", self.on_color_focus_out, zone, confId)
 
@@ -563,7 +563,7 @@ class pyAlienFX_GUI():
         #color2.connect("exposeevent", self.expose_gradient,2,[c1.red_float,c1.green_float,c1.blue_float],[c2.red_float,c2.green_float,c2.blue_float],cm,width)
         color2.set_above_child(True)
         color2.set_size_request(width, 1)
-        color2.connect("buttonpress-event", self.on_AlienFX_Preview_Zone_Clicked , zone, confId, 2)
+        color2.connect("buttonpress-event", self.on_AlienFX_Preview_Zone_Clicked, zone, confId, 2)
         #color2.connect("enternotify-event", self.on_color_focus_in, zone, confId)
         #color2.connect("leavenotify-event", self.on_color_focus_out, zone, confId)
 
@@ -1050,7 +1050,7 @@ class pyAlienFX_GUI():
     def on_color_focus_in(self, widget, event, zone, conf):
         if not zone.power_button:
             if conf > 0:
-                try :
+                try:
                     if self.remove_box:
                         self.remove_box.destroy()
                 except:
