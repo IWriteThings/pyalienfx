@@ -105,14 +105,14 @@ class pyAlienFX_GUI():
         profiles = os.listdir('./Profiles/')
         #print profiles
         for profile in profiles:
-            if not ".cfg" in profile:
+            if ".cfg" not in profile:
                 #print "REMOVED : ",profile
                 profiles.remove(profile)
         for profile in profiles:
             try:
                 conf = AlienFXConfiguration()
                 conf.Load(os.path.join('.', 'Profiles', profile))
-                if not conf.name in DB_profiles.keys():
+                if conf.name not in DB_profiles.keys():
                     DB_profiles[conf.name] = profile
             except:
                 #print "REMOVED : ",profile
@@ -820,7 +820,7 @@ class pyAlienFX_GUI():
             response = chooser.run()
             if response == gtk.RESPONSE_OK:
                 self.actual_conf_file = chooser.get_filename()
-                if not ".cfg" in self.actual_conf_file:
+                if ".cfg" not in self.actual_conf_file:
                     self.actual_conf_file = self.actual_conf_file + ".cfg"
                 self.configuration = AlienFXConfiguration()
                 self.configuration.Create(self.new_title, self.computer.name, self.selected_speed, self.actual_conf_file)
