@@ -38,8 +38,8 @@ BUFSIZ = 4096
 HOST = 'localhost'
 PORT = 25436  # ALIEN port as if you typed ALIEN on your phone ;)
 ADDR = (HOST, PORT)
-#LOGFILE = '/var/log/pydaemon.log'
-#PIDFILE = '/var/run/pydaemon.pid'
+# LOGFILE = '/var/log/pydaemon.log'
+# PIDFILE = '/var/run/pydaemon.pid'
 
 # class Log:
 #    """file like for writes with auto flush after each write

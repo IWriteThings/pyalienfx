@@ -368,7 +368,7 @@ class AlienFX_Constructor(list):
         cmd = copy(self.void)
         print "Color2 ==== >>> ", Color2
         legend = "Set Morph Color, Area : %s , Color1 : r = %s, g = %s, b = %s, Color2 : r = %s, g = %s, b = %s" % (hex(Area[0] * 65536 + Area[1] * 256 + Area[2]), hex((Color1[0] / 16)), hex(Color1[0] - (Color1[0] / 16) * 16), hex(Color1[1] / 16), hex(Color2[0] / 16), hex(Color2[0] - (Color2[0] / 16) * 16), hex(Color2[1] / 16))
-        #Color2[1] = Color2[1]/ 16 + (Color2[0] - (Color2[0]/ 16) * 16)
+        # Color2[1] = Color2[1]/ 16 + (Color2[0] - (Color2[0]/ 16) * 16)
         print "Color2after ==== >>> ", Color2
         Color12 = Color1[1] + Color2[0]
         cmd[0] = self.computer.START_BYTE

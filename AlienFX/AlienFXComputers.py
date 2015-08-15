@@ -29,7 +29,7 @@ class AlienFXPowerMode:
 
     def __init__(self, name, description, block):
         self.description = description
-        #self.blockId = block
+        # self.blockId = block
         self.name = name
 
 
@@ -384,7 +384,7 @@ class M15XAllPowerfull:
         self.regions[self.AlienFXProperties.POWER_BUTTON_EYES_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_EYES_ID, self.AlienFXTexts.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION, self.REGION_POWER_BUTTON_EYES, 1, False, False, True, self.default_color, self.suportedMode)
         self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, True, True, True, self.default_color, self.suportedMode, power_button=True)
 
-#############################################################
+# ############################################################
 # added by niai (start)
 class M17XR3:
 
@@ -468,9 +468,9 @@ class M17XR3:
         self.regions[self.AlienFXProperties.POWER_BUTTON_EYES_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_EYES_ID, self.AlienFXTexts.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION, self.REGION_POWER_BUTTON_EYES, 1, False, False, True, self.default_color, self.suportedMode)
         self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, True, True, True, self.default_color, self.suportedMode, power_button=True)
 # added by niai (end)
-##############################################################################################
+# #############################################################################################
 
-#############################################################
+# ############################################################
 # added by SuperTool (start)
 class M18XR2:
 
@@ -555,7 +555,7 @@ class M18XR2:
         self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, True, True, True, self.default_color, self.suportedMode, power_button=True)
 
 # added by SuperTool (end)
-##############################################################################################
+# #############################################################################################
 
 
 class AlienFXComputer:
@@ -598,17 +598,17 @@ class AllComputers():
         "M11XR1": AlienFXComputer("M11XR1", 0x187c, 0x0514, M11XR3()),
         "M15XAllPowerful": AlienFXComputer("M15XAllPowerful", 0x187c, 0x0512, M15XAllPowerfull()),
         "M15XArea51": AlienFXComputer("M15XArea51", 0x187c, 0x0511, M15XArea51()),
-        #############################################################################
+        # ############################################################################
         # added by niai (start)
         "M17XR3": AlienFXComputer("M17XR3", 0x187c, 0x0520, M17XR3()),
         # added by niai (end)
-        ############################################################################
-        #LightHash [start]
+        # ###########################################################################
+        # LightHash [start]
         "M14XR1": AlienFXComputer("M14XR1", 0x187c, 0x0521, M14XLight()),
-        #"M14XR1" : AlienFXComputer("M14XR1",0x187c,0x0522,M14XLight())}
-        #############################################################################
+        # "M14XR1" : AlienFXComputer("M14XR1",0x187c,0x0522,M14XLight())}
+        # ############################################################################
         # added by SuperTool (start)
         "M18XR2": AlienFXComputer("M18XR2", 0x187c, 0x0518, M18XR2())}
     # added by SuperTool (end)
-    ############################################################################
-    #LightHash [end]
+    # ###########################################################################
+    # LightHash [end]
