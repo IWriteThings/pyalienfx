@@ -1101,21 +1101,21 @@ class pyAlienFX_GUI():
                 pass
             self.lights = False
 
-    def on_AlienFX_Menu_Light_On(self,widget):
+    def on_AlienFX_Menu_Light_On(self, widget):
         #print "ON"
         if not self.lights:
             self.Set_Conf()
         self.lights = True
 
-    def Not_Yet(self,widget):
+    def Not_Yet(self, widget):
         messagedialog = gtk.MessageDialog(None, gtk.DIALOG_MODAL|gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_INFO, gtk.BUTTONS_OK, "This feature is not yet available !")
         messagedialog.run()
         messagedialog.destroy()
 
-    def on_AlienFX_ColorSelection_Windows_Close(self,widget):
+    def on_AlienFX_ColorSelection_Windows_Close(self, widget):
         pass
 
-    def on_AlienFX_ColorSelection_Windows_Destroy(self,widget):
+    def on_AlienFX_ColorSelection_Windows_Destroy(self, widget):
         pass
 
 
@@ -1163,7 +1163,7 @@ class Daemon_Controller:
     def __init__(self):
         self.HOST = 'localhost'
         self.PORT = 25436
-        self.ADDR = (self.HOST,self.PORT)
+        self.ADDR = (self.HOST, self.PORT)
         self.sock = None
         self.BUFSIZE = 4096
         self.request = []
@@ -1174,7 +1174,7 @@ class Daemon_Controller:
             self.sock.connect(self.ADDR)
             self.sock.settimeout(1)
             return True
-        except error,e:
+        except error, e:
             if "[Errno 111]" in str(e):
                 print "the Deamon is disconnected ... "
             else:
@@ -1189,60 +1189,60 @@ class Daemon_Controller:
         data = self.sock.recv(self.BUFSIZE)
         return data
 
-    def Set_Loop(self,action):
-        packet = ["Set_Loop",str(action)]
+    def Set_Loop(self, action):
+        packet = ["Set_Loop", str(action)]
         self.request.append(packet)
 
-    def Set_Loop_Conf(self,Save=False,block = 0x01):
-        packet = ["Set_Loop_Conf",str(Save),str(block)]
+    def Set_Loop_Conf(self, Save=False, block = 0x01):
+        packet = ["Set_Loop_Conf", str(Save), str(block)]
         self.request.append(packet)
 
-    def Add_Loop_Conf(self,area,mode,color1,color2=None):
-        packet = ["Add_Loop_Conf",str(hex(area)).replace('0x',''),str(mode),str(color1),str(color2)]
+    def Add_Loop_Conf(self, area, mode, color1, color2=None):
+        packet = ["Add_Loop_Conf", str(hex(area)).replace('0x', ''), str(mode), str(color1), str(color2)]
         self.request.append(packet)
 
-    def Add_Speed_Conf(self,speed = 0xc800):
-        packet = ["Add_Speed_Conf",str(speed)]
+    def Add_Speed_Conf(self, speed = 0xc800):
+        packet = ["Add_Speed_Conf", str(speed)]
         self.request.append(packet)
 
     def End_Loop_Conf(self):
-        packet = ["End_Loop_Conf",""]
+        packet = ["End_Loop_Conf", ""]
         self.request.append(packet)
 
     def End_Transfert_Conf(self):
-        packet = ["End_Transfert_Conf",""]
+        packet = ["End_Transfert_Conf", ""]
         self.request.append(packet)
 
     def Write_Conf(self):
-        packet = ["Write_Conf",""]
+        packet = ["Write_Conf", ""]
         self.request.append(packet)
         self.Send_Packet()
 
     def Set_Color(self, Area, Color, Save = False, Apply = False, block = 0x01):
-        packet = ["Set_Color",str(hex(Area)).replace('0x',''),str(Color),str(Save),str(Apply),str(block)]
+        packet = ["Set_Color", str(hex(Area)).replace('0x', ''), str(Color), str(Save), str(Apply), str(block)]
         self.request.append(packet)
         self.Send_Packet()
 
-    def Set_Color_Blink(self,Area,Color, Save = False, Apply = False, block = 0x01):
-        packet = ["Set_Color_Blink",str(hex(Area)).replace('0x',''),str(Color),str(Save),str(Apply),str(block)]
+    def Set_Color_Blink(self, Area, Color, Save = False, Apply = False, block = 0x01):
+        packet = ["Set_Color_Blink", str(hex(Area)).replace('0x', ''), str(Color), str(Save), str(Apply), str(block)]
         self.request.append(packet)
         self.Send_Packet()
 
-    def Set_Color_Morph(self,Area,Color1,Color2, Save = False, Apply = False, block = 0x01):
-        packet = ["Set_Color_Morph",str(hex(Area)).replace('0x',''),str(Color1),str(Color2),str(Save),str(Apply),str(block)]
+    def Set_Color_Morph(self, Area, Color1, Color2, Save = False, Apply = False, block = 0x01):
+        packet = ["Set_Color_Morph", str(hex(Area)).replace('0x', ''), str(Color1), str(Color2), str(Save), str(Apply), str(block)]
         self.request.append(packet)
         self.Send_Packet()
 
     def WaitForOk(self):
-        packet = ["WaitForOk",""]
+        packet = ["WaitForOk", ""]
         self.request.append(packet)
 
     def Get_State(self):
-        packet = ["Get_State",""]
+        packet = ["Get_State", ""]
         self.request.append(packet)
 
-    def Reset(self,res_cmd):
-        packet = ["Reset",str(res_cmd)]
+    def Reset(self, res_cmd):
+        packet = ["Reset", str(res_cmd)]
         self.request.append(packet)
 
     def Send_Packet(self):
@@ -1262,7 +1262,7 @@ class Daemon_Controller:
         self.sendCmd("PING")
         print "Sent ..."
         pong = self.getResults()
-        print "Server Answer : ",pong
+        print "Server Answer : ", pong
         if pong != "PONG":
             return False
         return True
