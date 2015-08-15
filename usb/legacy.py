@@ -346,4 +346,3 @@ class Bus(object):
 def busses():
     r"""Return a tuple with the usb busses."""
     return (Bus(),)
-

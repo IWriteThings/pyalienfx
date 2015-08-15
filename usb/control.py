@@ -259,4 +259,3 @@ def set_interface(dev, bInterfaceNumber, bAlternateSetting):
     sent to.
     """
     dev.set_interface_altsetting(bInterfaceNumber, bAlternateSetting)
-

@@ -139,4 +139,3 @@ def as_array(data=None):
         # When you pass a unicode string, you got a TypeError
         # if first parameter is not 'u'
         return array.array('u', data)
-

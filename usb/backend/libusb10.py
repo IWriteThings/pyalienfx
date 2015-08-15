@@ -360,8 +360,8 @@ def _check(retval):
         retval = c_int(retval)
     if isinstance(retval, c_int):
         if retval.value < 0:
-           from usb.core import USBError
-           raise USBError(_str_error[retval.value])
+            from usb.core import USBError
+            raise USBError(_str_error[retval.value])
     return retval
 
 # wrap a device

@@ -244,11 +244,11 @@ def get_string(dev, length, index, langid = None):
     """
     from usb.control import get_descriptor
     if langid is None:
-	# Asking for the zero'th index is special - it returns a string
-	# descriptor that contains all the language IDs supported by the device.
-	# Typically there aren't many - often only one. The language IDs are 16
-	# bit numbers, and they start at the third byte in the descriptor. See
-	# USB 2.0 specification section 9.6.7 for more information.
+        # Asking for the zero'th index is special - it returns a string
+        # descriptor that contains all the language IDs supported by the device.
+        # Typically there aren't many - often only one. The language IDs are 16
+        # bit numbers, and they start at the third byte in the descriptor. See
+        # USB 2.0 specification section 9.6.7 for more information.
         #
         # Note from libusb 1.0 sources (descriptor.c)
         buf = get_descriptor(
