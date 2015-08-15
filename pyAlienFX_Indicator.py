@@ -42,8 +42,8 @@ class pyAlienFX_Indicator:
         """Init creation of the gtk.Menu and binding to the appindicator"""
         self.colormap = {"White": "FFFFFF", "Yellow": "FFFF00", "Purple": "FF00FF", "Cyan": "00FFFF", "Red": "FF0000", "Green": "00FF00", "Blue": "0000FF"}
         self.ind = appindicator.Indicator("pyAlienFX",
-                                        "/home/xqua/Documents/Work/Coding/Python/pyalienfx/images/indicator_off.png",
-                                        appindicator.CATEGORY_APPLICATION_STATUS)
+                                          "/home/xqua/Documents/Work/Coding/Python/pyalienfx/images/indicator_off.png",
+                                          appindicator.CATEGORY_APPLICATION_STATUS)
         self.ind.set_status(appindicator.STATUS_ACTIVE)
         self.ind.set_attention_icon("/home/xqua/Documents/Work/Coding/Python/pyalienfx/images/indicator_on.png")
         self.gui = pyAlienFX.pyAlienFX_GUI()

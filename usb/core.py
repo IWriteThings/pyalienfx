@@ -314,7 +314,7 @@ class Interface(object):
     """
 
     def __init__(self, device, interface = 0,
-            alternate_setting = 0, configuration = 0):
+                 alternate_setting = 0, configuration = 0):
         r"""Initialize the interface object.
 
         The device parameter is the device object returned by the find()
@@ -653,7 +653,7 @@ class Device(object):
             )
 
     def ctrl_transfer(self, bmRequestType, bRequest, wValue=0, wIndex=0,
-            data_or_wLength = None, timeout = None):
+                      data_or_wLength = None, timeout = None):
         r"""Do a control transfer on the endpoint 0.
 
         This method is used to issue a control transfer over the
