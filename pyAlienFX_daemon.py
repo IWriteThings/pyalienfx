@@ -114,7 +114,8 @@ class ServCmd:
             s.__cli.close()
             s.__serv.close()
             sys.exit(0)
-        if not cmd: return
+        if not cmd:
+            return
         print cmd
         s.__servCmd(cmd)
         if s.__improcessing:
