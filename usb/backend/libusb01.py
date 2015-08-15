@@ -449,7 +449,7 @@ class _LibUSB(usb.backend.IBackend):
                                   0,
                                   1,
                                   100
-                            )[0]
+                                  )[0]
 
     @methodtrace(_logger)
     def claim_interface(self, dev_handle, intf):
