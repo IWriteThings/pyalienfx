@@ -1088,7 +1088,7 @@ class pyAlienFX_GUI():
 
     def __textbackground(self, widget, ev, image):
         widget.window.draw_pixbuf(widget.style.bg_gc[gtk.STATE_NORMAL], image, 0, 0, 0, 0)
-        if widget.get_child() != None:
+        if widget.get_child() is not None:
             widget.propagate_expose(widget.get_child(), ev)
         return True
 
