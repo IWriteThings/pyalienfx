@@ -116,7 +116,7 @@ class pyAlienFX_GUI():
 				#print "REMOVED : ",profile
 				profiles.remove(profile)
 		return DB_profiles
-		
+
 	#================================
 	#GTK functions!
 	#================================
@@ -156,7 +156,7 @@ class pyAlienFX_GUI():
 		self.AlienFX_Main_Windows.window.set_back_pixmap(pixmap, False)
 		self.AlienFX_ComputerName_Label.set_label(self.computer.name)
 		self.gtk_AlienFX_Main.connect_signals(self)
-		
+
 		#Background Colors !
 		self.AlienFX_ComputerName_EventBox.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.background_color))
 		self.AlienFX_ComputerName_Label.modify_fg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.text_color))
@@ -502,7 +502,7 @@ class pyAlienFX_GUI():
 			self.AlienFX_Preview_Eventbox.add(self.AlienFX_Preview_Hbox)
 			self.AlienFX_Preview_Eventbox.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.background_color))
 			self.AlienFX_Main_Windows.show_all()
-	
+
 	def Widget_Zone(self,zone,confId = 0,line = False):
 		"""That function creates a gtk object.
 		This object is a not advanced zone box"""
@@ -530,7 +530,7 @@ class pyAlienFX_GUI():
 			#Zone_VBox.pack_start(title, expand=False)
 		#color = gtk.EventBox()
 		#color_hbox = gtk.HBox()
-		
+
 		#color_hbox.pack_start(color2)
 		#print self.configuration.Show_Configuration()
 		c1 = gtk.gdk.Color('#'+self.configuration.area[zone.name][confId].color1)
@@ -597,7 +597,7 @@ class pyAlienFX_GUI():
 				EventFixed.add(fixed)
 				EventFixed.connect("button-press-event", self.on_AlienFX_Preview_Mode_Clicked, "fixed", zone, confId)
 				mode.pack_start(EventFixed, expand=False)
-			if zone.canBlink:	
+			if zone.canBlink:
 				blink = gtk.Image()
 				blink.set_from_file(image2)
 				EventBlink = gtk.EventBox()
@@ -619,7 +619,7 @@ class pyAlienFX_GUI():
 		Table = self.Create_Border(set_type,Color_Hbox,Label,zone,confId)
 		Zone_VBox.pack_start(Table, expand=False)
 		return Zone_VBox
-	
+
 	def Create_Line(self):
 		"""That function creates a gtk object.
 		That object is the Normal Selections boxes (not advanced).
@@ -649,7 +649,7 @@ class pyAlienFX_GUI():
 		self.AlienFX_Configurator_Eventbox.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.background_color))
 		self.AlienFX_Configurator_ScrollWindow.add_with_viewport(self.AlienFX_Configurator_Eventbox)
 		self.AlienFX_Main_Windows.show_all()
-	
+
 	def Widget_Line(self, zone, l):
 		"""That function creates a gtk object.
 		This object is an advanced zone box"""
@@ -665,7 +665,7 @@ class pyAlienFX_GUI():
 			AddConf.set_label("Add")
 			AddConf.connect("clicked", self.on_Line_AddConf_pressed, zone, conf)
 			self.AlienFX_Configurator_Table.attach(AddConf,int(conf)+2,int(conf)+3,l-1,l,xoptions=gtk.SHRINK,yoptions=gtk.SHRINK)
-		
+
 	def Set_Conf(self,Save=False):
 		Id = 0x00
 		self.controller.Set_Loop_Conf(Save, self.computer.BLOCK_LOAD_ON_BOOT)
@@ -725,7 +725,7 @@ class pyAlienFX_GUI():
 			self.controller.End_Loop_Conf()
 			self.controller.End_Transfert_Conf()
 			self.controller.Write_Conf()
-			
+
 			#Block = 0x06 ! Charging !
 			self.controller.Set_Loop_Conf(Save,self.computer.BLOCK_CHARGING)
 			self.controller.Add_Loop_Conf(area,"morph",color1,color2)
@@ -733,7 +733,7 @@ class pyAlienFX_GUI():
 			self.controller.End_Loop_Conf()
 			self.controller.End_Transfert_Conf()
 			self.controller.Write_Conf()
-			
+
 			#Block 0x07 ! Battery Sleeping !
 			self.controller.Set_Loop_Conf(Save,self.computer.BLOCK_BATT_SLEEPING)
 			self.controller.Add_Loop_Conf(area,"morph",color2,'000000')
@@ -750,22 +750,22 @@ class pyAlienFX_GUI():
 			self.controller.End_Loop_Conf()
 			self.controller.End_Transfert_Conf()
 			self.controller.Write_Conf()
-			
+
 			#Block 0x09 ! Critical When Sleeping ...
 			self.controller.Set_Loop_Conf(Save,self.computer.BLOCK_BATT_CRITICAL)
 			self.controller.Add_Loop_Conf(area,"blink",color2)
 			self.controller.End_Loop_Conf()
 			self.controller.End_Transfert_Conf()
 			self.controller.Write_Conf()
-			
+
 			#Applying after all the saving !
 			self.Set_Conf()
 		self.configuration.Save(path="default.cfg")
-			
+
 	def Select_Zone(self,zone):
 		"""When a zone is selected, launch the correct functions"""
 		pass
-	
+
 	def Set_color(self):
 		if self.selected_mode == "fixed":
 			self.controller.Set_Color(self.selected_area.regionId,self.selected_color1)
@@ -774,7 +774,7 @@ class pyAlienFX_GUI():
 		if self.selected_mode == "morph" and self.selected_color2:
 			#print "\n\n\n",self.selected_color2
 			self.controller.Set_Color_Morph(self.selected_area.regionId,self.selected_color1,self.selected_color2)
-		
+
 	def AlienFX_Color_Panel(self):
 		default_color = ["FFFFFF","FFFF00","FF00FF","00FFFF","FF0000","00FF00","0000FF","000000","select"]
 		self.AlienFX_Color_Panel_VBox = gtk.VBox(spacing = 5)
@@ -834,20 +834,20 @@ class pyAlienFX_GUI():
 		self.Updtate_Profile_Combobox()
 		#self.Create_zones()
 		#self.Create_Line()
-	
+
 	#================================
 	#Connect functions!
 	#================================
 
 	def on_New_Conf(self):
 		self.AlienFX_Choose_Profile_Name.show_all()
-	
+
 	def on_AlienFX_Choose_Profile_Name_Button_clicked(self,widget):
 		#print widget
 		self.new_title = widget.get_text()
 		self.AlienFX_Choose_Profile_Name.hide()
 		self.New_Conf()
-	
+
 	def on_Profile_changed(self,widget,p = None):
 		"""Get the profile selected and changes to that profile !"""
 		if not p:
@@ -914,29 +914,29 @@ class pyAlienFX_GUI():
 			b = "00"
 		else:
 			b = hex(b).replace('0x','')
-		
+
 		color = "%s%s%s"%(r,g,b)
 		self.AlienFX_ColorSelection_Window.hide()
 		self.on_AlienFX_Color_Panel_Clicked(self,self,color)
 
 	def on_AlienFX_ColorSelection_Dialog_Cancel(self,widget):
 		self.AlienFX_ColorSelection_Window.hide()
-	
+
 	def on_color_select_button_Clicked(self,widget):
 		self.AlienFX_ColorSelection_Window.show()
-	
+
 	def on_Apply_pressed(self,widget):
 		self.Set_Conf()
-	
+
 	def on_Save_pressed(self,widget):
 		self.Set_Conf(Save=True)
-	
+
 	def on_Line_AddConf_pressed(self,widget, zone, conf):
 		self.configuration.area[zone.name].append("fixed", self.default_color, self.default_color)
 		#print zone.line
 		self.Create_zones()
 		self.Create_Line()
-	
+
 	def on_AlienFX_Color_Panel_Clicked(self,widget, event, color):
 		if self.set_color == 1:
 			self.selected_color1 = color
@@ -952,7 +952,7 @@ class pyAlienFX_GUI():
 		#print self.configuration.area[self.selected_area.name].line[self.selected_Id]
 		self.Create_zones()
 		self.Create_Line()
-	
+
 	def on_AlienFX_Preview_Zone_Clicked(self,widget,event,zone,Id,color):
 		self.selected_area = zone
 		self.selected_Id = Id
@@ -964,7 +964,7 @@ class pyAlienFX_GUI():
 		else:
 			self.set_color = 1
 		#print "Hey ! Color %s clicked ! Area : %s"%(color,zone.description)
-		
+
 	def on_AlienFX_Preview_Mode_Clicked(self, widget, event, mode, zone, confId):
 		self.selected_mode = mode
 		self.selected_Id = confId
@@ -984,10 +984,10 @@ class pyAlienFX_GUI():
 			self.auto_apply = False
 		else:
 			self.auto_apply = True
-		
+
 	def on_AlienFX_Main_Window_destroy(self,widget):
 		gtk.main_quit()
-		
+
 	def on_Configuration_New(self,widget):
 		if os.path.isfile(self.actual_conf_file):
 			if not self.configuration.Check(self.actual_conf_file):
@@ -1019,7 +1019,7 @@ class pyAlienFX_GUI():
 		chooser.destroy()
 		self.Create_zones()
 		self.Create_Line()
-		
+
 	def on_Configuration_Save(self,widget):
 		self.configuration.Save(self.actual_conf_file)
 
@@ -1039,13 +1039,13 @@ class pyAlienFX_GUI():
 		chooser.destroy()
 		self.Create_zones()
 		self.Create_Line()
-	
+
 	def on_Remove_Clicked(self,widget,bla,zone,conf):
 		if len(self.configuration.area[zone.name]) > 1:
 			self.configuration.area[zone.name].remove(conf)
 		self.Create_zones()
 		self.Create_Line()
-		
+
 	def on_color_focus_in(self,widget,event,zone,conf):
 		if not zone.power_button:
 			if conf > 0:
@@ -1070,7 +1070,7 @@ class pyAlienFX_GUI():
 				#print "ABOVE ?",widget.get_above_child()
 				self.remove_box.show_all()
 				#print "Focus IN :x = %s y = %s    %s, %s, %s"%(event.x,event.y,zone.description,conf,widget.get_size_request())
-	
+
 	def on_color_focus_out(self,widget,event,zone,conf):
 		#print widget
 		#if not self.Remove_button_destroy:
@@ -1089,7 +1089,7 @@ class pyAlienFX_GUI():
 		if widget.get_child() != None:
 			widget.propagate_expose(widget.get_child(), ev)
 		return True
-		
+
 	def on_AlienFX_Menu_Light_Off(self,widget):
 		#print "OFF"
 		if self.lights:

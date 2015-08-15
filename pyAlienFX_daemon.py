@@ -47,7 +47,7 @@ ADDR = (HOST,PORT)
 	#unexpected exit."""
 	#def __init__(self, f):
 		#self.f = f
-		
+
 	#def write(self, s):
 		#self.f.write(s)
 		#self.f.flush()
@@ -303,7 +303,7 @@ class ServCmd:
 
 if __name__ == "__main__":
 	Daemon = ServCmd()
-			
+
 #if __name__ == "__main__":
 	## do the UNIX double-fork magic, see Stevens' "Advanced
 	## Programming in the UNIX Environment" for details (ISBN 0201563177)

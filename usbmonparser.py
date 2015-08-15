@@ -10,14 +10,14 @@ class parser:
 		self.clean()
 		self.Strip()
 		self.Print()
-	
+
 	def clean(self):
 		tmp = []
 		for l in xrange(len(self.string)):
 			if "    " in self.string[l]:
 				tmp.append(self.string[l])
 		self.string = tmp
-		
+
 	def Strip(self):
 		for l in range(len(self.string)):
 			self.string[l] = self.string[l].strip()
@@ -35,7 +35,7 @@ class parser:
 			except:
 				pass
 		self.string = tmp
-	
+
 	def Print(self):
 		for l in range(len(self.string)):
 			n = 0
@@ -48,7 +48,7 @@ class parser:
 					tmp += i
 					n += 1
 			self.string[l] = tmp
-			
+
 		for l in self.string:
 			print l
 

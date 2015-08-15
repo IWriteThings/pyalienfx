@@ -10,19 +10,19 @@ class AlienFXConfiguration:
 		self.area = {}
 		self.computer = ""
 		self.AlienFXTexts = AlienFXTexts()
-	
+
 	def Create(self,name,computer,speed,path):
 		self.name = name
 		self.computer = computer
 		self.speed = speed
 		self.path = path
-		
+
 	def Add(self,area):
 		if not self.area.has_key(area.name):
 			self.area[area.name] = configuration(area)
 		#else:
 			#self.area[area.name].append(configuration(area))
-	
+
 	def Show_Configuration(self):
 		print "\t%s\n=== === === === === ===\n"%self.name
 		print "Speed %s\n"%self.speed
@@ -36,7 +36,7 @@ class AlienFXConfiguration:
 		if self.area.has_key(area):
 			for element in self.area[area]:
 				print element.text
-	
+
 	def Save(self,path=None):
 		if path:
 			self.path = path
@@ -51,7 +51,7 @@ class AlienFXConfiguration:
 				f.write("color=%s\n"%element.color1)
 				f.write("color2=%s\n"%element.color2)
 		f.close()
-	
+
 	def Load(self,path):
 		if path:
 			self.path = path
@@ -59,7 +59,7 @@ class AlienFXConfiguration:
 		lines = f.readlines()
 		for line in lines:
 			split = line.strip().split('=')
-			
+
 			if split[0] == "name":
 				self.name = split[1]
 			elif split[0] == "speed":
@@ -75,7 +75,7 @@ class AlienFXConfiguration:
 				self.area[area][-1].color1 = split[1]
 			elif split[0] == "color2":
 				self.area[area][-1].color2 = split[1]
-				
+
 	def Check(self,path):
 		old = AlienFXConfiguration()
 		old.Load(path)
@@ -107,8 +107,8 @@ class AlienFXConfiguration:
 		#if self.area != old.area:
 			#return False
 		return True
-		
-		
+
+
 class configuration(list,AlienFXTexts):
 
 	def __init__(self,area):
@@ -132,12 +132,12 @@ class configuration(list,AlienFXTexts):
 				self[Id].color2 = color2
 			return True
 		return False
-	
+
 	def remove(self,Id):
 		for i in range(Id,len(self)-1):
 			self[i].Id -= 1
 		del self[Id]
-		
+
 class element():
 
 	def __init__(self, Type, color = "", color2 = ""):
@@ -153,5 +153,5 @@ class element():
 		"endloop" : "End of the loop%s%s"}
 		#print "-%s-"%self.mode
 		self.text = self.Text_Conf_Type[self.mode]%(self.color1,self.color2)
-	
-	
+
+

@@ -75,7 +75,7 @@ while True:
 		break
 	else:
 		print "Please answer Y or N (N)"
-	
+
 
 Bin = """#!/bin/sh
 # -*- coding: UTF-8 -*-

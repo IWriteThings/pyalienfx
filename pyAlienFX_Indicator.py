@@ -77,7 +77,7 @@ class pyAlienFX_Indicator:
 	def launch_editor(self,widget):
 		"""Launch the configuration editor window !"""
 		self.gui.main()
-	
+
 	def on_AlienFX_Color_Clicked(self,widget,c):
 		"""Applying a single color profile !"""
 		#print "Color Click ! ",c
@@ -88,7 +88,7 @@ class pyAlienFX_Indicator:
 			self.configuration.area[zone].append(self.gui.computer.default_mode,self.colormap[c],self.colormap[c])
 		self.gui.configuration = self.configuration
 		self.gui.Set_Conf(Save=True)
-		
+
 	def lights_on(self,widget):
 		print "Light on"
 		if not self.gui.lights:

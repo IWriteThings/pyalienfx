@@ -43,13 +43,13 @@ class AlienFX_Driver(AllComputers):
 		self.READ_REQUEST = 0x01
 		self.READ_VALUE = 0x101
 		self.READ_INDEX = 0x0
-		
+
 		self.log = open("packet.log",'w')
 		self.debug = True
-		
+
 		self.AlienFXProperties = AlienFXProperties()
 		self.AlienFXTexts = AlienFXTexts()
-				
+
 		#Initializing !
 		# find our device
 		if not self.FindDevice():
@@ -57,7 +57,7 @@ class AlienFX_Driver(AllComputers):
 			sys.exit(1)
 		self.Take_over()
 		#dev.claimInterface()
-	
+
 	def FindDevice(self):
 		"""Look for all the devices listed in the AlienFXComputer file, if found return True, else return False.
 		If a computer is found, the device is loaded, as well as all the parameters for the computer (which are in the AlienFXComputer)"""
@@ -72,7 +72,7 @@ class AlienFX_Driver(AllComputers):
 				self.dev = dev
 				return True
 		return False
-	
+
 	def WriteDevice(self,MSG):
 		if len(MSG[0].packet) == self.computer.DATA_LENGTH:
 			for msg in MSG:
@@ -95,13 +95,13 @@ class AlienFX_Driver(AllComputers):
 				self.dev.ctrl_transfer(self.SEND_REQUEST_TYPE, self.SEND_REQUEST, self.SEND_VALUE, self.SEND_INDEX, msg.packet)
 		else:
 			self.dev.ctrl_transfer(self.SEND_REQUEST_TYPE, self.SEND_REQUEST, self.SEND_VALUE, self.SEND_INDEX, MSG)
-			
+
 	def ReadDevice(self,msg):
 		msg = self.dev.ctrl_transfer(self.READ_REQUEST_TYPE, self.READ_REQUEST, self.READ_VALUE, self.READ_INDEX, len(msg[0].packet))
 		if self.debug:
 			print msg
 		return msg
-		
+
 	def Take_over(self):
 		try:
 			self.dev.detach_kernel_driver(0)
@@ -132,19 +132,19 @@ class AlienFX_Controller:
 
 	def Bye(self):
 		sys.exit(0)
-		
+
 	def Ping(self):
 		return "No Deamon"
-		
+
 	def Set_Loop(self,action):
 		self.WaitForOk()
 		self.driver.WriteDevice(action)
 		time.sleep(0.1)
 		self.driver.WriteDevice(action)
-	
+
 	def Set_Loop_Conf(self,Save=False,block = 0x01):
 		self.request = AlienFX_Constructor(self.driver,Save,block)
-	
+
 	def Add_Loop_Conf(self,area,mode,color1,color2=None):
 		if type(area) != list:
 			area = self.request.Area(area)
@@ -161,20 +161,20 @@ class AlienFX_Controller:
 
 	def Add_Speed_Conf(self,speed = 0xc800):
 		self.request.Set_Speed(speed)
-		
+
 	def End_Loop_Conf(self):
 		self.request.End_Loop()
-		
+
 	def End_Transfert_Conf(self):
 		self.request.End_Transfert()
-		
+
 	def Write_Conf(self):
 		self.WaitForOk()
 		self.driver.WriteDevice(self.request)
 		if not self.request.save:
 			time.sleep(0.1)
 			self.driver.WriteDevice(self.request)
-	
+
 	def Set_Color(self, Area, Color, Save = False, Apply = False, block = 0x01):
 		"""Set the Color of an Area """
 		request = AlienFX_Constructor(self.driver,Save,block)
@@ -198,7 +198,7 @@ class AlienFX_Controller:
 			self.driver.WriteDevice(request)
 			time.sleep(0.1)
 			self.driver.WriteDevice(request)
-	
+
 	def Set_Color_Blink(self,Area,Color, Save = False, Apply = False, block = 0x01):
 		self.WaitForOk()
 		request = AlienFX_Constructor(self.driver,Save,block)
@@ -223,7 +223,7 @@ class AlienFX_Controller:
 			self.driver.WriteDevice(request)
 			time.sleep(0.1)
 			self.driver.WriteDevice(request)
-		
+
 	def Set_Color_Morph(self,Area,Color1,Color2, Save = False, Apply = False, block = 0x01):
 		self.WaitForOk()
 		request = AlienFX_Constructor(self.driver,Save,block)
@@ -250,14 +250,14 @@ class AlienFX_Controller:
 			self.driver.WriteDevice(request)
 			time.sleep(0.1)
 			self.driver.WriteDevice(request)
-	
+
 	def Send_Request(self,request):
 		"""Only for testing purposes !"""
 		self.WaitForOk()
 		self.driver.WriteDevice(request)
 		time.sleep(0.1)
 		self.driver.WriteDevice(request)
-	
+
 	def Try_Power(self,block,color):
 		"""Only for testing purposes !"""
 		self.WaitForOk()
@@ -270,7 +270,7 @@ class AlienFX_Controller:
 		self.driver.WriteDevice(request)
 		time.sleep(0.1)
 		self.driver.WriteDevice(request)
-		
+
 	def WaitForOk(self):
 		self.driver.Take_over()
 		self.Get_State()
@@ -283,7 +283,7 @@ class AlienFX_Controller:
 			request.Reset_all()
 			self.driver.WriteDevice(request)
 		return True
-		
+
 	def Get_State(self):
 		self.driver.Take_over()
 		request = AlienFX_Constructor(self.driver)
@@ -291,7 +291,7 @@ class AlienFX_Controller:
 		self.driver.WriteDevice(request)
 		msg = self.driver.ReadDevice(request)
 		return msg[0] == self.driver.computer.STATE_READY
-	
+
 	def Reset(self,res_cmd):
 		self.driver.Take_over()
 		request = AlienFX_Constructor(self.driver)
@@ -311,7 +311,7 @@ class AlienFX_Controller:
 			if msg[0] == 0x10:
 				break
 		return True
-	
+
 class AlienFX_Constructor(list):
 
 	def __init__(self,driver,save = False,block = 0x01):
@@ -321,21 +321,21 @@ class AlienFX_Constructor(list):
 		self.Id = 0x01
 		self.save = save
 		self.block = block
-	
+
 	def Save(self,end = False):
 		if self.save:
 			if not end:
 				self.Set_Save_Block(self.block)
 			else:
 				self.Set_Save()
-	
+
 	def Show_Request(self):
 		for i in self:
 			packet = ""
 			for j in i.packet:
 				packet += hex(j) + " "
 			print "%s\t:\t%s"%(i.legend,packet)
-	
+
 	def Set_Speed(self,Speed = 0xc800):
 		self.Save()
 		cmd = copy(self.void)
@@ -345,7 +345,7 @@ class AlienFX_Constructor(list):
 		cmd[3] = Speed/256
 		cmd[4] = Speed - (Speed/256)*256
 		self.append(Request(legend,cmd))
-	
+
 	def Set_Blink_Color(self,Area,Color):
 		self.Save()
 		cmd = copy(self.void)
@@ -360,7 +360,7 @@ class AlienFX_Constructor(list):
 		cmd[7] = Color[1]
 		#print "constructor : ",cmd
 		self.append(Request(legend,cmd))
-	
+
 	def Set_Morph_Color(self,Area,Color1,Color2):
 		self.Save()
 		cmd = copy(self.void)
@@ -380,7 +380,7 @@ class AlienFX_Constructor(list):
 		cmd[8] = Color2[1]
 		##print "constructor : ",cmd
 		self.append(Request(legend,cmd))
-		
+
 	def Area(self, areas): # gotta check the power button to understand it ...
 		area = 0x000000
 		ret = [0x00,0x00,0x00]
@@ -395,7 +395,7 @@ class AlienFX_Constructor(list):
 		ret[1] = area/256 - ret[0] * 256		#Takes the four first digit and remove the two first digit ret[0] = 0x12 => ret[0] * 256 = 0x1200
 		ret[2] = area - ret[0] * 65536 - ret[1] * 256	#Same but remove the first 4 digit
 		return ret
-	
+
 	def Set_Color(self,Area,Color,Id = 0x01):
 		self.Save()
 		cmd = copy(self.void)
@@ -410,7 +410,7 @@ class AlienFX_Constructor(list):
 		cmd[7] = Color[1]
 		#print "constructor : ",cmd
 		self.append(Request(legend,cmd))
-	
+
 	def Set_Save_Block(self,block):
 		cmd = copy(self.void)
 		legend = "Save block : %s"%block
@@ -419,7 +419,7 @@ class AlienFX_Constructor(list):
 		cmd[2] = block
 		#print "constructor : ",cmd
 		self.append(Request(legend,cmd))
-	
+
 	def Set_Save(self):
 		cmd = copy(self.void)
 		legend = "Save"
@@ -427,7 +427,7 @@ class AlienFX_Constructor(list):
 		cmd[1] = self.computer.COMMAND_SAVE
 		#print "constructor : ",cmd
 		self.append(Request(legend,cmd))
-	
+
 	def Color(self,color):
 		r = int(color[0:2],16)/16
 		g = int(color[2:4],16)/16
@@ -445,7 +445,7 @@ class AlienFX_Constructor(list):
 		c[0] = r  # if r = 0xf > r*16 = 0xf0 > and b = 0xc r*16 + b 0xfc
 		c[1] = g * 16 + b
 		return c
-		
+
 	def Get_Status(self):
 		cmd = copy(self.void)
 		legend = "Get Status"
@@ -453,7 +453,7 @@ class AlienFX_Constructor(list):
 		cmd[1] = self.computer.COMMAND_GET_STATUS
 		#print "constructor : ",cmd
 		self.append(Request(legend,cmd))
-		
+
 	def Reset_all(self):
 		self.Save()
 		cmd = copy(self.void)
@@ -463,7 +463,7 @@ class AlienFX_Constructor(list):
 		cmd[2] = self.computer.RESET_ALL_LIGHTS_ON
 		#print "constructor : ",cmd
 		self.append(Request(legend,cmd))
-		
+
 	def Reset(self,command):
 		if command in [self.computer.RESET_ALL_LIGHTS_ON,self.computer.RESET_ALL_LIGHTS_OFF,self.computer.RESET_TOUCH_CONTROLS,self.computer.RESET_SLEEP_LIGHTS_ON]:
 			self.Save()
@@ -476,7 +476,7 @@ class AlienFX_Constructor(list):
 			self.append(Request(legend,cmd))
 		else:
 			print "ERROR : WRONG RESET COMMAND"
-	
+
 	def End_Loop(self):
 		self.Save()
 		cmd = copy(self.void)
@@ -487,7 +487,7 @@ class AlienFX_Constructor(list):
 		#if self.save:
 		self.Id += 0x01
 		self.append(Request(legend,cmd))
-		
+
 	def End_Transfert(self):
 		self.Save(end = True)
 		if not self.save:
@@ -497,11 +497,11 @@ class AlienFX_Constructor(list):
 			cmd[1] = self.computer.COMMAND_TRANSMIT_EXECUTE
 			#print "constructor : ",cmd
 			self.append(Request(legend,cmd))
-	
+
 	def raz(self):
 		while len(self) != 0:
 			self.pop()
-			
+
 
 class Request:
 

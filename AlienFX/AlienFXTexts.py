@@ -34,11 +34,11 @@ class AlienFXTexts:
 		self.PROFILE_NAME_EMPTY_ERROR_TEXT = "Name cannot be empty"
 		self.SAVE_PROFILE_ERROR_FORMAT = "Failed to save the Profile: %s\n"
 		self.ALREADY_RUNNING_ERROR_TEXT = "AlienFX is already running"
-		
+
 		#warnings
 		self.ALIEN_FX_WARNING_TITLE_TEXT = "AlienFX Warning"
 		self.SYSTEM_TRAY_WARNING_TEXT = "It seems the system does not support system trays. The Application will not run in background."
-		
+
 		#info messages
 		self.ALIEN_FX_INFO_TITLE_TEXT = "AlienFx Info"
 		self.SHOW_ALIEN_FX_LITE_TEXT = "Show AlienFXLite"
@@ -51,38 +51,38 @@ class AlienFXTexts:
 		self.ABOUT_TITLE = "About"
 		self.HELP_TITLE = "Help"
 		self.RESET_TITLE = "Reset AlienFx"
-		
+
 		#Events
 		self.EVENT_TURN_OFF_ALL = "Turn off AlienFX"
 		self.EVENT_TURN_OFF_ALL_BUT_KEYBOARD = "Turn off All but Keyboard"
 		self.EVENT_TURN_OFF_KEYBOARD = "Turn off keyboard"
-		
+
 		#controls
 		self.EXIT_TEXT = "Exit"
 		self.PREVIEW_LABEL_TEXT = "Preview"
 		self.SELECT_PROFILE_TEXT = "Please select a profile from the combobox or create a new one"
-		
+
 		self.APPLY_THE_CURRENT_PROFILE = "Apply the current Profile"
 		self.DELETE_THE_CURRENT_PROFILE = "Delete the current Profile"
 		self.SAVE_THE_CURRENT_PROFILE = "Save the current Profile"
 		self.CREATE_A_NEW_PROFILE = "Create a new Profile"
 		self.PREVIEW_TOOL_TIP = "Preview Colors on AlienFX"
-		
+
 		self.PROFILE_SPEED_TEXT = "Speed:"
 		self.COLORS_PROFILE_TITLE = "Colors Used in Profile"
 		self.DEFAULT_TEXT = "Default"
 		self.COLORS_TEXT = "Colors"
 		self.PROFILE_TEXT = "Profile"
-		
+
 		self.PROFILE_SPEED_SLOW = "Slow"
 		self.PROFILE_SPEED_FAST = "Fast"
-		
+
 		self.ACTION_COLOR_TEXT = "Color"
 		self.ACTION_BLINK_TEXT = "Blink"
 		self.ACTION_MORPH_TEXT = "Morph"
-		
+
 		self.DEFAULT_PROFILE_TEXT = "Default Profile"
-		
+
 		#Alienware devices:
 		self.POWER_BUTTON_DESCRIPTION = "Power Button"
 		self.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION = "Powerbutton Eyes"
