@@ -77,7 +77,7 @@ class ServCmd:
         s.__serv.bind((ADDR))
         #s.__serv.settimeout(60)
         s.__cli = None
-        s.__imlistening  = 0
+        s.__imlistening = 0
         s.__improcessing = 0
         s.__run()
 
