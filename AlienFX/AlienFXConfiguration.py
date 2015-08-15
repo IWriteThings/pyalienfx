@@ -147,10 +147,10 @@ class element():
         self.color1 = color
         self.color2 = color2
         self.Text_Conf_Type = {
-        "fixed": "Setting fixed color to %s%s",
-        "blink": "Setting blinking color to %s%s",
-        "morph": "Setting morph color from %s to %s",
-        "speed": "Setting Speed to %s%s",
-        "endloop": "End of the loop%s%s"}
+            "fixed": "Setting fixed color to %s%s",
+            "blink": "Setting blinking color to %s%s",
+            "morph": "Setting morph color from %s to %s",
+            "speed": "Setting Speed to %s%s",
+            "endloop": "End of the loop%s%s"}
         #print "-%s-"%self.mode
         self.text = self.Text_Conf_Type[self.mode]%(self.color1, self.color2)
