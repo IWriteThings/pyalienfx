@@ -227,7 +227,7 @@ class pyAlienFX_GUI():
         except:
             pass
 
-    def Create_Border(self, Type, Inside, Label=None, zone=None , confId=None):
+    def Create_Border(self, Type, Inside, Label=None, zone=None, confId=None):
         """2 type of border Advanced (type == 1) and Normal (type == 0)
         That function creates the gtk Box that contains the images border that surround the zones."""
         if Type == 0:
@@ -1050,7 +1050,7 @@ class pyAlienFX_GUI():
     def on_color_focus_in(self, widget, event, zone, conf):
         if not zone.power_button:
             if conf > 0:
-                try :
+                try:
                     if self.remove_box:
                         self.remove_box.destroy()
                 except:

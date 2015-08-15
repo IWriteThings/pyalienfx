@@ -48,7 +48,7 @@ class AlienFXRegion:
         self.power_button = power_button
         self.maxCommands = maxCommands
         self.supportedModes = supportedModes
-        self.line = {1 : AlienFXConfiguration(self.mode, self.color1, self.color2)}
+        self.line = {1: AlienFXConfiguration(self.mode, self.color1, self.color2)}
 
     def update_line(self, Id, mode=None, color1=None, color2=None):
         if self.line.has_key(Id):
@@ -141,12 +141,12 @@ class M11XR3:
         self.suportedMode["charging"] = AlienFXPowerMode(self.AlienFXProperties.CHARGING_ID, self.AlienFXTexts.CHARGING2_DESCRIPTION, self.BLOCK_CHARGING),
         self.suportedMode["onBat"] = AlienFXPowerMode(self.AlienFXProperties.ON_BATTERY_ID, self.AlienFXTexts.ON_BATTERY_DESCRIPTION, self.BLOCK_BAT_POWER)
 
-        self.regions[self.AlienFXProperties.RIGHT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_KEYBOARD_ID, self.AlienFXTexts.KEYBOARD_DESCRIPTION, self.REGION_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.RIGHT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_SPEAKER_ID, self.AlienFXTexts.RIGHT_SPEAKER_DESCRIPTION, self.REGION_RIGHT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.LEFT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_SPEAKER_ID, self.AlienFXTexts.LEFT_SPEAKER_DESCRIPTION, self.REGION_LEFT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.ALIEN_LOGO_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_LOGO_ID, self.AlienFXTexts.ALIENWARE_LOGO_DESCRIPTION, self.REGION_ALIEN_NAME, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.MEDIA_BAR_ID] = AlienFXRegion(self.AlienFXProperties.MEDIA_BAR_ID, self.AlienFXTexts.MEDIA_BAR_DESCRIPTION, self.REGION_MEDIA_BAR, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, False, True, False, self.default_color , self.suportedMode, power_button=True)
+        self.regions[self.AlienFXProperties.RIGHT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_KEYBOARD_ID, self.AlienFXTexts.KEYBOARD_DESCRIPTION, self.REGION_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.RIGHT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_SPEAKER_ID, self.AlienFXTexts.RIGHT_SPEAKER_DESCRIPTION, self.REGION_RIGHT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.LEFT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_SPEAKER_ID, self.AlienFXTexts.LEFT_SPEAKER_DESCRIPTION, self.REGION_LEFT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.ALIEN_LOGO_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_LOGO_ID, self.AlienFXTexts.ALIENWARE_LOGO_DESCRIPTION, self.REGION_ALIEN_NAME, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.MEDIA_BAR_ID] = AlienFXRegion(self.AlienFXProperties.MEDIA_BAR_ID, self.AlienFXTexts.MEDIA_BAR_DESCRIPTION, self.REGION_MEDIA_BAR, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, False, True, False, self.default_color, self.suportedMode, power_button=True)
 
 #added by LightHash [start]
 class M14XLight:
@@ -218,18 +218,18 @@ class M14XLight:
         self.suportedMode["charging"] = AlienFXPowerMode(self.AlienFXProperties.CHARGING_ID, self.AlienFXTexts.CHARGING2_DESCRIPTION, self.BLOCK_CHARGING)
         self.suportedMode["onBat"] = AlienFXPowerMode(self.AlienFXProperties.ON_BATTERY_ID, self.AlienFXTexts.ON_BATTERY_DESCRIPTION, self.BLOCK_BAT_POWER)
 
-        self.regions[self.AlienFXProperties.RIGHT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_KEYBOARD_ID,  self.AlienFXTexts.RIGHT_KEYBOARD_DESCRIPTION, self.REGION_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID, self.AlienFXTexts.RIGHT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.LEFT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_KEYBOARD_ID,  self.AlienFXTexts.LEFT_KEYBOARD_DESCRIPTION, self.REGION_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID, self.AlienFXTexts.LEFT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.RIGHT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_SPEAKER_ID,  self.AlienFXTexts.RIGHT_SPEAKER_DESCRIPTION, self.REGION_RIGHT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.LEFT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_SPEAKER_ID,  self.AlienFXTexts.LEFT_SPEAKER_DESCRIPTION, self.REGION_LEFT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.ALIEN_HEAD_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_HEAD_ID,  self.AlienFXTexts.ALIENWARE_HEAD_DESCRIPTION, self.REGION_ALIEN_HEAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.ALIEN_LOGO_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_LOGO_ID,  self.AlienFXTexts.ALIENWARE_LOGO_DESCRIPTION, self.REGION_ALIEN_NAME, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.TOUCH_PAD_ID] = AlienFXRegion(self.AlienFXProperties.TOUCH_PAD_ID,  self.AlienFXTexts.TOUCHPAD_DESCRIPTION, self.REGION_TOUCH_PAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.MEDIA_BAR_ID] = AlienFXRegion(self.AlienFXProperties.MEDIA_BAR_ID,  self.AlienFXTexts.MEDIA_BAR_DESCRIPTION, self.REGION_MEDIA_BAR, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.POWER_BUTTON_EYES_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_EYES_ID, self.AlienFXTexts.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION, self.REGION_POWER_BUTTON_EYES, 1, False, False, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, True, True, True, self.default_color , self.suportedMode, power_button=True)
+        self.regions[self.AlienFXProperties.RIGHT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_KEYBOARD_ID,  self.AlienFXTexts.RIGHT_KEYBOARD_DESCRIPTION, self.REGION_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID, self.AlienFXTexts.RIGHT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.LEFT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_KEYBOARD_ID,  self.AlienFXTexts.LEFT_KEYBOARD_DESCRIPTION, self.REGION_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID, self.AlienFXTexts.LEFT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.RIGHT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_SPEAKER_ID,  self.AlienFXTexts.RIGHT_SPEAKER_DESCRIPTION, self.REGION_RIGHT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.LEFT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_SPEAKER_ID,  self.AlienFXTexts.LEFT_SPEAKER_DESCRIPTION, self.REGION_LEFT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.ALIEN_HEAD_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_HEAD_ID,  self.AlienFXTexts.ALIENWARE_HEAD_DESCRIPTION, self.REGION_ALIEN_HEAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.ALIEN_LOGO_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_LOGO_ID,  self.AlienFXTexts.ALIENWARE_LOGO_DESCRIPTION, self.REGION_ALIEN_NAME, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.TOUCH_PAD_ID] = AlienFXRegion(self.AlienFXProperties.TOUCH_PAD_ID,  self.AlienFXTexts.TOUCHPAD_DESCRIPTION, self.REGION_TOUCH_PAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.MEDIA_BAR_ID] = AlienFXRegion(self.AlienFXProperties.MEDIA_BAR_ID,  self.AlienFXTexts.MEDIA_BAR_DESCRIPTION, self.REGION_MEDIA_BAR, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.POWER_BUTTON_EYES_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_EYES_ID, self.AlienFXTexts.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION, self.REGION_POWER_BUTTON_EYES, 1, False, False, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, True, True, True, self.default_color, self.suportedMode, power_button=True)
 #added by LightHash [end]
 
 
@@ -292,13 +292,13 @@ class M15XArea51:
         self.suportedMode["charging"] = AlienFXPowerMode(self.AlienFXProperties.CHARGING_ID, self.AlienFXTexts.CHARGING2_DESCRIPTION, self.BLOCK_CHARGING)
         self.suportedMode["onBat"] = AlienFXPowerMode(self.AlienFXProperties.ON_BATTERY_ID, self.AlienFXTexts.ON_BATTERY_DESCRIPTION, self.BLOCK_BAT_POWER)
 
-        self.regions[self.AlienFXProperties.LIGHT_PIPE_ID] = AlienFXRegion(self.AlienFXProperties.LIGHT_PIPE_ID, self.AlienFXTexts.LIGHT_PIPE_DESCRIPTION, self.REGION_LIGHTPIPE, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.KEYBOARD_ID, self.AlienFXTexts.KEYBOARD_DESCRIPTION, self.REGION_KEY_BOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.ALIEN_HEAD_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_HEAD_ID, self.AlienFXTexts.ALIENWARE_HEAD_DESCRIPTION, self.REGION_ALIEN_HEAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.ALIEN_LOGO_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_LOGO_ID, self.AlienFXTexts.ALIENWARE_LOGO_DESCRIPTION, self.REGION_ALIEN_LOGO, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.TOUCH_PAD_ID] = AlienFXRegion(self.AlienFXProperties.TOUCH_PAD_ID, self.AlienFXTexts.TOUCHPAD_DESCRIPTION, self.REGION_TOUCH_PAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.MEDIA_BAR_ID] = AlienFXRegion(self.AlienFXProperties.MEDIA_BAR_ID, self.AlienFXTexts.MEDIA_BAR_DESCRIPTION, self.REGION_TOUCH_PANEL, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 1, False, False, True, self.default_color , self.suportedMode, power_button=True)
+        self.regions[self.AlienFXProperties.LIGHT_PIPE_ID] = AlienFXRegion(self.AlienFXProperties.LIGHT_PIPE_ID, self.AlienFXTexts.LIGHT_PIPE_DESCRIPTION, self.REGION_LIGHTPIPE, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.KEYBOARD_ID, self.AlienFXTexts.KEYBOARD_DESCRIPTION, self.REGION_KEY_BOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.ALIEN_HEAD_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_HEAD_ID, self.AlienFXTexts.ALIENWARE_HEAD_DESCRIPTION, self.REGION_ALIEN_HEAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.ALIEN_LOGO_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_LOGO_ID, self.AlienFXTexts.ALIENWARE_LOGO_DESCRIPTION, self.REGION_ALIEN_LOGO, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.TOUCH_PAD_ID] = AlienFXRegion(self.AlienFXProperties.TOUCH_PAD_ID, self.AlienFXTexts.TOUCHPAD_DESCRIPTION, self.REGION_TOUCH_PAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.MEDIA_BAR_ID] = AlienFXRegion(self.AlienFXProperties.MEDIA_BAR_ID, self.AlienFXTexts.MEDIA_BAR_DESCRIPTION, self.REGION_TOUCH_PANEL, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 1, False, False, True, self.default_color, self.suportedMode, power_button=True)
 
 
 class M15XAllPowerfull:
@@ -370,18 +370,18 @@ class M15XAllPowerfull:
         self.suportedMode["charging"] = AlienFXPowerMode(self.AlienFXProperties.CHARGING_ID, self.AlienFXTexts.CHARGING2_DESCRIPTION, self.BLOCK_CHARGING)
         self.suportedMode["onBat"] = AlienFXPowerMode(self.AlienFXProperties.ON_BATTERY_ID, self.AlienFXTexts.ON_BATTERY_DESCRIPTION, self.BLOCK_BAT_POWER)
 
-        self.regions[self.AlienFXProperties.RIGHT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_KEYBOARD_ID,  self.AlienFXTexts.RIGHT_KEYBOARD_DESCRIPTION, self.REGION_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID, self.AlienFXTexts.RIGHT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.LEFT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_KEYBOARD_ID,  self.AlienFXTexts.LEFT_KEYBOARD_DESCRIPTION, self.REGION_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID, self.AlienFXTexts.LEFT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.RIGHT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_SPEAKER_ID,  self.AlienFXTexts.RIGHT_SPEAKER_DESCRIPTION, self.REGION_RIGHT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.LEFT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_SPEAKER_ID,  self.AlienFXTexts.LEFT_SPEAKER_DESCRIPTION, self.REGION_LEFT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.ALIEN_HEAD_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_HEAD_ID,  self.AlienFXTexts.ALIENWARE_HEAD_DESCRIPTION, self.REGION_ALIEN_HEAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.ALIEN_LOGO_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_LOGO_ID,  self.AlienFXTexts.ALIENWARE_LOGO_DESCRIPTION, self.REGION_ALIEN_NAME, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.TOUCH_PAD_ID] = AlienFXRegion(self.AlienFXProperties.TOUCH_PAD_ID,  self.AlienFXTexts.TOUCHPAD_DESCRIPTION, self.REGION_TOUCH_PAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.MEDIA_BAR_ID] = AlienFXRegion(self.AlienFXProperties.MEDIA_BAR_ID,  self.AlienFXTexts.MEDIA_BAR_DESCRIPTION, self.REGION_MEDIA_BAR, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.POWER_BUTTON_EYES_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_EYES_ID, self.AlienFXTexts.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION, self.REGION_POWER_BUTTON_EYES, 1, False, False, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, True, True, True, self.default_color , self.suportedMode, power_button=True)
+        self.regions[self.AlienFXProperties.RIGHT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_KEYBOARD_ID,  self.AlienFXTexts.RIGHT_KEYBOARD_DESCRIPTION, self.REGION_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID, self.AlienFXTexts.RIGHT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.LEFT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_KEYBOARD_ID,  self.AlienFXTexts.LEFT_KEYBOARD_DESCRIPTION, self.REGION_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID, self.AlienFXTexts.LEFT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.RIGHT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_SPEAKER_ID,  self.AlienFXTexts.RIGHT_SPEAKER_DESCRIPTION, self.REGION_RIGHT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.LEFT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_SPEAKER_ID,  self.AlienFXTexts.LEFT_SPEAKER_DESCRIPTION, self.REGION_LEFT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.ALIEN_HEAD_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_HEAD_ID,  self.AlienFXTexts.ALIENWARE_HEAD_DESCRIPTION, self.REGION_ALIEN_HEAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.ALIEN_LOGO_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_LOGO_ID,  self.AlienFXTexts.ALIENWARE_LOGO_DESCRIPTION, self.REGION_ALIEN_NAME, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.TOUCH_PAD_ID] = AlienFXRegion(self.AlienFXProperties.TOUCH_PAD_ID,  self.AlienFXTexts.TOUCHPAD_DESCRIPTION, self.REGION_TOUCH_PAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.MEDIA_BAR_ID] = AlienFXRegion(self.AlienFXProperties.MEDIA_BAR_ID,  self.AlienFXTexts.MEDIA_BAR_DESCRIPTION, self.REGION_MEDIA_BAR, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.POWER_BUTTON_EYES_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_EYES_ID, self.AlienFXTexts.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION, self.REGION_POWER_BUTTON_EYES, 1, False, False, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, True, True, True, self.default_color, self.suportedMode, power_button=True)
 
 #############################################################
 #added by niai (start)
@@ -454,18 +454,18 @@ class M17XR3:
         self.suportedMode["charging"] = AlienFXPowerMode(self.AlienFXProperties.CHARGING_ID, self.AlienFXTexts.CHARGING2_DESCRIPTION, self.BLOCK_CHARGING)
         self.suportedMode["onBat"] = AlienFXPowerMode(self.AlienFXProperties.ON_BATTERY_ID, self.AlienFXTexts.ON_BATTERY_DESCRIPTION, self.BLOCK_BAT_POWER)
 
-        self.regions[self.AlienFXProperties.RIGHT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_KEYBOARD_ID,  self.AlienFXTexts.RIGHT_KEYBOARD_DESCRIPTION, self.REGION_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID, self.AlienFXTexts.RIGHT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.LEFT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_KEYBOARD_ID,  self.AlienFXTexts.LEFT_KEYBOARD_DESCRIPTION, self.REGION_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID, self.AlienFXTexts.LEFT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.RIGHT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_SPEAKER_ID,  self.AlienFXTexts.RIGHT_SPEAKER_DESCRIPTION, self.REGION_RIGHT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.LEFT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_SPEAKER_ID,  self.AlienFXTexts.LEFT_SPEAKER_DESCRIPTION, self.REGION_LEFT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.ALIEN_HEAD_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_HEAD_ID,  self.AlienFXTexts.ALIENWARE_HEAD_DESCRIPTION, self.REGION_ALIEN_HEAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.ALIEN_LOGO_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_LOGO_ID,  self.AlienFXTexts.ALIENWARE_LOGO_DESCRIPTION, self.REGION_ALIEN_NAME, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.TOUCH_PAD_ID] = AlienFXRegion(self.AlienFXProperties.TOUCH_PAD_ID,  self.AlienFXTexts.TOUCHPAD_DESCRIPTION, self.REGION_TOUCH_PAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.MEDIA_BAR_ID] = AlienFXRegion(self.AlienFXProperties.MEDIA_BAR_ID,  self.AlienFXTexts.MEDIA_BAR_DESCRIPTION, self.REGION_MEDIA_BAR, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.POWER_BUTTON_EYES_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_EYES_ID, self.AlienFXTexts.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION, self.REGION_POWER_BUTTON_EYES, 1, False, False, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, True, True, True, self.default_color , self.suportedMode, power_button=True)
+        self.regions[self.AlienFXProperties.RIGHT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_KEYBOARD_ID,  self.AlienFXTexts.RIGHT_KEYBOARD_DESCRIPTION, self.REGION_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID, self.AlienFXTexts.RIGHT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.LEFT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_KEYBOARD_ID,  self.AlienFXTexts.LEFT_KEYBOARD_DESCRIPTION, self.REGION_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID, self.AlienFXTexts.LEFT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.RIGHT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_SPEAKER_ID,  self.AlienFXTexts.RIGHT_SPEAKER_DESCRIPTION, self.REGION_RIGHT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.LEFT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_SPEAKER_ID,  self.AlienFXTexts.LEFT_SPEAKER_DESCRIPTION, self.REGION_LEFT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.ALIEN_HEAD_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_HEAD_ID,  self.AlienFXTexts.ALIENWARE_HEAD_DESCRIPTION, self.REGION_ALIEN_HEAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.ALIEN_LOGO_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_LOGO_ID,  self.AlienFXTexts.ALIENWARE_LOGO_DESCRIPTION, self.REGION_ALIEN_NAME, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.TOUCH_PAD_ID] = AlienFXRegion(self.AlienFXProperties.TOUCH_PAD_ID,  self.AlienFXTexts.TOUCHPAD_DESCRIPTION, self.REGION_TOUCH_PAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.MEDIA_BAR_ID] = AlienFXRegion(self.AlienFXProperties.MEDIA_BAR_ID,  self.AlienFXTexts.MEDIA_BAR_DESCRIPTION, self.REGION_MEDIA_BAR, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.POWER_BUTTON_EYES_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_EYES_ID, self.AlienFXTexts.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION, self.REGION_POWER_BUTTON_EYES, 1, False, False, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, True, True, True, self.default_color, self.suportedMode, power_button=True)
 #added by niai (end)
 ##############################################################################################
 
@@ -540,18 +540,18 @@ class M18XR2:
         self.suportedMode["charging"] = AlienFXPowerMode(self.AlienFXProperties.CHARGING_ID, self.AlienFXTexts.CHARGING2_DESCRIPTION, self.BLOCK_CHARGING)
         self.suportedMode["onBat"] = AlienFXPowerMode(self.AlienFXProperties.ON_BATTERY_ID, self.AlienFXTexts.ON_BATTERY_DESCRIPTION, self.BLOCK_BAT_POWER)
 
-        self.regions[self.AlienFXProperties.RIGHT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_KEYBOARD_ID,  self.AlienFXTexts.RIGHT_KEYBOARD_DESCRIPTION, self.REGION_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID, self.AlienFXTexts.RIGHT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.LEFT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_KEYBOARD_ID,  self.AlienFXTexts.LEFT_KEYBOARD_DESCRIPTION, self.REGION_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID, self.AlienFXTexts.LEFT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.RIGHT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_SPEAKER_ID,  self.AlienFXTexts.RIGHT_SPEAKER_DESCRIPTION, self.REGION_RIGHT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.LEFT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_SPEAKER_ID,  self.AlienFXTexts.LEFT_SPEAKER_DESCRIPTION, self.REGION_LEFT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.ALIEN_HEAD_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_HEAD_ID,  self.AlienFXTexts.ALIENWARE_HEAD_DESCRIPTION, self.REGION_ALIEN_HEAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.ALIEN_LOGO_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_LOGO_ID,  self.AlienFXTexts.ALIENWARE_LOGO_DESCRIPTION, self.REGION_ALIEN_NAME, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.TOUCH_PAD_ID] = AlienFXRegion(self.AlienFXProperties.TOUCH_PAD_ID,  self.AlienFXTexts.TOUCHPAD_DESCRIPTION, self.REGION_TOUCH_PAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.MEDIA_BAR_ID] = AlienFXRegion(self.AlienFXProperties.MEDIA_BAR_ID,  self.AlienFXTexts.MEDIA_BAR_DESCRIPTION, self.REGION_MEDIA_BAR, self.SUPPORTED_COMMANDS, True, True, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.POWER_BUTTON_EYES_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_EYES_ID, self.AlienFXTexts.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION, self.REGION_POWER_BUTTON_EYES, 1, False, False, True, self.default_color , self.suportedMode)
-        self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, True, True, True, self.default_color , self.suportedMode, power_button=True)
+        self.regions[self.AlienFXProperties.RIGHT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_KEYBOARD_ID,  self.AlienFXTexts.RIGHT_KEYBOARD_DESCRIPTION, self.REGION_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_CENTER_KEYBOARD_ID, self.AlienFXTexts.RIGHT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_RIGHT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.LEFT_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_KEYBOARD_ID,  self.AlienFXTexts.LEFT_KEYBOARD_DESCRIPTION, self.REGION_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_CENTER_KEYBOARD_ID, self.AlienFXTexts.LEFT_CENTER_KEYBOARD_DESCRIPTION, self.REGION_MIDDLE_LEFT_KEYBOARD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.RIGHT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.RIGHT_SPEAKER_ID,  self.AlienFXTexts.RIGHT_SPEAKER_DESCRIPTION, self.REGION_RIGHT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.LEFT_SPEAKER_ID] = AlienFXRegion(self.AlienFXProperties.LEFT_SPEAKER_ID,  self.AlienFXTexts.LEFT_SPEAKER_DESCRIPTION, self.REGION_LEFT_SPEAKER, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.ALIEN_HEAD_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_HEAD_ID,  self.AlienFXTexts.ALIENWARE_HEAD_DESCRIPTION, self.REGION_ALIEN_HEAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.ALIEN_LOGO_ID] = AlienFXRegion(self.AlienFXProperties.ALIEN_LOGO_ID,  self.AlienFXTexts.ALIENWARE_LOGO_DESCRIPTION, self.REGION_ALIEN_NAME, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.TOUCH_PAD_ID] = AlienFXRegion(self.AlienFXProperties.TOUCH_PAD_ID,  self.AlienFXTexts.TOUCHPAD_DESCRIPTION, self.REGION_TOUCH_PAD, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.MEDIA_BAR_ID] = AlienFXRegion(self.AlienFXProperties.MEDIA_BAR_ID,  self.AlienFXTexts.MEDIA_BAR_DESCRIPTION, self.REGION_MEDIA_BAR, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.POWER_BUTTON_EYES_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_EYES_ID, self.AlienFXTexts.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION, self.REGION_POWER_BUTTON_EYES, 1, False, False, True, self.default_color, self.suportedMode)
+        self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, True, True, True, self.default_color, self.suportedMode, power_button=True)
 
 #added by SuperTool (end)
 ##############################################################################################
@@ -591,23 +591,23 @@ class AllComputers():
     ALIENFX_UNKOWN_COMMAND = 0x12
 
     computerList = {
-    "M11XR3" : AlienFXComputer("M11XR3", 0x187c, 0x0522, M11XR3()),
-    "M11XR25" : AlienFXComputer("M11XR25", 0x187c, 0x0516, M11XR3()),
-    "M11XR2" : AlienFXComputer("M11XR2", 0x187c, 0x0515, M11XR3()),
-    "M11XR1" : AlienFXComputer("M11XR1", 0x187c, 0x0514, M11XR3()),
-    "M15XAllPowerful" : AlienFXComputer("M15XAllPowerful", 0x187c, 0x0512, M15XAllPowerfull()),
-    "M15XArea51" : AlienFXComputer("M15XArea51", 0x187c, 0x0511, M15XArea51()),
+    "M11XR3": AlienFXComputer("M11XR3", 0x187c, 0x0522, M11XR3()),
+    "M11XR25": AlienFXComputer("M11XR25", 0x187c, 0x0516, M11XR3()),
+    "M11XR2": AlienFXComputer("M11XR2", 0x187c, 0x0515, M11XR3()),
+    "M11XR1": AlienFXComputer("M11XR1", 0x187c, 0x0514, M11XR3()),
+    "M15XAllPowerful": AlienFXComputer("M15XAllPowerful", 0x187c, 0x0512, M15XAllPowerfull()),
+    "M15XArea51": AlienFXComputer("M15XArea51", 0x187c, 0x0511, M15XArea51()),
     #############################################################################
     #added by niai (start)
-    "M17XR3" : AlienFXComputer("M17XR3", 0x187c, 0x0520, M17XR3()),
+    "M17XR3": AlienFXComputer("M17XR3", 0x187c, 0x0520, M17XR3()),
     #added by niai (end)
     ############################################################################
     #LightHash [start]
-    "M14XR1" : AlienFXComputer("M14XR1", 0x187c, 0x0521, M14XLight()),
+    "M14XR1": AlienFXComputer("M14XR1", 0x187c, 0x0521, M14XLight()),
     #"M14XR1" : AlienFXComputer("M14XR1",0x187c,0x0522,M14XLight())}
     #############################################################################
     #added by SuperTool (start)
-    "M18XR2" : AlienFXComputer("M18XR2", 0x187c, 0x0518, M18XR2())}
+    "M18XR2": AlienFXComputer("M18XR2", 0x187c, 0x0518, M18XR2())}
     #added by SuperTool (end)
     ############################################################################
     #LightHash [end]
