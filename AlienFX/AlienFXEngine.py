@@ -400,7 +400,7 @@ class AlienFX_Constructor(list):
     def Set_Color(self, Area, Color, Id=0x01):
         self.Save()
         cmd = copy(self.void)
-        legend = "Set Fixed Color, Area : %s, Color : r = %s, g = %s, b = %s"%(hex(Area[0] * 65536 + Area[1] * 256 + Area[2]), hex((Color[0] / 16)), hex(Color[0] -(Color[0] - (Color[0] / 16) * 16)), hex(Color[1] + 16))
+        legend = "Set Fixed Color, Area : %s, Color : r = %s, g = %s, b = %s"%(hex(Area[0] * 65536 + Area[1] * 256 + Area[2]), hex((Color[0] / 16)), hex(Color[0] - (Color[0] - (Color[0] / 16) * 16)), hex(Color[1] + 16))
         cmd[0] = self.computer.START_BYTE
         cmd[1] = self.computer.COMMAND_SET_COLOR
         cmd[2] = self.Id
