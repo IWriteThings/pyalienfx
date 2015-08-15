@@ -78,7 +78,7 @@ class AlienFXConfiguration:
         self.color2 = color2
 
     def __str__(self):
-        return "Mode : %s\nColor1 : %s\nColor2 : %s"%(self.mode, self.color1, self.color2)
+        return "Mode : %s\nColor1 : %s\nColor2 : %s" % (self.mode, self.color1, self.color2)
 
 
 class M11XR3:

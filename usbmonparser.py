@@ -44,7 +44,7 @@ class parser:
             for i in self.string[l]:
                 if n == 1:
                     n = 0
-                    tmp += "%s "%i
+                    tmp += "%s " % i
                 else:
                     tmp += i
                     n += 1

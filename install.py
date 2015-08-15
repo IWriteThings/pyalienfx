@@ -107,7 +107,7 @@ Bin = """#!/bin/sh
 
 cd %s
 gksudo ./pyAlienFX_Launcher.sh
-"""%(BasePath)
+""" % (BasePath)
 
 Launcher = """#!/bin/sh
 # -*- coding: UTF-8 -*-
@@ -142,7 +142,7 @@ cd %s
 %spython ./pyAlienFX_daemon.py &
 %ssleep 5
 python ./pyAlienFX_Indicator.py &
-"""%(BasePath, optdeamon, optdeamon)
+""" % (BasePath, optdeamon, optdeamon)
 
 Unity = """[Desktop Entry]
 Name=pyAlienFX
@@ -154,7 +154,7 @@ Type=Application
 Categories=Utility;
 StartupNotify=true
 OnlyShowIn=GNOME;Unity;
-"""%(BasePath)
+""" % (BasePath)
 try:
     f = open('/usr/share/applications/pyAlienFX.desktop', 'w')
     f.write(Unity)
@@ -168,10 +168,10 @@ except:
 #os.setuid(1000)
 #os.setgid(1001)
 
-f = open('%s/pyAlienFX_Launcher.sh'%BasePath, 'w')
+f = open('%s/pyAlienFX_Launcher.sh' % BasePath, 'w')
 f.write(Launcher)
 f.close()
-os.system('chmod 755 %s/pyAlienFX_Launcher.sh'%BasePath)
+os.system('chmod 755 %s/pyAlienFX_Launcher.sh' % BasePath)
 
 try:
     f = open('/usr/bin/pyAlienFX', 'w')
@@ -179,10 +179,10 @@ try:
     f.close()
     os.system('chmod 755 /usr/bin/pyAlienFX')
 except:
-    f = open('%s/pyAlienFX'%BasePath, 'w')
+    f = open('%s/pyAlienFX' % BasePath, 'w')
     f.write(Bin)
     f.close()
-    os.system('chmod 755 %s/pyAlienFX'%BasePath)
+    os.system('chmod 755 %s/pyAlienFX' % BasePath)
     print "\033[1;31m !!! Please run the script as sudo in order to install the script correctly !!! \033[0m"
 
-print "Thanks for installing !\n%s"%thanksmsg
+print "Thanks for installing !\n%s" % thanksmsg

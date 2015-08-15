@@ -80,7 +80,7 @@ class pyAlienFX_GUI():
         if not os.path.isdir(os.path.join('.', 'Profiles')):
             os.mkdir(os.path.join('.', 'Profiles'))
         if os.path.isfile(self.actual_conf_file):
-            print "Loading : %s"%self.actual_conf_file
+            print "Loading : %s" % self.actual_conf_file
             self.configuration.Load(self.actual_conf_file)
             print "SPEED = ", self.configuration.speed
         else:
@@ -252,11 +252,11 @@ class pyAlienFX_GUI():
             else:
                 Title_width = (len(Label) * 9)
             UMbg = gtk.gdk.pixbuf_new_from_file_at_scale(self.Image_DB.AlienFX_Cadre_0_Up_Middle, width=Title_width, height=31, preserve_aspect_ratio=False)
-            #print "LEN ======>>>>>%s >> %s"%(Label,Title_width)
+            #print "LEN ======>>>>>%s >> %s"% (Label,Title_width)
             UM = gtk.EventBox()
             UM.set_size_request(width=Title_width, height=1)
             UM.connect('expose_event', self.__textbackground, UMbg)
-            text = gtk.Label('<span size="11000" color="#00FFFF">%s</span>'%Label)
+            text = gtk.Label('<span size="11000" color="#00FFFF">%s</span>' % Label)
             text.set_use_markup(gtk.TRUE)
             UM.add(text)
             UM.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.background_color))
@@ -429,7 +429,7 @@ class pyAlienFX_GUI():
         cf[0] = ((color1[0] + color2[0]) / 2.0)
         cf[1] = ((color1[1] + color2[1]) / 2.0)
         cf[2] = ((color1[2] + color2[2]) / 2.0)
-        #print "Color1 : %s\nColor2 : %s\nColor F : %s"%(color1,color2,cf)
+        #print "Color1 : %s\nColor2 : %s\nColor F : %s"% (color1,color2,cf)
         return cf
 
     def norm_color(self, color):
@@ -917,7 +917,7 @@ class pyAlienFX_GUI():
         else:
             b = hex(b).replace('0x', '')
 
-        color = "%s%s%s"%(r, g, b)
+        color = "%s%s%s" % (r, g, b)
         self.AlienFX_ColorSelection_Window.hide()
         self.on_AlienFX_Color_Panel_Clicked(self, self, color)
 
@@ -965,7 +965,7 @@ class pyAlienFX_GUI():
             self.set_color = color
         else:
             self.set_color = 1
-        #print "Hey ! Color %s clicked ! Area : %s"%(color,zone.description)
+        #print "Hey ! Color %s clicked ! Area : %s" % (color,zone.description)
 
     def on_AlienFX_Preview_Mode_Clicked(self, widget, event, mode, zone, confId):
         self.selected_mode = mode
@@ -1071,7 +1071,7 @@ class pyAlienFX_GUI():
                 widget.add(self.remove_box)
                 #print "ABOVE ?",widget.get_above_child()
                 self.remove_box.show_all()
-                #print "Focus IN :x = %s y = %s    %s, %s, %s"%(event.x,event.y,zone.description,conf,widget.get_size_request())
+                #print "Focus IN :x = %s y = %s    %s, %s, %s" % (event.x,event.y,zone.description,conf,widget.get_size_request())
 
     def on_color_focus_out(self, widget, event, zone, conf):
         #print widget
@@ -1084,7 +1084,7 @@ class pyAlienFX_GUI():
                 self.remove_box.destroy()
         except:
             pass
-        #print "Focus OUT : x = %s y = %s %s, %s"%(event.x,event.y,zone.description,conf)
+        #print "Focus OUT : x = %s y = %s %s, %s" % (event.x,event.y,zone.description,conf)
 
     def __textbackground(self, widget, ev, image):
         widget.window.draw_pixbuf(widget.style.bg_gc[gtk.STATE_NORMAL], image, 0, 0, 0, 0)
