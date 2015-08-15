@@ -414,7 +414,7 @@ class _DevIterator(object):
         self.num_devs = _check(_lib.libusb_get_device_list(
             None,
             byref(self.dev_list))
-            ).value
+        ).value
 
     def __iter__(self):
         for i in range(self.num_devs):

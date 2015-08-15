@@ -441,7 +441,7 @@ class _LibUSB(usb.backend.IBackend):
             usb.util.CTRL_IN,
             usb.util.CTRL_TYPE_STANDARD,
             usb.util.CTRL_RECIPIENT_DEVICE
-            )
+        )
         return self.ctrl_transfer(dev_handle,
                                   bmRequestType,
                                   0x08,
@@ -515,7 +515,7 @@ class _LibUSB(usb.backend.IBackend):
                 cast(address, c_char_p),
                 length,
                 timeout
-                ))
+            ))
         else:
             data = _interop.as_array((0,) * data_or_wLength)
             read = int(_check(_lib.usb_control_msg(
@@ -528,7 +528,7 @@ class _LibUSB(usb.backend.IBackend):
                                      c_char_p),
                 data_or_wLength,
                 timeout
-                )))
+            )))
             return data[:read]
 
     @methodtrace(_logger)
@@ -548,7 +548,7 @@ class _LibUSB(usb.backend.IBackend):
             cast(address, c_char_p),
             length,
             timeout
-            )))
+        )))
 
     def __read(self, fn, dev_handle, ep, intf, size, timeout):
         data = _interop.as_array((0,) * size)
@@ -560,7 +560,7 @@ class _LibUSB(usb.backend.IBackend):
             cast(address, c_char_p),
             length,
             timeout
-            )))
+        )))
         return data[:ret]
 
 def get_backend():

@@ -40,7 +40,7 @@ def _trace_function_call(logger, fname, *args, **named_args):
         fname + '(' + \
         ', '.join((str(val) for val in args)) + \
                 ', '.join((name + '=' + str(val) for name, val in named_args.items())) + ')'
-        )
+    )
 
 # decorator for methods calls tracing
 def methodtrace(logger):

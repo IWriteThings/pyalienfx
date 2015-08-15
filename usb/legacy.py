@@ -135,9 +135,9 @@ class Configuration(object):
                 _interop._sorted(
                     [Interface(i) for i in cfg],
                     key=lambda i: i.interfaceNumber
-                    ),
+                ),
                 lambda i: i.alternateSetting)
-            ]
+        ]
 
 
 class DeviceHandle(object):
@@ -214,7 +214,7 @@ class DeviceHandle(object):
             wIndex = index,
             data_or_wLength = buffer,
             timeout = timeout
-            )
+        )
 
     def clearHalt(self, endpoint):
         r"""Clears any halt status on the specified endpoint.

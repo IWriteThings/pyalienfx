@@ -168,9 +168,9 @@ def find_descriptor(desc, find_all=False, custom_match=None, **args):
                     operator.eq,
                     v,
                     map(lambda i: getattr(d, i), k)
-                    ),
+                ),
                 True
-                    ):
+            ):
                 yield d
 
     k, v = args.keys(), args.values()
@@ -256,7 +256,7 @@ def get_string(dev, length, index, langid = None):
             1024,
             DESC_TYPE_STRING,
             0
-            )
+        )
         assert len(buf) >= 4
         langid = buf[2] | (buf[3] << 8)
 
@@ -266,5 +266,5 @@ def get_string(dev, length, index, langid = None):
         DESC_TYPE_STRING,
         index,
         langid
-        )
+    )
     return buf[2:].tostring().decode('utf-16-le')

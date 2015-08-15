@@ -167,7 +167,7 @@ class _ResourceManager(object):
             cfg = util.find_descriptor(
                 device,
                 bConfigurationValue=self.backend.get_configuration(self.handle)
-                )
+            )
             if cfg is None:
                 raise USBError('Configuration not set')
             self._active_cfg_index = cfg.index
@@ -253,7 +253,7 @@ class Endpoint(object):
             interface,
             alternate_setting,
             configuration
-            )
+        )
 
         _set_attr(
             desc,
@@ -267,8 +267,8 @@ class Endpoint(object):
                 'bInterval',
                 'bRefresh',
                 'bSynchAddress'
-                )
             )
+        )
 
     def write(self, data, timeout = None):
         r"""Write data to the endpoint.
@@ -339,7 +339,7 @@ class Interface(object):
             interface,
             alternate_setting,
             configuration
-            )
+        )
 
         _set_attr(
             desc,
@@ -354,8 +354,8 @@ class Interface(object):
                 'bInterfaceSubClass',
                 'bInterfaceProtocol',
                 'iInterface'
-                )
             )
+        )
 
     def set_altsetting(self):
         r"""Set the interface alternate setting."""
@@ -373,7 +373,7 @@ class Interface(object):
                 self.index,
                 self.alternate_index,
                 self.configuration
-                )
+            )
 
     def __getitem__(self, index):
         r"""Return the Endpoint object in the given position."""
@@ -383,7 +383,7 @@ class Interface(object):
             self.index,
             self.alternate_index,
             self.configuration
-            )
+        )
 
 
 class Configuration(object):
@@ -418,7 +418,7 @@ class Configuration(object):
         desc = backend.get_configuration_descriptor(
             self.device._ctx.dev,
             configuration
-            )
+        )
 
         _set_attr(
             desc,
@@ -432,8 +432,8 @@ class Configuration(object):
                 'iConfiguration',
                 'bmAttributes',
                 'bMaxPower'
-                )
             )
+        )
 
     def set(self):
         r"""Set this configuration as the active one."""
@@ -530,8 +530,8 @@ class Device(object):
                 'iProduct',
                 'iSerialNumber',
                 'bNumConfigurations'
-                )
             )
+        )
 
     def set_configuration(self, configuration = None):
         r"""Set the active configuration.
@@ -603,7 +603,7 @@ class Device(object):
             util.ENDPOINT_TYPE_BULK: backend.bulk_write,
             util.ENDPOINT_TYPE_INTR: backend.intr_write,
             util.ENDPOINT_TYPE_ISO: backend.iso_write
-            }
+        }
 
         intf = self._ctx.get_interface(self, interface)
         fn = fn_map[self._ctx.get_endpoint_type(self, endpoint, intf)]
@@ -615,7 +615,7 @@ class Device(object):
             intf.bInterfaceNumber,
             _interop.as_array(data),
             self.__get_timeout(timeout)
-            )
+        )
 
     def read(self, endpoint, size, interface = None, timeout = None):
         r"""Read data from the endpoint.
@@ -638,7 +638,7 @@ class Device(object):
             util.ENDPOINT_TYPE_BULK: backend.bulk_read,
             util.ENDPOINT_TYPE_INTR: backend.intr_read,
             util.ENDPOINT_TYPE_ISO: backend.iso_read
-            }
+        }
 
         intf = self._ctx.get_interface(self, interface)
         fn = fn_map[self._ctx.get_endpoint_type(self, endpoint, intf)]
@@ -650,7 +650,7 @@ class Device(object):
             intf.bInterfaceNumber,
             size,
             self.__get_timeout(timeout)
-            )
+        )
 
     def ctrl_transfer(self, bmRequestType, bRequest, wValue=0, wIndex=0,
                       data_or_wLength = None, timeout = None):
@@ -690,7 +690,7 @@ class Device(object):
             wIndex,
             a,
             self.__get_timeout(timeout)
-            )
+        )
 
     def is_kernel_driver_active(self, interface):
         r"""Determine if there is kernel driver associated with the interface.
@@ -743,7 +743,7 @@ class Device(object):
         __get_def_tmo,
         __set_def_tmo,
         doc = 'Default timeout for transfer I/O functions'
-        )
+    )
 
 
 def find(find_all=False, backend = None, custom_match = None, **args):
@@ -825,9 +825,9 @@ def find(find_all=False, backend = None, custom_match = None, **args):
                     operator.eq,
                     v,
                     map(lambda i: getattr(d, i), k)
-                    ),
+                ),
                 True
-                    ):
+            ):
                 yield d
 
     if backend is None:
