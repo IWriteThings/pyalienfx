@@ -291,9 +291,9 @@ class pyAlienFX_GUI():
             BL2.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.background_color))
             BM = gtk.EventBox()
             BMi = gtk.Image()
-            BMbg = gtk.gdk.pixbuf_new_from_file_at_scale(self.Image_DB.AlienFX_Cadre_0_Bottom_Middle, width=((81 + Title_width) 165), height=16, preserve_aspect_ratio=False)
+            BMbg = gtk.gdk.pixbuf_new_from_file_at_scale(self.Image_DB.AlienFX_Cadre_0_Bottom_Middle, width=((81 + Title_width) - 165), height=16, preserve_aspect_ratio=False)
             BMi.set_from_pixbuf(BMbg)
-            BMi.set_size_request(width=((81 + Title_width) 165), height=-1)
+            BMi.set_size_request(width=((81 + Title_width) - 165), height=-1)
             BM.add(BMi)
             BM.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.background_color))
             BR2 = gtk.EventBox()
@@ -306,7 +306,7 @@ class pyAlienFX_GUI():
             BRi.set_from_file(self.Image_DB.AlienFX_Cadre_0_Bottom_Right)
             BR.add(BRi)
             BR.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.background_color))
-            Inside.set_size_request(width=(81 + Title_width) 33, height=-1)
+            Inside.set_size_request(width=(81 + Title_width) - 33, height=-1)
             TopBox.pack_start(UL, gtk.SHRINK)
             TopBox.pack_start(UL2, gtk.SHRINK)
             TopBox.pack_start(UM, gtk.SHRINK)
@@ -482,7 +482,7 @@ class pyAlienFX_GUI():
         #print cr
         #widget.window.draw_pixbuf(widget.style.bg_gc[gtk.STATE_NORMAL],cr, 0, 0, 0, 0)
         #if widget.get_child() != None:
-            #widget.propagate_expose(widget.get_child(), ev)
+        #    widget.propagate_expose(widget.get_child(), ev)
         return True
 
     def Create_zones(self):
@@ -513,9 +513,9 @@ class pyAlienFX_GUI():
         Label = None
         height = 40
         if not zone.power_button:
-            width = (180 33 - 28) / 2
+            width = (180 - 33 - 28) / 2
         else:
-            width = (180 33) / 2
+            width = (180 - 33) / 2
         if not line:
             set_type = 0
             Label = zone.description
@@ -524,9 +524,9 @@ class pyAlienFX_GUI():
             else:
                 Title_width = (len(Label) * 9)
             if not zone.power_button:
-                width = ((81 + Title_width)  33 - 28) / 2
+                width = ((81 + Title_width) - 33 - 28) / 2
             else:
-                width = ((81 + Title_width) 33) / 2
+                width = ((81 + Title_width) - 33) / 2
             #title = gtk.Label(zone.description)
             #Zone_VBox.pack_start(title, expand=False)
         #color = gtk.EventBox()
@@ -657,15 +657,15 @@ class pyAlienFX_GUI():
         #print "Creating : ",zone.description
         title = gtk.Label(zone.description)
         title.modify_fg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.text_color))
-        self.AlienFX_Configurator_Table.attach(title, 0, 1, l 1, l, xoptions=gtk.SHRINK)  # ,xoptions=gtk.EXPAND
+        self.AlienFX_Configurator_Table.attach(title, 0, 1, l - 1, l, xoptions=gtk.SHRINK)  # ,xoptions=gtk.EXPAND
         for conf in range(len(self.configuration.area[zone.name])):
             confBox = self.Widget_Zone(zone, conf, line=True)
-            self.AlienFX_Configurator_Table.attach(confBox, int(conf) + 1, int(conf) + 2, l 1, l, xoptions=gtk.SHRINK, yoptions=gtk.SHRINK)
+            self.AlienFX_Configurator_Table.attach(confBox, int(conf) + 1, int(conf) + 2, l - 1, l, xoptions=gtk.SHRINK, yoptions=gtk.SHRINK)
         if not zone.power_button:
             AddConf = gtk.Button()
             AddConf.set_label("Add")
             AddConf.connect("clicked", self.on_Line_AddConf_pressed, zone, conf)
-            self.AlienFX_Configurator_Table.attach(AddConf, int(conf) + 2, int(conf) + 3, l 1, l, xoptions=gtk.SHRINK, yoptions=gtk.SHRINK)
+            self.AlienFX_Configurator_Table.attach(AddConf, int(conf) + 2, int(conf) + 3, l - 1, l, xoptions=gtk.SHRINK, yoptions=gtk.SHRINK)
 
     def Set_Conf(self, Save=False):
         Id = 0x00
