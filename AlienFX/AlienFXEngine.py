@@ -65,7 +65,7 @@ class AlienFX_Driver(AllComputers):
         ok = False
         for computer in self.computerList.keys():
             dev = usb.core.find(idVendor=self.computerList[computer].vendorId, idProduct=self.computerList[computer].productId)
-            if dev != None:
+            if dev is not None:
                 print "Comnputer %s found ! Loading the parameters ..."%self.computerList[computer].name
                 self.computer = self.computerList[computer].computer
                 self.vendorId = self.computerList[computer].vendorId
