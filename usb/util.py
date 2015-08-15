@@ -163,13 +163,13 @@ def find_descriptor(desc, find_all=False, custom_match=None, **args):
         for d in desc:
             if (custom_match is None or custom_match(d)) and \
                 _interop._reduce(
-                        lambda a, b: a and b,
-                        map(
-                            operator.eq,
-                            v,
-                            map(lambda i: getattr(d, i), k)
-                        ),
-                        True
+                lambda a, b: a and b,
+                map(
+                    operator.eq,
+                    v,
+                    map(lambda i: getattr(d, i), k)
+                    ),
+                True
                     ):
                 yield d
 
@@ -252,19 +252,19 @@ def get_string(dev, length, index, langid = None):
         #
         # Note from libusb 1.0 sources (descriptor.c)
         buf = get_descriptor(
-                    dev,
-                    1024,
-                    DESC_TYPE_STRING,
-                    0
-                )
+            dev,
+            1024,
+            DESC_TYPE_STRING,
+            0
+            )
         assert len(buf) >= 4
         langid = buf[2] | (buf[3] << 8)
 
     buf = get_descriptor(
-                dev,
-                length * 2 + 2, # string is utf16 + 2 bytes of the descriptor
-                DESC_TYPE_STRING,
-                index,
-                langid
-            )
+        dev,
+        length * 2 + 2, # string is utf16 + 2 bytes of the descriptor
+        DESC_TYPE_STRING,
+        index,
+        langid
+        )
     return buf[2:].tostring().decode('utf-16-le')

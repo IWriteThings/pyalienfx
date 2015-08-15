@@ -190,16 +190,16 @@ def _setup_prototypes(lib):
     # ssize_t libusb_get_device_list (libusb_context *ctx,
     #                                 libusb_device ***list)
     lib.libusb_get_device_list.argtypes = [
-            c_void_p,
-            POINTER(POINTER(c_void_p))
-        ]
+        c_void_p,
+        POINTER(POINTER(c_void_p))
+    ]
 
     # void libusb_free_device_list (libusb_device **list,
     #                               int unref_devices)
     lib.libusb_free_device_list.argtypes = [
-            POINTER(c_void_p),
-            c_int
-        ]
+        POINTER(c_void_p),
+        c_int
+    ]
 
     # libusb_device *libusb_ref_device (libusb_device *dev)
     lib.libusb_ref_device.argtypes = [c_void_p]
@@ -234,10 +234,10 @@ def _setup_prototypes(lib):
     #                                      int interface_number,
     #                                      int alternate_setting)
     lib.libusb_set_interface_alt_setting.argtypes = [
-            _libusb_device_handle,
-            c_int,
-            c_int
-        ]
+        _libusb_device_handle,
+        c_int,
+        c_int
+    ]
 
     # int libusb_reset_device (libusb_device_handle *dev)
     lib.libusb_reset_device.argtypes = [_libusb_device_handle]
@@ -245,32 +245,32 @@ def _setup_prototypes(lib):
     # int libusb_kernel_driver_active(libusb_device_handle *dev,
     #                                 int interface)
     lib.libusb_kernel_driver_active.argtypes = [
-            _libusb_device_handle,
-            c_int
-        ]
+        _libusb_device_handle,
+        c_int
+    ]
 
     # int libusb_detach_kernel_driver(libusb_device_handle *dev,
     #                                 int interface)
     lib.libusb_detach_kernel_driver.argtypes = [
-            _libusb_device_handle,
-            c_int
-        ]
+        _libusb_device_handle,
+        c_int
+    ]
 
     # int libusb_attach_kernel_driver(libusb_device_handle *dev,
     #                                 int interface)
     lib.libusb_attach_kernel_driver.argtypes = [
-            _libusb_device_handle,
-            c_int
-        ]
+        _libusb_device_handle,
+        c_int
+    ]
 
     # int libusb_get_device_descriptor(
     #                   libusb_device *dev,
     #                   struct libusb_device_descriptor *desc
     #               )
     lib.libusb_get_device_descriptor.argtypes = [
-            c_void_p,
-            POINTER(_libusb_device_descriptor)
-        ]
+        c_void_p,
+        POINTER(_libusb_device_descriptor)
+    ]
 
     # int libusb_get_config_descriptor(
     #           libusb_device *dev,
@@ -278,28 +278,28 @@ def _setup_prototypes(lib):
     #           struct libusb_config_descriptor **config
     #       )
     lib.libusb_get_config_descriptor.argtypes = [
-            c_void_p,
-            c_uint8,
-            POINTER(POINTER(_libusb_config_descriptor))
-        ]
+        c_void_p,
+        c_uint8,
+        POINTER(POINTER(_libusb_config_descriptor))
+    ]
 
     # void  libusb_free_config_descriptor(
     #           struct libusb_config_descriptor *config
     #   )
     lib.libusb_free_config_descriptor.argtypes = [
-            POINTER(_libusb_config_descriptor)
-        ]
+        POINTER(_libusb_config_descriptor)
+    ]
 
     # int libusb_get_string_descriptor_ascii(libusb_device_handle *dev,
     #                                         uint8_t desc_index,
     #                                         unsigned char *data,
     #                                         int length)
     lib.libusb_get_string_descriptor_ascii.argtypes = [
-            _libusb_device_handle,
-            c_uint8,
-            POINTER(c_ubyte),
-            c_int
-        ]
+        _libusb_device_handle,
+        c_uint8,
+        POINTER(c_ubyte),
+        c_int
+    ]
 
     # int libusb_control_transfer(libusb_device_handle *dev_handle,
     #                             uint8_t bmRequestType,
@@ -310,15 +310,15 @@ def _setup_prototypes(lib):
     #                             uint16_t wLength,
     #                             unsigned int timeout)
     lib.libusb_control_transfer.argtypes = [
-            _libusb_device_handle,
-            c_uint8,
-            c_uint8,
-            c_uint16,
-            c_uint16,
-            POINTER(c_ubyte),
-            c_uint16,
-            c_uint
-        ]
+        _libusb_device_handle,
+        c_uint8,
+        c_uint8,
+        c_uint16,
+        c_uint16,
+        POINTER(c_ubyte),
+        c_uint16,
+        c_uint
+    ]
 
     #int libusb_bulk_transfer(
     #           struct libusb_device_handle *dev_handle,
@@ -329,13 +329,13 @@ def _setup_prototypes(lib):
     #           unsigned int timeout
     #       )
     lib.libusb_bulk_transfer.argtypes = [
-                _libusb_device_handle,
-                c_ubyte,
-                POINTER(c_ubyte),
-                c_int,
-                POINTER(c_int),
-                c_uint
-            ]
+        _libusb_device_handle,
+        c_ubyte,
+        POINTER(c_ubyte),
+        c_int,
+        POINTER(c_int),
+        c_uint
+    ]
 
     # int libusb_interrupt_transfer(
     #               libusb_device_handle *dev_handle,
@@ -346,13 +346,13 @@ def _setup_prototypes(lib):
     #               unsigned int timeout
     #           );
     lib.libusb_interrupt_transfer.argtypes = [
-                    _libusb_device_handle,
-                    c_ubyte,
-                    POINTER(c_ubyte),
-                    c_int,
-                    POINTER(c_int),
-                    c_uint
-                ]
+        _libusb_device_handle,
+        c_ubyte,
+        POINTER(c_ubyte),
+        c_int,
+        POINTER(c_int),
+        c_uint
+    ]
 
 # check a libusb function call
 def _check(retval):
@@ -412,9 +412,9 @@ class _DevIterator(object):
     def __init__(self):
         self.dev_list = POINTER(c_void_p)()
         self.num_devs = _check(_lib.libusb_get_device_list(
-                                    None,
-                                    byref(self.dev_list))
-                                ).value
+            None,
+            byref(self.dev_list))
+            ).value
 
     def __iter__(self):
         for i in range(self.num_devs):

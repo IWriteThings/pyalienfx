@@ -76,10 +76,10 @@ def _parse_recipient(recipient, direction):
     else:
         raise ValueError('Invalid recipient.')
     bmRequestType = util.build_request_type(
-                            direction,
-                            util.CTRL_TYPE_STANDARD,
-                            r
-                        )
+        direction,
+        util.CTRL_TYPE_STANDARD,
+        r
+        )
     return (bmRequestType, wIndex)
 
 # standard feature selectors from USB 2.0/3.0
@@ -162,16 +162,16 @@ def get_descriptor(dev, desc_size, desc_type, desc_index, wIndex = 0):
     """
     wValue = desc_index | (desc_type << 8)
     bmRequestType = util.build_request_type(
-                        util.CTRL_IN,
-                        util.CTRL_TYPE_STANDARD,
-                        util.CTRL_RECIPIENT_DEVICE
-                    )
+        util.CTRL_IN,
+        util.CTRL_TYPE_STANDARD,
+        util.CTRL_RECIPIENT_DEVICE
+        )
     return dev.ctrl_transfer(
-            bmRequestType = bmRequestType,
-            bRequest = 0x06,
-            wValue = wValue,
-            wIndex = wIndex,
-            data_or_wLength = desc_size
+        bmRequestType = bmRequestType,
+        bRequest = 0x06,
+        wValue = wValue,
+        wIndex = wIndex,
+        data_or_wLength = desc_size
         )
 
 
@@ -189,10 +189,10 @@ def set_descriptor(dev, desc, desc_type, desc_index, wIndex = None):
     """
     wValue = desc_index | (desc_type << 8)
     bmRequestType = util.build_request_type(
-                        util.CTRL_OUT,
-                        util.CTRL_TYPE_STANDARD,
-                        util.CTRL_RECIPIENT_DEVICE
-                    )
+        util.CTRL_OUT,
+        util.CTRL_TYPE_STANDARD,
+        util.CTRL_RECIPIENT_DEVICE
+        )
     dev.ctrl_transfer(
         bmRequestType = bmRequestType,
         bRequest = 0x07,
@@ -213,15 +213,15 @@ def get_configuration(dev):
     function always does a device request.
     """
     bmRequestType = util.build_request_type(
-                            util.CTRL_IN,
-                            util.CTRL_TYPE_STANDARD,
-                            util.CTRL_RECIPIENT_DEVICE
-                        )
+        util.CTRL_IN,
+        util.CTRL_TYPE_STANDARD,
+        util.CTRL_RECIPIENT_DEVICE
+        )
     return dev.ctrl_transfer(
-                bmRequestType,
-                bRequest = 0x08,
-                data_or_wLength = 1
-            )[0]
+        bmRequestType,
+        bRequest = 0x08,
+        data_or_wLength = 1
+        )[0]
 
 
 def set_configuration(dev, bConfigurationNumber):
@@ -240,16 +240,16 @@ def get_interface(dev, bInterfaceNumber):
     sent to.
     """
     bmRequestType = util.build_request_type(
-                            util.CTRL_IN,
-                            util.CTRL_TYPE_STANDARD,
-                            util.CTRL_RECIPIENT_INTERFACE
-                        )
+        util.CTRL_IN,
+        util.CTRL_TYPE_STANDARD,
+        util.CTRL_RECIPIENT_INTERFACE
+        )
     return dev.ctrl_transfer(
-                bmRequestType = bmRequestType,
-                bRequest = 0x0a,
-                wIndex = bInterfaceNumber,
-                data_or_wLength = 1
-            )[0]
+        bmRequestType = bmRequestType,
+        bRequest = 0x0a,
+        wIndex = bInterfaceNumber,
+        data_or_wLength = 1
+        )[0]
 
 
 def set_interface(dev, bInterfaceNumber, bAlternateSetting):

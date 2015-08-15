@@ -174,9 +174,9 @@ def _setup_prototypes(lib):
     #                                 openusb_busid_t **busids,
     #                                 uint32_t *num_busids);
     lib.openusb_get_busid_list.argtypes = [
-            _openusb_handle,
-            POINTER(POINTER(_openusb_busid)),
-            POINTER(c_uint32)
+        _openusb_handle,
+        POINTER(POINTER(_openusb_busid)),
+        POINTER(c_uint32)
     ]
 
     # void openusb_free_busid_list(openusb_busid_t * busids);
@@ -187,10 +187,10 @@ def _setup_prototypes(lib):
     #                                    openusb_devid_t **devids,
     #                                    uint32_t *num_devids);
     lib.openusb_get_devids_by_bus.argtypes = [
-                _openusb_handle,
-                _openusb_busid,
-                POINTER(POINTER(_openusb_devid)),
-                POINTER(c_uint32)
+        _openusb_handle,
+        _openusb_busid,
+        POINTER(POINTER(_openusb_devid)),
+        POINTER(c_uint32)
     ]
 
     lib.openusb_get_devids_by_bus.restype = c_int32
@@ -203,10 +203,10 @@ def _setup_prototypes(lib):
     #                             uint32_t flags,
     #                             openusb_dev_handle_t *dev);
     lib.openusb_open_device.argtypes = [
-                _openusb_handle,
-                _openusb_devid,
-                c_uint32,
-                POINTER(_openusb_dev_handle)
+        _openusb_handle,
+        _openusb_devid,
+        c_uint32,
+        POINTER(_openusb_dev_handle)
     ]
 
     lib.openusb_open_device.restype = c_int32
@@ -229,9 +229,9 @@ def _setup_prototypes(lib):
     #                                 uint8_t ifc,
     #                                 openusb_init_flag_t flags);
     lib.openusb_claim_interface.argtypes = [
-            _openusb_dev_handle,
-            c_uint8,
-            c_int
+        _openusb_dev_handle,
+        c_uint8,
+        c_int
     ]
 
     lib.openusb_claim_interface.restype = c_int32
@@ -239,8 +239,8 @@ def _setup_prototypes(lib):
     # int32_t openusb_release_interface(openusb_dev_handle_t dev,
     #                                   uint8_t ifc);
     lib.openusb_release_interface.argtypes = [
-            _openusb_dev_handle,
-            c_uint8
+        _openusb_dev_handle,
+        c_uint8
     ]
 
     lib.openusb_release_interface.restype = c_int32
@@ -249,9 +249,9 @@ def _setup_prototypes(lib):
     #                               uint8_t ifc,
     #                               uint8_t alt);
     lib.openusb_set_altsetting.argtypes = [
-            _openusb_dev_handle,
-            c_uint8,
-            c_uint8
+        _openusb_dev_handle,
+        c_uint8,
+        c_uint8
     ]
     lib.openusb_set_altsetting.restype = c_int32
 
@@ -265,11 +265,11 @@ def _setup_prototypes(lib):
     #                                   uint16_t buflen,
     #                                   usb_device_desc_t *devdesc);
     lib.openusb_parse_device_desc.argtypes = [
-            _openusb_handle,
-            _openusb_devid,
-            POINTER(c_uint8),
-            c_uint16,
-            POINTER(_usb_device_desc)
+        _openusb_handle,
+        _openusb_devid,
+        POINTER(c_uint8),
+        c_uint16,
+        POINTER(_usb_device_desc)
     ]
 
     lib.openusb_parse_device_desc.restype = c_int32
@@ -281,12 +281,12 @@ def _setup_prototypes(lib):
     #                                   uint8_t cfgidx,
     #                                   usb_config_desc_t *cfgdesc);
     lib.openusb_parse_config_desc.argtypes = [
-                _openusb_handle,
-                _openusb_devid,
-                POINTER(c_uint8),
-                c_uint16,
-                c_uint8,
-                POINTER(_usb_config_desc)
+        _openusb_handle,
+        _openusb_devid,
+        POINTER(c_uint8),
+        c_uint16,
+        c_uint8,
+        POINTER(_usb_config_desc)
     ]
     lib.openusb_parse_config_desc.restype = c_int32
 
@@ -299,14 +299,14 @@ def _setup_prototypes(lib):
     #                                      uint8_t alt,
     #                                      usb_interface_desc_t *ifcdesc);
     lib.openusb_parse_interface_desc.argtypes = [
-                    _openusb_handle,
-                    _openusb_devid,
-                    POINTER(c_uint8),
-                    c_uint16,
-                    c_uint8,
-                    c_uint8,
-                    c_uint8,
-                    POINTER(_usb_interface_desc)
+        _openusb_handle,
+        _openusb_devid,
+        POINTER(c_uint8),
+        c_uint16,
+        c_uint8,
+        c_uint8,
+        c_uint8,
+        POINTER(_usb_interface_desc)
     ]
 
     lib.openusb_parse_interface_desc.restype = c_int32
@@ -321,15 +321,15 @@ def _setup_prototypes(lib):
     #                                     uint8_t eptidx,
     #                                     usb_endpoint_desc_t *eptdesc);
     lib.openusb_parse_endpoint_desc.argtypes = [
-                    _openusb_handle,
-                    _openusb_devid,
-                    POINTER(c_uint8),
-                    c_uint16,
-                    c_uint8,
-                    c_uint8,
-                    c_uint8,
-                    c_uint8,
-                    POINTER(_usb_endpoint_desc)
+        _openusb_handle,
+        _openusb_devid,
+        POINTER(c_uint8),
+        c_uint16,
+        c_uint8,
+        c_uint8,
+        c_uint8,
+        c_uint8,
+        POINTER(_usb_endpoint_desc)
     ]
 
     lib.openusb_parse_interface_desc.restype = c_int32
@@ -343,10 +343,10 @@ def _setup_prototypes(lib):
     #                           uint8_t ept,
     #                           openusb_ctrl_request_t *ctrl);
     lib.openusb_ctrl_xfer.argtypes = [
-            _openusb_dev_handle,
-            c_uint8,
-            c_uint8,
-            POINTER(_openusb_ctrl_request)
+        _openusb_dev_handle,
+        c_uint8,
+        c_uint8,
+        POINTER(_openusb_ctrl_request)
     ]
 
     lib.openusb_ctrl_xfer.restype = c_int32
@@ -356,10 +356,10 @@ def _setup_prototypes(lib):
     #                           uint8_t ept,
     #                           openusb_intr_request_t *intr);
     lib.openusb_intr_xfer.argtypes = [
-                _openusb_dev_handle,
-                c_uint8,
-                c_uint8,
-                POINTER(_openusb_intr_request)
+        _openusb_dev_handle,
+        c_uint8,
+        c_uint8,
+        POINTER(_openusb_intr_request)
     ]
 
     lib.openusb_bulk_xfer.restype = c_int32
@@ -369,10 +369,10 @@ def _setup_prototypes(lib):
     #                           uint8_t ept,
     #                           openusb_bulk_request_t *bulk);
     lib.openusb_bulk_xfer.argtypes = [
-            _openusb_dev_handle,
-            c_uint8,
-            c_uint8,
-            POINTER(_openusb_bulk_request)
+        _openusb_dev_handle,
+        c_uint8,
+        c_uint8,
+        POINTER(_openusb_bulk_request)
     ]
 
     lib.openusb_bulk_xfer.restype = c_int32
@@ -382,10 +382,10 @@ def _setup_prototypes(lib):
     #                           uint8_t ept,
     #                           openusb_isoc_request_t *isoc);
     lib.openusb_isoc_xfer.argtypes = [
-            _openusb_dev_handle,
-            c_uint8,
-            c_uint8,
-            POINTER(_openusb_isoc_request)
+        _openusb_dev_handle,
+        c_uint8,
+        c_uint8,
+        POINTER(_openusb_isoc_request)
     ]
 
     lib.openusb_isoc_xfer.restype = c_int32

@@ -205,51 +205,51 @@ def _setup_prototypes(lib):
     #                    char *buf,
     #                    size_t buflen);
     lib.usb_get_string.argtypes = [
-            _usb_dev_handle,
-            c_int,
-            c_int,
-            c_char_p,
-            c_size_t
-        ]
+        _usb_dev_handle,
+        c_int,
+        c_int,
+        c_char_p,
+        c_size_t
+    ]
 
     # int usb_get_string_simple(usb_dev_handle *dev,
     #                           int index,
     #                           char *buf,
     #                           size_t buflen);
     lib.usb_get_string_simple.argtypes = [
-            _usb_dev_handle,
-            c_int,
-            c_char_p,
-            c_size_t
-        ]
+        _usb_dev_handle,
+        c_int,
+        c_char_p,
+        c_size_t
+    ]
 
     # int usb_get_descriptor_by_endpoint(usb_dev_handle *udev,
     #                                    int ep,
-    #	                                 unsigned char type,
+    #                                    unsigned char type,
     #                                    unsigned char index,
     #                                    void *buf,
     #                                    int size);
     lib.usb_get_descriptor_by_endpoint.argtypes = [
-                                _usb_dev_handle,
-                                c_int,
-                                c_ubyte,
-                                c_ubyte,
-                                c_void_p,
-                                c_int
-                            ]
+        _usb_dev_handle,
+        c_int,
+        c_ubyte,
+        c_ubyte,
+        c_void_p,
+        c_int
+    ]
 
     # int usb_get_descriptor(usb_dev_handle *udev,
     #                        unsigned char type,
-    #	                     unsigned char index,
+    #                        unsigned char index,
     #                        void *buf,
     #                        int size);
     lib.usb_get_descriptor.argtypes = [
-                    _usb_dev_handle,
-                    c_ubyte,
-                    c_ubyte,
-                    c_void_p,
-                    c_int
-                ]
+        _usb_dev_handle,
+        c_ubyte,
+        c_ubyte,
+        c_void_p,
+        c_int
+    ]
 
     # int usb_bulk_write(usb_dev_handle *dev,
     #                    int ep,
@@ -257,12 +257,12 @@ def _setup_prototypes(lib):
     #                    int size,
     #                    int timeout);
     lib.usb_bulk_write.argtypes = [
-            _usb_dev_handle,
-            c_int,
-            c_char_p,
-            c_int,
-            c_int
-        ]
+        _usb_dev_handle,
+        c_int,
+        c_char_p,
+        c_int,
+        c_int
+    ]
 
     # int usb_bulk_read(usb_dev_handle *dev,
     #                   int ep,
@@ -270,12 +270,12 @@ def _setup_prototypes(lib):
     #                   int size,
     #                   int timeout);
     lib.usb_bulk_read.argtypes = [
-            _usb_dev_handle,
-            c_int,
-            c_char_p,
-            c_int,
-            c_int
-        ]
+        _usb_dev_handle,
+        c_int,
+        c_char_p,
+        c_int,
+        c_int
+    ]
 
     # int usb_interrupt_write(usb_dev_handle *dev,
     #                         int ep,
@@ -283,12 +283,12 @@ def _setup_prototypes(lib):
     #                         int size,
     #                         int timeout);
     lib.usb_interrupt_write.argtypes = [
-            _usb_dev_handle,
-            c_int,
-            c_char_p,
-            c_int,
-            c_int
-        ]
+        _usb_dev_handle,
+        c_int,
+        c_char_p,
+        c_int,
+        c_int
+    ]
 
     # int usb_interrupt_read(usb_dev_handle *dev,
     #                        int ep,
@@ -296,31 +296,31 @@ def _setup_prototypes(lib):
     #                        int size,
     #                        int timeout);
     lib.usb_interrupt_read.argtypes = [
-            _usb_dev_handle,
-            c_int,
-            c_char_p,
-            c_int,
-            c_int
-        ]
+        _usb_dev_handle,
+        c_int,
+        c_char_p,
+        c_int,
+        c_int
+    ]
 
     # int usb_control_msg(usb_dev_handle *dev,
     #                     int requesttype,
     #                     int request,
-    # 	                  int value,
+    #                     int value,
     #                     int index,
     #                     char *bytes,
     #                     int size,
     #                     int timeout);
     lib.usb_control_msg.argtypes = [
-            _usb_dev_handle,
-            c_int,
-            c_int,
-            c_int,
-            c_int,
-            c_char_p,
-            c_int,
-            c_int
-        ]
+        _usb_dev_handle,
+        c_int,
+        c_int,
+        c_int,
+        c_int,
+        c_char_p,
+        c_int,
+        c_int
+    ]
 
     # int usb_set_configuration(usb_dev_handle *dev, int configuration);
     lib.usb_set_configuration.argtypes = [_usb_dev_handle, c_int]
@@ -438,10 +438,10 @@ class _LibUSB(usb.backend.IBackend):
     @methodtrace(_logger)
     def get_configuration(self, dev_handle):
         bmRequestType = usb.util.build_request_type(
-                                usb.util.CTRL_IN,
-                                usb.util.CTRL_TYPE_STANDARD,
-                                usb.util.CTRL_RECIPIENT_DEVICE
-                            )
+            usb.util.CTRL_IN,
+            usb.util.CTRL_TYPE_STANDARD,
+            usb.util.CTRL_RECIPIENT_DEVICE
+            )
         return self.ctrl_transfer(dev_handle,
                                   bmRequestType,
                                   0x08,
@@ -507,28 +507,28 @@ class _LibUSB(usb.backend.IBackend):
             address, length = data_or_wLength.buffer_info()
             length *= data_or_wLength.itemsize
             return _check(_lib.usb_control_msg(
-                                dev_handle,
-                                bmRequestType,
-                                bRequest,
-                                wValue,
-                                wIndex,
-                                cast(address, c_char_p),
-                                length,
-                                timeout
-                            ))
+                dev_handle,
+                bmRequestType,
+                bRequest,
+                wValue,
+                wIndex,
+                cast(address, c_char_p),
+                length,
+                timeout
+                ))
         else:
             data = _interop.as_array((0,) * data_or_wLength)
             read = int(_check(_lib.usb_control_msg(
-                                dev_handle,
-                                bmRequestType,
-                                bRequest,
-                                wValue,
-                                wIndex,
-                                cast(data.buffer_info()[0],
+                dev_handle,
+                bmRequestType,
+                bRequest,
+                wValue,
+                wIndex,
+                cast(data.buffer_info()[0],
                                      c_char_p),
-                                data_or_wLength,
-                                timeout
-                            )))
+                data_or_wLength,
+                timeout
+                )))
             return data[:read]
 
     @methodtrace(_logger)
@@ -543,24 +543,24 @@ class _LibUSB(usb.backend.IBackend):
         address, length = data.buffer_info()
         length *= data.itemsize
         return int(_check(fn(
-                        dev_handle,
-                        ep,
-                        cast(address, c_char_p),
-                        length,
-                        timeout
-                    )))
+            dev_handle,
+            ep,
+            cast(address, c_char_p),
+            length,
+            timeout
+            )))
 
     def __read(self, fn, dev_handle, ep, intf, size, timeout):
         data = _interop.as_array((0,) * size)
         address, length = data.buffer_info()
         length *= data.itemsize
         ret = int(_check(fn(
-                    dev_handle,
-                    ep,
-                    cast(address, c_char_p),
-                    length,
-                    timeout
-                )))
+            dev_handle,
+            ep,
+            cast(address, c_char_p),
+            length,
+            timeout
+            )))
         return data[:ret]
 
 def get_backend():

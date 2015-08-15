@@ -131,13 +131,13 @@ class Configuration(object):
         self.totalLength = cfg.wTotalLength
         self.value = cfg.bConfigurationValue
         self.interfaces = [
-                            list(g) for k, g in _interop._groupby(
-                                    _interop._sorted(
-                                        [Interface(i) for i in cfg],
-                                        key=lambda i: i.interfaceNumber
-                                    ),
-                                    lambda i: i.alternateSetting)
-                        ]
+            list(g) for k, g in _interop._groupby(
+                _interop._sorted(
+                    [Interface(i) for i in cfg],
+                    key=lambda i: i.interfaceNumber
+                    ),
+                lambda i: i.alternateSetting)
+            ]
 
 
 class DeviceHandle(object):
@@ -208,13 +208,13 @@ class DeviceHandle(object):
         Return the number of bytes written.
         """
         return self.dev.ctrl_transfer(
-                    requestType,
-                    request,
-                    wValue = value,
-                    wIndex = index,
-                    data_or_wLength = buffer,
-                    timeout = timeout
-                )
+            requestType,
+            request,
+            wValue = value,
+            wIndex = index,
+            data_or_wLength = buffer,
+            timeout = timeout
+            )
 
     def clearHalt(self, endpoint):
         r"""Clears any halt status on the specified endpoint.
