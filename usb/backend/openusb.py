@@ -38,6 +38,7 @@ __all__ = ['get_backend']
 
 _logger = logging.getLogger('usb.backend.openusb')
 
+
 class _usb_endpoint_desc(Structure):
     _fields_ = [('bLength', c_uint8),
                 ('bDescriptorType', c_uint8),
@@ -47,6 +48,7 @@ class _usb_endpoint_desc(Structure):
                 ('bInterval', c_uint8),
                 ('bRefresh', c_uint8),
                 ('bSynchAddress', c_uint8)]
+
 
 class _usb_interface_desc(Structure):
     _fields_ = [('bLength', c_uint8),
@@ -59,6 +61,7 @@ class _usb_interface_desc(Structure):
                 ('bInterfaceProtocol', c_uint8),
                 ('iInterface', c_uint8)]
 
+
 class _usb_config_desc(Structure):
     _fields_ = [('bLength', c_uint8),
                 ('bDescriptorType', c_uint8),
@@ -68,6 +71,7 @@ class _usb_config_desc(Structure):
                 ('iConfiguration', c_uint8),
                 ('bmAttributes', c_uint8),
                 ('bMaxPower', c_uint8)]
+
 
 class _usb_device_desc(Structure):
     _fields_ = [('bLength', c_uint8),
@@ -85,9 +89,11 @@ class _usb_device_desc(Structure):
                 ('iSerialNumber', c_uint8),
                 ('bNumConfigurations', c_uint8)]
 
+
 class _openusb_request_result(Structure):
     _fields_ = [('status', c_int32),
                 ('transfered_bytes', c_uint32)]
+
 
 class _openusb_ctrl_request(Structure):
 
@@ -103,6 +109,7 @@ class _openusb_ctrl_request(Structure):
                 ('result', _openusb_request_result),
                 ('next', c_void_p)]
 
+
 class _openusb_intr_request(Structure):
     _fields_ = [('interval', c_uint16),
                 ('payload', POINTER(c_uint8)),
@@ -112,6 +119,7 @@ class _openusb_intr_request(Structure):
                 ('result', _openusb_request_result),
                 ('next', c_void_p)]
 
+
 class _openusb_bulk_request(Structure):
     _fields_ = [('payload', POINTER(c_uint8)),
                 ('length', c_uint32),
@@ -120,6 +128,7 @@ class _openusb_bulk_request(Structure):
                 ('result', _openusb_request_result),
                 ('next', c_void_p)]
 
+
 class _openusb_isoc_pkts(Structure):
 
     class _openusb_isoc_packet(Structure):
@@ -127,6 +136,7 @@ class _openusb_isoc_pkts(Structure):
                     ('length', c_uint32)]
     _fields_ = [('num_packets', c_uint32),
                 ('packets', POINTER(_openusb_isoc_packet))]
+
 
 class _openusb_isoc_request(Structure):
     _fields_ = [('start_frame', c_uint32),
@@ -144,11 +154,13 @@ _openusb_dev_handle = c_uint64
 _lib = None
 _ctx = None
 
+
 def _load_library():
     libname = ctypes.util.find_library('openusb')
     if libname is None:
         raise OSError('USB library could not be found')
     return CDLL(libname)
+
 
 def _setup_prototypes(lib):
     # int32_t openusb_init(uint32_t flags , openusb_handle_t *handle);
@@ -378,19 +390,23 @@ def _setup_prototypes(lib):
 
     lib.openusb_isoc_xfer.restype = c_int32
 
+
 def _check(retval):
     if retval.value != 0:
         from usb.core import USBError
         raise USBError(_lib.openusb_strerror(retval).value)
     return retval
 
+
 class _Context(object):
 
     def __init__(self):
         self.handle = _openusb_handle()
         _check(_lib.openusb_init(0, byref(self.handle)))
+
     def __del__(self):
         _lib.openusb_fini(self.handle)
+
 
 class _BusIterator(object):
 
@@ -401,11 +417,14 @@ class _BusIterator(object):
                                            byref(self.buslist),
                                            byref(num_busids)))
         self.num_busids = num_busids.value
+
     def __iter__(self):
         for i in range(self.num_busids):
             yield self.buslist[i]
+
     def __del__(self):
         _lib.openusb_free_busid_list(self.buslist)
+
 
 class _DevIterator(object):
 
@@ -417,11 +436,14 @@ class _DevIterator(object):
                                               byref(self.devlist),
                                               byref(num_devids)))
         self.num_devids = num_devids.value
+
     def __iter__(self):
         for i in range(self.num_devids):
             yield self.devlist[i]
+
     def __del__(self):
         _lib.openusb_free_devid_list(self.devlist)
+
 
 class _OpenUSB(usb.backend.IBackend):
 
@@ -596,6 +618,7 @@ class _OpenUSB(usb.backend.IBackend):
     @methodtrace(_logger)
     def reset_device(self, dev_handle):
         _check(_lib.openusb_reset(dev_handle))
+
 
 def get_backend():
     try:

@@ -62,6 +62,7 @@ __all__ = ['get_status',
 import usb.util as util
 import usb.core as core
 
+
 def _parse_recipient(recipient, direction):
     if recipient is None:
         r = util.CTRL_RECIPIENT_DEVICE
@@ -89,6 +90,7 @@ U1_ENABLE = 48
 U2_ENABLE = 49
 LTM_ENABLE = 50
 
+
 def get_status(dev, recipient = None):
     r"""Return the status for the specified recipient.
 
@@ -108,6 +110,7 @@ def get_status(dev, recipient = None):
                             data_or_wLength = 2)
     return ret[0] | (ret[1] << 8)
 
+
 def clear_feature(dev, feature, recipient = None):
     r"""Clear/disable a specific feature.
 
@@ -125,6 +128,7 @@ def clear_feature(dev, feature, recipient = None):
                       wIndex = wIndex,
                       wValue = feature)
 
+
 def set_feature(dev, feature, recipient = None):
     r"""Set/enable a specific feature.
 
@@ -141,6 +145,7 @@ def set_feature(dev, feature, recipient = None):
                       bRequest = 0x03,
                       wIndex = wIndex,
                       wValue = feature)
+
 
 def get_descriptor(dev, desc_size, desc_type, desc_index, wIndex = 0):
     r"""Return the specified descriptor.
@@ -169,6 +174,7 @@ def get_descriptor(dev, desc_size, desc_type, desc_index, wIndex = 0):
             data_or_wLength = desc_size
         )
 
+
 def set_descriptor(dev, desc, desc_type, desc_index, wIndex = None):
     r"""Update an existing descriptor or add a new one.
 
@@ -195,6 +201,7 @@ def set_descriptor(dev, desc, desc_type, desc_index, wIndex = None):
         data_or_wLength = desc
     )
 
+
 def get_configuration(dev):
     r"""Get the current active configuration of the device.
 
@@ -216,6 +223,7 @@ def get_configuration(dev):
                 data_or_wLength = 1
             )[0]
 
+
 def set_configuration(dev, bConfigurationNumber):
     r"""Set the current device configuration.
 
@@ -223,6 +231,7 @@ def set_configuration(dev, bConfigurationNumber):
     sent to.
     """
     dev.set_configuration(bConfigurationNumber)
+
 
 def get_interface(dev, bInterfaceNumber):
     r"""Get the current alternate setting of the interface.
@@ -241,6 +250,7 @@ def get_interface(dev, bInterfaceNumber):
                 wIndex = bInterfaceNumber,
                 data_or_wLength = 1
             )[0]
+
 
 def set_interface(dev, bInterfaceNumber, bAlternateSetting):
     r"""Set the alternate setting of the interface.

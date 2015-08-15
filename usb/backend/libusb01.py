@@ -64,16 +64,19 @@ if sys.platform == 'win32':
 
 # Data structures
 
+
 class _usb_descriptor_header(Structure):
     _pack_ = 1
     _fields_ = [('blength', c_uint8),
                 ('bDescriptorType', c_uint8)]
+
 
 class _usb_string_descriptor(Structure):
     _pack_ = 1
     _fields_ = [('bLength', c_uint8),
                 ('bDescriptorType', c_uint8),
                 ('wData', c_uint16)]
+
 
 class _usb_endpoint_descriptor(Structure, _PackPolicy):
     _fields_ = [('bLength', c_uint8),
@@ -86,6 +89,7 @@ class _usb_endpoint_descriptor(Structure, _PackPolicy):
                 ('bSynchAddress', c_uint8),
                 ('extra', POINTER(c_uint8)),
                 ('extralen', c_int)]
+
 
 class _usb_interface_descriptor(Structure, _PackPolicy):
     _fields_ = [('bLength', c_uint8),
@@ -101,9 +105,11 @@ class _usb_interface_descriptor(Structure, _PackPolicy):
                 ('extra', POINTER(c_uint8)),
                 ('extralen', c_int)]
 
+
 class _usb_interface(Structure, _PackPolicy):
     _fields_ = [('altsetting', POINTER(_usb_interface_descriptor)),
                 ('num_altsetting', c_int)]
+
 
 class _usb_config_descriptor(Structure, _PackPolicy):
     _fields_ = [('bLength', c_uint8),
@@ -117,6 +123,7 @@ class _usb_config_descriptor(Structure, _PackPolicy):
                 ('interface', POINTER(_usb_interface)),
                 ('extra', POINTER(c_uint8)),
                 ('extralen', c_int)]
+
 
 class _usb_device_descriptor(Structure, _PackPolicy):
     _pack_ = 1
@@ -135,8 +142,10 @@ class _usb_device_descriptor(Structure, _PackPolicy):
                 ('iSerialNumber', c_uint8),
                 ('bNumConfigurations', c_uint8)]
 
+
 class _usb_device(Structure, _PackPolicy):
     pass
+
 
 class _usb_bus(Structure, _PackPolicy):
     pass
@@ -163,6 +172,7 @@ _usb_dev_handle = c_void_p
 
 _lib = None
 
+
 def _load_library():
     candidates = ('usb-0.1', 'usb', 'libusb0')
     for candidate in candidates:
@@ -179,6 +189,7 @@ def _load_library():
 
         raise OSError('USB library could not be found')
     return CDLL(libname)
+
 
 def _setup_prototypes(lib):
     # usb_dev_handle *usb_open(struct usb_device *dev);
@@ -345,6 +356,7 @@ def _setup_prototypes(lib):
 
     # struct usb_bus *usb_get_busses(void);
     lib.usb_get_busses.restype = POINTER(_usb_bus)
+
 
 def _check(retval):
     if retval is None:

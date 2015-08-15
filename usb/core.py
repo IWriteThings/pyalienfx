@@ -51,9 +51,11 @@ _logger = logging.getLogger('usb.core')
 
 _DEFAULT_TIMEOUT = 1000
 
+
 def _set_attr(input, output, fields):
     for f in fields:
         setattr(output, f, int(getattr(input, f)))
+
 
 class _ResourceManager(object):
 
@@ -196,6 +198,7 @@ class _ResourceManager(object):
         self._alt_set.clear()
         self._active_cfg_index = None
 
+
 class USBError(IOError):
 
     r"""Exception class for USB errors.
@@ -203,6 +206,7 @@ class USBError(IOError):
     Backends must raise this exception when USB related errors occur.
     """
     pass
+
 
 class Endpoint(object):
 
@@ -292,6 +296,7 @@ class Endpoint(object):
         """
         return self.device.read(self.bEndpointAddress, size, self.interface, timeout)
 
+
 class Interface(object):
 
     r"""Represent an interface object.
@@ -369,6 +374,7 @@ class Interface(object):
                     self.alternate_index,
                     self.configuration
                 )
+
     def __getitem__(self, index):
         r"""Return the Endpoint object in the given position."""
         return Endpoint(
@@ -378,6 +384,7 @@ class Interface(object):
                 self.alternate_index,
                 self.configuration
             )
+
 
 class Configuration(object):
 
@@ -442,6 +449,7 @@ class Configuration(object):
                     alt += 1
             except (USBError, IndexError):
                 pass
+
     def __getitem__(self, index):
         r"""Return the Interface object in the given position.
 
@@ -736,6 +744,7 @@ class Device(object):
                         __set_def_tmo,
                         doc = 'Default timeout for transfer I/O functions'
                     )
+
 
 def find(find_all=False, backend = None, custom_match = None, **args):
     r"""Find an USB device and return it.

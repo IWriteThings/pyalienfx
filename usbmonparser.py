@@ -2,6 +2,7 @@
 
 import sys
 
+
 class parser:
 
 	def __init__(self,path):

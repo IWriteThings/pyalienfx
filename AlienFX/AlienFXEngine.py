@@ -312,6 +312,7 @@ class AlienFX_Controller:
 				break
 		return True
 
+
 class AlienFX_Constructor(list):
 
 	def __init__(self,driver,save = False,block = 0x01):

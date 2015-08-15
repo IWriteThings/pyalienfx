@@ -93,18 +93,22 @@ TYPE_RESERVED = 96
 TYPE_STANDARD = 0
 TYPE_VENDOR = 64
 
+
 class Endpoint(object):
 
     r"""Endpoint descriptor object."""
+
     def __init__(self, ep):
         self.address = ep.bEndpointAddress
         self.interval = ep.bInterval
         self.maxPacketSize = ep.wMaxPacketSize
         self.type = util.endpoint_type(ep.bmAttributes)
 
+
 class Interface(object):
 
     r"""Interface descriptor object."""
+
     def __init__(self, intf):
         self.alternateSetting = intf.bAlternateSetting
         self.interfaceNumber = intf.bInterfaceNumber
@@ -114,9 +118,11 @@ class Interface(object):
         self.interfaceProtocol = intf.bInterfaceProtocol
         self.endpoints = [Endpoint(e) for e in intf]
 
+
 class Configuration(object):
 
     r"""Configuration descriptor object."""
+
     def __init__(self, cfg):
         self.iConfiguration = cfg.iConfiguration
         self.maxPower = cfg.bMaxPower << 2
@@ -132,6 +138,7 @@ class Configuration(object):
                                     ),
                                     lambda i: i.alternateSetting)
                         ]
+
 
 class DeviceHandle(object):
 
@@ -296,9 +303,11 @@ class DeviceHandle(object):
         """
         self.dev.detach_kernel_driver(interface)
 
+
 class Device(object):
 
     r"""Device descriptor object"""
+
     def __init__(self, dev):
         self.deviceClass = dev.bDeviceClass
         self.deviceSubClass = dev.bDeviceSubClass
@@ -323,13 +332,16 @@ class Device(object):
         """
         return DeviceHandle(self.dev)
 
+
 class Bus(object):
 
     r"""Bus object."""
+
     def __init__(self):
         self.dirname = ''
         self.localtion = 0
         self.devices = [Device(d) for d in core.find(find_all=True)]
+
 
 def busses():
     r"""Return a tuple with the usb busses."""

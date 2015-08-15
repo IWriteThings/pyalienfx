@@ -33,6 +33,7 @@ __all__ = ['methodtrace', 'functiontrace']
 import logging
 import usb._interop as _interop
 
+
 def _trace_function_call(logger, fname, *args, **named_args):
     logger.debug(
                 # TODO: check if 'f' is a method or a free function

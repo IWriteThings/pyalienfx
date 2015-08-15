@@ -38,6 +38,7 @@ from time import sleep
 
 gobject.threads_init()
 
+
 class pyAlienFX_GUI():
 
 	def __init__(self):

@@ -23,6 +23,7 @@
 import platform
 import sys,os
 
+
 class AlienFXProperties:
 
 	def __init__(self):

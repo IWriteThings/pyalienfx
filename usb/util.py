@@ -85,6 +85,7 @@ _ENDPOINT_DIR_MASK = 0x80
 _ENDPOINT_TRANSFER_TYPE_MASK = 0x03
 _CTRL_DIR_MASK = 0x80
 
+
 def endpoint_address(address):
     r"""Return the endpoint absolute address.
 
@@ -92,6 +93,7 @@ def endpoint_address(address):
     of the endpoint descriptor.
     """
     return address & _ENDPOINT_ADDR_MASK
+
 
 def endpoint_direction(address):
     r"""Return the endpoint direction.
@@ -101,6 +103,7 @@ def endpoint_direction(address):
     The possible return values are ENDPOINT_OUT or ENDPOINT_IN.
     """
     return address & _ENDPOINT_DIR_MASK
+
 
 def endpoint_type(bmAttributes):
     r"""Return the transfer type of the endpoint.
@@ -112,6 +115,7 @@ def endpoint_type(bmAttributes):
     """
     return bmAttributes & _ENDPOINT_TRANSFER_TYPE_MASK
 
+
 def ctrl_direction(bmRequestType):
     r"""Return the direction of a control request.
 
@@ -120,6 +124,7 @@ def ctrl_direction(bmRequestType):
     The possible return values are CTRL_OUT or CTRL_IN.
     """
     return bmRequestType & _CTRL_DIR_MASK
+
 
 def build_request_type(direction, type, recipient):
     r"""Build a bmRequestType field for control requests.
@@ -136,6 +141,7 @@ def build_request_type(direction, type, recipient):
     Return the bmRequestType value.
     """
     return recipient | type | direction
+
 
 def find_descriptor(desc, find_all=False, custom_match=None, **args):
     r"""Find an inner descriptor.
@@ -177,6 +183,7 @@ def find_descriptor(desc, find_all=False, custom_match=None, **args):
         except StopIteration:
             return None
 
+
 def claim_interface(device, interface):
     r"""Explicitly claim an interface.
 
@@ -190,6 +197,7 @@ def claim_interface(device, interface):
     """
     device._ctx.managed_claim_interface(device, interface)
 
+
 def release_interface(device, interface):
     r"""Explicitly release an interface.
 
@@ -201,6 +209,7 @@ def release_interface(device, interface):
     the device object takes care of it automatically.
     """
     device._ctx.managed_release_interface(device, interface)
+
 
 def dispose_resources(device):
     r"""Release internal resources allocated by the object.
@@ -217,6 +226,7 @@ def dispose_resources(device):
     will allocate them automatically.
     """
     device._ctx.dispose(device)
+
 
 def get_string(dev, length, index, langid = None):
     r"""Retrieve a string descriptor from the device.

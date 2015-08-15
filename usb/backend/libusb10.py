@@ -79,6 +79,7 @@ _str_error = {
 
 # Data structures
 
+
 class _libusb_endpoint_descriptor(Structure):
     _fields_ = [('bLength', c_uint8),
                 ('bDescriptorType', c_uint8),
@@ -90,6 +91,7 @@ class _libusb_endpoint_descriptor(Structure):
                 ('bSynchAddress', c_uint8),
                 ('extra', POINTER(c_ubyte)),
                 ('extra_length', c_int)]
+
 
 class _libusb_interface_descriptor(Structure):
     _fields_ = [('bLength', c_uint8),
@@ -105,9 +107,11 @@ class _libusb_interface_descriptor(Structure):
                 ('extra', POINTER(c_ubyte)),
                 ('extra_length', c_int)]
 
+
 class _libusb_interface(Structure):
     _fields_ = [('altsetting', POINTER(_libusb_interface_descriptor)),
                 ('num_altsetting', c_int)]
+
 
 class _libusb_config_descriptor(Structure):
     _fields_ = [('bLength', c_uint8),
@@ -121,6 +125,7 @@ class _libusb_config_descriptor(Structure):
                 ('interface', POINTER(_libusb_interface)),
                 ('extra', POINTER(c_ubyte)),
                 ('extra_length', c_int)]
+
 
 class _libusb_device_descriptor(Structure):
     _fields_ = [('bLength', c_uint8),
@@ -142,6 +147,7 @@ _lib = None
 _init = None
 
 _libusb_device_handle = c_void_p
+
 
 def _load_library():
     candidates = ('usb-1.0', 'libusb-1.0', 'usb')
@@ -169,6 +175,7 @@ def _load_library():
     if not hasattr(l, 'libusb_init'):
         raise OSError('USB library could not be found')
     return l
+
 
 def _setup_prototypes(lib):
     # void libusb_set_debug (libusb_context *ctx, int level)
@@ -362,6 +369,7 @@ class _Device(object):
 
     def __init__(self, devid):
         self.devid = _lib.libusb_ref_device(devid)
+
     def __del__(self):
         _lib.libusb_unref_device(self.devid)
 
@@ -372,6 +380,7 @@ class _WrapDescriptor(object):
     def __init__(self, desc, obj = None):
         self.obj = obj
         self.desc = desc
+
     def __getattr__(self, name):
         return getattr(self.desc, name)
 
@@ -380,8 +389,10 @@ class _ConfigDescriptor(object):
 
     def __init__(self, desc):
         self.desc = desc
+
     def __del__(self):
         _lib.libusb_free_config_descriptor(self.desc)
+
     def __getattr__(self, name):
         return getattr(self.desc.contents, name)
 
@@ -390,6 +401,7 @@ class _Initializer(object):
 
     def __init__(self):
         _check(_lib.libusb_init(None))
+
     def __del__(self):
         _lib.libusb_exit(None)
 
@@ -403,9 +415,11 @@ class _DevIterator(object):
                                     None,
                                     byref(self.dev_list))
                                 ).value
+
     def __iter__(self):
         for i in range(self.num_devs):
             yield _Device(self.dev_list[i])
+
     def __del__(self):
         _lib.libusb_free_device_list(self.dev_list, 1)
 
@@ -598,6 +612,7 @@ class _LibUSB(usb.backend.IBackend):
                   byref(transferred),
                   timeout))
         return data[:transferred.value]
+
 
 def get_backend():
     global _lib, _init

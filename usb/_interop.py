@@ -77,14 +77,17 @@ except (ImportError, AttributeError):
             self.keyfunc = key
             self.it = iter(iterable)
             self.tgtkey = self.currkey = self.currvalue = object()
+
         def __iter__(self):
             return self
+
         def next(self):
             while self.currkey == self.tgtkey:
                 self.currvalue = _next(self.it)    # Exit on StopIteration
                 self.currkey = self.keyfunc(self.currvalue)
             self.tgtkey = self.currkey
             return (self.currkey, self._grouper(self.tgtkey))
+
         def _grouper(self, tgtkey):
             while self.currkey == tgtkey:
                 yield self.currvalue
@@ -102,6 +105,7 @@ except NameError:
 
             def __init__(self, K):
                 self.key = K
+
             def __call__(self, x, y):
                 kx = self.key(x)
                 ky = self.key(y)
@@ -124,6 +128,7 @@ except (ImportError, AttributeError):
         wrapper.__module__ = wrapped.__module__
         wrapper.__doc__ = wrapped.__doc__
         wrapper.__dict__ = wrapped.__dict__
+
 
 def as_array(data=None):
     if data is None:

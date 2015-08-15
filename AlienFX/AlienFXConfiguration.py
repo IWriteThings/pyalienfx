@@ -138,6 +138,7 @@ class configuration(list,AlienFXTexts):
 			self[i].Id -= 1
 		del self[Id]
 
+
 class element():
 
 	def __init__(self, Type, color = "", color2 = ""):

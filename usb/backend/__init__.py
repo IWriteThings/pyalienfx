@@ -75,8 +75,10 @@ __author__ = 'Wander Lairson Costa'
 
 __all__ = ['IBackend', 'libusb01', 'libusb10', 'openusb']
 
+
 def _not_implemented(func):
     raise NotImplementedError(func.__name__)
+
 
 class IBackend(object):
 
@@ -92,6 +94,7 @@ class IBackend(object):
     are strongly recommended to do so, inheriting from IBackend provides consistent
     default behavior.
     """
+
     def enumerate_devices(self):
         r"""This function is required to return an iterable object which
         yields an implementation defined device identification for each

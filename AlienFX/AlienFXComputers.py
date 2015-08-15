@@ -32,6 +32,7 @@ class AlienFXPowerMode:
 		#self.blockId = block
 		self.name = name
 
+
 class AlienFXRegion:
 
 	def __init__(self, name, description, regionId, maxCommands, canBlink, canMorph, canLight, default_color, supportedModes, default_mode = "fixed", power_button = False):
@@ -67,6 +68,7 @@ class AlienFXRegion:
 			return True
 		return False
 
+
 class AlienFXConfiguration:
 
 	def __init__(self,mode,color1,color2 = None):
@@ -76,6 +78,7 @@ class AlienFXConfiguration:
 
 	def __str__(self):
 		return "Mode : %s\nColor1 : %s\nColor2 : %s"%(self.mode,self.color1,self.color2)
+
 
 class M11XR3:
 
@@ -553,6 +556,7 @@ class M18XR2:
 #added by SuperTool (end)
 ##############################################################################################
 
+
 class AlienFXComputer:
 
 	def __init__(self,name,vendorId,productId,computer):
@@ -560,6 +564,7 @@ class AlienFXComputer:
 		self.vendorId = vendorId
 		self.productId = productId
 		self.computer = computer
+
 
 class AllComputers():
 	#Define General Device controls
