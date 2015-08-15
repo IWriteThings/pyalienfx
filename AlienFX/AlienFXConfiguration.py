@@ -24,15 +24,15 @@ class AlienFXConfiguration:
             #self.area[area.name].append(configuration(area))
 
     def Show_Configuration(self):
-        print "\t%s\n=== === === === === ===\n"%self.name
-        print "Speed %s\n"%self.speed
+        print "\t%s\n=== === === === === ===\n" % self.name
+        print "Speed %s\n" % self.speed
         for area in self.area:
-            print "      %s\n      =============      \n"%self.area[area].description
+            print "      %s\n      =============      \n" % self.area[area].description
             for element in self.area[area]:
                 print element.text
 
     def Show_Area(self, area):
-        print "      %s\n      =============      \n"%self.area[area].description
+        print "      %s\n      =============      \n" % self.area[area].description
         if area in self.area:
             for element in self.area[area]:
                 print element.text
@@ -41,15 +41,15 @@ class AlienFXConfiguration:
         if path:
             self.path = path
         f = open(self.path, 'w')
-        f.write("name=%s\n"%self.name)
-        f.write("computer=%s\n"%self.computer)
-        f.write("speed=%s\n"%self.speed)
+        f.write("name=%s\n" % self.name)
+        f.write("computer=%s\n" % self.computer)
+        f.write("speed=%s\n" % self.speed)
         for area in self.area.keys():
-            f.write("area=%s\n"%area)
+            f.write("area=%s\n" % area)
             for element in self.area[area]:
-                f.write("type=%s\n"%element.mode)
-                f.write("color=%s\n"%element.color1)
-                f.write("color2=%s\n"%element.color2)
+                f.write("type=%s\n" % element.mode)
+                f.write("color=%s\n" % element.color1)
+                f.write("color2=%s\n" % element.color2)
         f.close()
 
     def Load(self, path):
@@ -153,4 +153,4 @@ class element():
             "speed": "Setting Speed to %s%s",
             "endloop": "End of the loop%s%s"}
         #print "-%s-"%self.mode
-        self.text = self.Text_Conf_Type[self.mode]%(self.color1, self.color2)
+        self.text = self.Text_Conf_Type[self.mode] % (self.color1, self.color2)

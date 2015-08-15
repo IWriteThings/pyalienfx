@@ -66,7 +66,7 @@ class AlienFX_Driver(AllComputers):
         for computer in self.computerList.keys():
             dev = usb.core.find(idVendor=self.computerList[computer].vendorId, idProduct=self.computerList[computer].productId)
             if dev is not None:
-                print "Comnputer %s found ! Loading the parameters ..."%self.computerList[computer].name
+                print "Comnputer %s found ! Loading the parameters ..." % self.computerList[computer].name
                 self.computer = self.computerList[computer].computer
                 self.vendorId = self.computerList[computer].vendorId
                 self.productId = self.computerList[computer].productId
@@ -82,16 +82,16 @@ class AlienFX_Driver(AllComputers):
                     nice_packet = ""
                     for i in msg.packet:
                         if i < 16:
-                            nice_packet += " 0%s"%hex(i).replace('0x', '')
+                            nice_packet += " 0%s" % hex(i).replace('0x', '')
                         else:
-                            nice_packet += " %s"%hex(i).replace('0x', '')
-                    print "Sending : %s\nPacket : %s"%(msg.legend, nice_packet)
+                            nice_packet += " %s" % hex(i).replace('0x', '')
+                    print "Sending : %s\nPacket : %s" % (msg.legend, nice_packet)
                     log = ""
                     for m in msg.packet:
                         if m < 16:
-                            log += ("0%x "%m).replace('0x', '')
+                            log += ("0%x " % m).replace('0x', '')
                         else:
-                            log += ("%x "%m).replace('0x', '')
+                            log += ("%x " % m).replace('0x', '')
                     self.log.write(log + "\n")
                 self.dev.ctrl_transfer(self.SEND_REQUEST_TYPE, self.SEND_REQUEST, self.SEND_VALUE, self.SEND_INDEX, msg.packet)
         else:
@@ -108,12 +108,12 @@ class AlienFX_Driver(AllComputers):
             self.dev.detach_kernel_driver(0)
             print "Kernel Detached (on 1st trial)"
         except Exception, e:
-            print "can't detach_kernel_driver error : %s"%e
+            print "can't detach_kernel_driver error : %s" % e
         try:
             self.dev.set_configuration()
             print "CONFIGURATION SET ! (on 1st trial)"
         except Exception, e:
-            print "Can't set the configuration. Error : %s"%e
+            print "Can't set the configuration. Error : %s" % e
             self.dev.attach_kernel_driver(0)
             print "Driver Attached to Kernel"
             self.dev.detach_kernel_driver(0)
@@ -122,7 +122,7 @@ class AlienFX_Driver(AllComputers):
                 self.dev.set_configuration()
                 print "CONFIGURATION SET ! (on 2nd trial)"
             except Exception, e:
-                print "Can't set the configuration. Error : %s"%e
+                print "Can't set the configuration. Error : %s" % e
                 sys.exit(1)
 
 
@@ -336,12 +336,12 @@ class AlienFX_Constructor(list):
             packet = ""
             for j in i.packet:
                 packet += hex(j) + " "
-            print "%s\t:\t%s"%(i.legend, packet)
+            print "%s\t:\t%s" % (i.legend, packet)
 
     def Set_Speed(self, Speed=0xc800):
         self.Save()
         cmd = copy(self.void)
-        legend = "Set Speed : %s"%Speed
+        legend = "Set Speed : %s" % Speed
         cmd[0] = self.computer.START_BYTE
         cmd[1] = self.computer.COMMAND_SET_SPEED
         cmd[3] = Speed / 256
@@ -351,7 +351,7 @@ class AlienFX_Constructor(list):
     def Set_Blink_Color(self, Area, Color):
         self.Save()
         cmd = copy(self.void)
-        legend = "Set Blink Color, Area : %s, Color : r = %s, g = %s, b = %s"%(hex(Area[0] * 65536 + Area[1] * 256 + Area[2]), hex((Color[0] / 16)), hex(Color[0] - (Color[0] / 16) * 16), hex(Color[1] / 16))
+        legend = "Set Blink Color, Area : %s, Color : r = %s, g = %s, b = %s" % (hex(Area[0] * 65536 + Area[1] * 256 + Area[2]), hex((Color[0] / 16)), hex(Color[0] - (Color[0] / 16) * 16), hex(Color[1] / 16))
         cmd[0] = self.computer.START_BYTE
         cmd[1] = self.computer.COMMAND_SET_BLINK_COLOR
         cmd[2] = self.Id
@@ -367,7 +367,7 @@ class AlienFX_Constructor(list):
         self.Save()
         cmd = copy(self.void)
         print "Color2 ==== >>> ", Color2
-        legend = "Set Morph Color, Area : %s , Color1 : r = %s, g = %s, b = %s, Color2 : r = %s, g = %s, b = %s"%(hex(Area[0] * 65536 + Area[1] * 256 + Area[2]), hex((Color1[0] / 16)), hex(Color1[0] - (Color1[0] / 16) * 16), hex(Color1[1] / 16), hex(Color2[0] / 16), hex(Color2[0] - (Color2[0] / 16) * 16), hex(Color2[1] / 16))
+        legend = "Set Morph Color, Area : %s , Color1 : r = %s, g = %s, b = %s, Color2 : r = %s, g = %s, b = %s" % (hex(Area[0] * 65536 + Area[1] * 256 + Area[2]), hex((Color1[0] / 16)), hex(Color1[0] - (Color1[0] / 16) * 16), hex(Color1[1] / 16), hex(Color2[0] / 16), hex(Color2[0] - (Color2[0] / 16) * 16), hex(Color2[1] / 16))
         #Color2[1] = Color2[1] / 16 + (Color2[0] - (Color2[0] / 16) * 16)
         print "Color2after ==== >>> ", Color2
         Color12 = Color1[1] + Color2[0]
@@ -401,7 +401,7 @@ class AlienFX_Constructor(list):
     def Set_Color(self, Area, Color, Id=0x01):
         self.Save()
         cmd = copy(self.void)
-        legend = "Set Fixed Color, Area : %s, Color : r = %s, g = %s, b = %s"%(hex(Area[0] * 65536 + Area[1] * 256 + Area[2]), hex((Color[0] / 16)), hex(Color[0] - (Color[0] - (Color[0] / 16) * 16)), hex(Color[1] + 16))
+        legend = "Set Fixed Color, Area : %s, Color : r = %s, g = %s, b = %s" % (hex(Area[0] * 65536 + Area[1] * 256 + Area[2]), hex((Color[0] / 16)), hex(Color[0] - (Color[0] - (Color[0] / 16) * 16)), hex(Color[1] + 16))
         cmd[0] = self.computer.START_BYTE
         cmd[1] = self.computer.COMMAND_SET_COLOR
         cmd[2] = self.Id
@@ -415,7 +415,7 @@ class AlienFX_Constructor(list):
 
     def Set_Save_Block(self, block):
         cmd = copy(self.void)
-        legend = "Save block : %s"%block
+        legend = "Save block : %s" % block
         cmd[0] = self.computer.START_BYTE
         cmd[1] = self.computer.COMMAND_SAVE_NEXT
         cmd[2] = block
