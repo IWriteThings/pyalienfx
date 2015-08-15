@@ -73,7 +73,7 @@ class ServCmd:
         print "Initializing Controller ..."
         s.controller = AlienFX_Controller(s.driver)
         s.computer = s.driver.computer
-        s.__serv = socket( AF_INET, SOCK_STREAM)
+        s.__serv = socket(AF_INET, SOCK_STREAM)
         s.__serv.bind((ADDR))
         #s.__serv.settimeout(60)
         s.__cli = None
