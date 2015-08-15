@@ -320,7 +320,7 @@ def _setup_prototypes(lib):
         c_uint
     ]
 
-    #int libusb_bulk_transfer(
+    # int libusb_bulk_transfer(
     #           struct libusb_device_handle *dev_handle,
     #           unsigned char endpoint,
     #           unsigned char *data,

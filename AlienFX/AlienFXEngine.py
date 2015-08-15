@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-#This file is part of pyAlienFX.
+# This file is part of pyAlienFX.
 #
 #    pyAlienFX is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ from AlienFX.AlienFXComputers import AllComputers
 class AlienFX_Driver(AllComputers):
 
     def __init__(self):
-        #Define I/O Reqquest types
+        # Define I/O Reqquest types
         self.SEND_REQUEST_TYPE = 0x21
         self.SEND_REQUEST = 0x09
         self.SEND_VALUE = 0x202
@@ -51,13 +51,13 @@ class AlienFX_Driver(AllComputers):
         self.AlienFXProperties = AlienFXProperties()
         self.AlienFXTexts = AlienFXTexts()
 
-        #Initializing !
+        # Initializing !
         # find our device
         if not self.FindDevice():
             print "No AlienFX USB controler found ! Go see the list of supported computer on : https://code.google.com/p/pyalienfx/wiki/SupportedComputer "
             sys.exit(1)
         self.Take_over()
-        #dev.claimInterface()
+        # dev.claimInterface()
 
     def FindDevice(self):
         """Look for all the devices listed in the AlienFXComputer file, if found return True, else return False.
@@ -300,7 +300,7 @@ class AlienFX_Controller:
             request.Get_Status()
             self.driver.WriteDevice(request)
             msg = self.driver.ReadDevice(request)
-            #print msg
+            # print msg
             if msg[0] == 0x10:
                 break
             request.raz()
@@ -308,7 +308,7 @@ class AlienFX_Controller:
             request.Reset(res_cmd)
             self.driver.WriteDevice(request)
             msg = self.driver.ReadDevice(request)
-            #print msg
+            # print msg
             if msg[0] == 0x10:
                 break
         return True
@@ -360,7 +360,7 @@ class AlienFX_Constructor(list):
         cmd[5] = Area[2]
         cmd[6] = Color[0]
         cmd[7] = Color[1]
-        #print "constructor : ",cmd
+        # print "constructor : ",cmd
         self.append(Request(legend, cmd))
 
     def Set_Morph_Color(self, Area, Color1, Color2):
@@ -380,7 +380,7 @@ class AlienFX_Constructor(list):
         cmd[6] = Color1[0]
         cmd[7] = Color12
         cmd[8] = Color2[1]
-        ##print "constructor : ",cmd
+        # print "constructor : ",cmd
         self.append(Request(legend, cmd))
 
     def Area(self, areas):  # gotta check the power button to understand it ...
@@ -410,7 +410,7 @@ class AlienFX_Constructor(list):
         cmd[5] = Area[2]
         cmd[6] = Color[0]
         cmd[7] = Color[1]
-        #print "constructor : ",cmd
+        # print "constructor : ",cmd
         self.append(Request(legend, cmd))
 
     def Set_Save_Block(self, block):
@@ -419,7 +419,7 @@ class AlienFX_Constructor(list):
         cmd[0] = self.computer.START_BYTE
         cmd[1] = self.computer.COMMAND_SAVE_NEXT
         cmd[2] = block
-        #print "constructor : ",cmd
+        # print "constructor : ",cmd
         self.append(Request(legend, cmd))
 
     def Set_Save(self):
@@ -427,7 +427,7 @@ class AlienFX_Constructor(list):
         legend = "Save"
         cmd[0] = self.computer.START_BYTE
         cmd[1] = self.computer.COMMAND_SAVE
-        #print "constructor : ",cmd
+        # print "constructor : ",cmd
         self.append(Request(legend, cmd))
 
     def Color(self, color):
@@ -453,7 +453,7 @@ class AlienFX_Constructor(list):
         legend = "Get Status"
         cmd[0] = self.computer.START_BYTE
         cmd[1] = self.computer.COMMAND_GET_STATUS
-        #print "constructor : ",cmd
+        # print "constructor : ",cmd
         self.append(Request(legend, cmd))
 
     def Reset_all(self):
@@ -463,7 +463,7 @@ class AlienFX_Constructor(list):
         cmd[0] = self.computer.START_BYTE
         cmd[1] = self.computer.COMMAND_RESET
         cmd[2] = self.computer.RESET_ALL_LIGHTS_ON
-        #print "constructor : ",cmd
+        # print "constructor : ",cmd
         self.append(Request(legend, cmd))
 
     def Reset(self, command):
@@ -474,7 +474,7 @@ class AlienFX_Constructor(list):
             cmd[0] = self.computer.START_BYTE
             cmd[1] = self.computer.COMMAND_RESET
             cmd[2] = command
-            #print "constructor : ",cmd
+            # print "constructor : ",cmd
             self.append(Request(legend, cmd))
         else:
             print "ERROR : WRONG RESET COMMAND"
@@ -485,8 +485,8 @@ class AlienFX_Constructor(list):
         legend = "End Loop"
         cmd[0] = self.computer.START_BYTE
         cmd[1] = self.computer.COMMAND_LOOP_BLOCK_END
-        #print "constructor : ",cmd
-        #if self.save:
+        # print "constructor : ",cmd
+        # if self.save:
         self.Id += 0x01
         self.append(Request(legend, cmd))
 
@@ -497,7 +497,7 @@ class AlienFX_Constructor(list):
             legend = "End Transfert"
             cmd[0] = self.computer.START_BYTE
             cmd[1] = self.computer.COMMAND_TRANSMIT_EXECUTE
-            #print "constructor : ",cmd
+            # print "constructor : ",cmd
             self.append(Request(legend, cmd))
 
     def raz(self):

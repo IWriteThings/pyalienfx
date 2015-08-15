@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-#This file is part of pyAlienFX.
+# This file is part of pyAlienFX.
 #
 #    pyAlienFX is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -165,8 +165,8 @@ try:
         f.close()
 except:
     print "\033[1;31m !!! Please run the script as sudo in order to install the script in the Unity interface !!! \033[0m"
-#os.setuid(1000)
-#os.setgid(1001)
+# os.setuid(1000)
+# os.setgid(1001)
 
 f = open('%s/pyAlienFX_Launcher.sh' % BasePath, 'w')
 f.write(Launcher)
