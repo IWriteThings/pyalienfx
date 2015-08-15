@@ -18,7 +18,7 @@ class AlienFXConfiguration:
         self.path = path
 
     def Add(self, area):
-        if not self.area.has_key(area.name):
+        if area.name not in self.area:
             self.area[area.name] = configuration(area)
         #else:
             #self.area[area.name].append(configuration(area))
@@ -33,7 +33,7 @@ class AlienFXConfiguration:
 
     def Show_Area(self, area):
         print "      %s\n      =============      \n"%self.area[area].description
-        if self.area.has_key(area):
+        if area in self.area:
             for element in self.area[area]:
                 print element.text
 
