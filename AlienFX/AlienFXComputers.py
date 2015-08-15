@@ -96,18 +96,18 @@ class M11XR3:
         self.STATE_UNKNOWN_COMMAND = 0x12
 
         self.SUPPORTED_COMMANDS = 15
-        self.COMMAND_END_STORAGE = 0x00 # = End Storage block (See storage)
-        self.COMMAND_SET_MORPH_COLOR = 0x01# = Set morph color (See set commands)
-        self.COMMAND_SET_BLINK_COLOR = 0x02# = Set blink color (See set commands)
-        self.COMMAND_SET_COLOR = 0x03# = Set color (See set commands)
-        self.COMMAND_LOOP_BLOCK_END = 0x04# = Loop Block end (See loops)
-        self.COMMAND_TRANSMIT_EXECUTE = 0x05# = End transmition and execute
-        self.COMMAND_GET_STATUS = 0x06# = Get device status (see get device status)
-        self.COMMAND_RESET = 0x07# = Reset (See reset)
-        self.COMMAND_SAVE_NEXT = 0x08# = Save next instruction in storage block (see storage)
-        self.COMMAND_SAVE = 0x09# = Save storage data (See storage)
-        self.COMMAND_BATTERY_STATE = 0x0F# = Set batery state (See set commands)
-        self.COMMAND_SET_SPEED = 0x0E# = Set display speed (see set speed)
+        self.COMMAND_END_STORAGE = 0x00  # = End Storage block (See storage)
+        self.COMMAND_SET_MORPH_COLOR = 0x01  # = Set morph color (See set commands)
+        self.COMMAND_SET_BLINK_COLOR = 0x02  # = Set blink color (See set commands)
+        self.COMMAND_SET_COLOR = 0x03  # = Set color (See set commands)
+        self.COMMAND_LOOP_BLOCK_END = 0x04  # = Loop Block end (See loops)
+        self.COMMAND_TRANSMIT_EXECUTE = 0x05  # = End transmition and execute
+        self.COMMAND_GET_STATUS = 0x06  # = Get device status (see get device status)
+        self.COMMAND_RESET = 0x07  # = Reset (See reset)
+        self.COMMAND_SAVE_NEXT = 0x08  # = Save next instruction in storage block (see storage)
+        self.COMMAND_SAVE = 0x09  # = Save storage data (See storage)
+        self.COMMAND_BATTERY_STATE = 0x0F  # = Set batery state (See set commands)
+        self.COMMAND_SET_SPEED = 0x0E  # = Set display speed (see set speed)
 
         self.RESET_TOUCH_CONTROLS = 0x01
         self.RESET_SLEEP_LIGHTS_ON = 0x02
@@ -166,18 +166,18 @@ class M14XLight:
         self.STATE_UNKNOWN_COMMAND = 0x12
 
         self.SUPPORTED_COMMANDS = 15
-        self.COMMAND_END_STORAGE = 0x00# = End Storage block (See storage)
-        self.COMMAND_SET_MORPH_COLOR = 0x01# = Set morph color (See set commands)
-        self.COMMAND_SET_BLINK_COLOR = 0x02# = Set blink color (See set commands)
-        self.COMMAND_SET_COLOR = 0x03# = Set color (See set commands)
-        self.COMMAND_LOOP_BLOCK_END = 0x04# = Loop Block end (See loops)
-        self.COMMAND_TRANSMIT_EXECUTE = 0x05# = End transmition and execute
-        self.COMMAND_GET_STATUS = 0x06# = Get device status (see get device status)
-        self.COMMAND_RESET = 0x07# = Reset (See reset)
-        self.COMMAND_SAVE_NEXT = 0x08# = Save next instruction in storage block (see storage)
-        self.COMMAND_SAVE = 0x09# = Save storage data (See storage)
-        self.COMMAND_BATTERY_STATE = 0x0F# = Set batery state (See set commands)
-        self.COMMAND_SET_SPEED = 0x0E# = Set display speed (see set speed)
+        self.COMMAND_END_STORAGE = 0x00  # = End Storage block (See storage)
+        self.COMMAND_SET_MORPH_COLOR = 0x01  # = Set morph color (See set commands)
+        self.COMMAND_SET_BLINK_COLOR = 0x02  # = Set blink color (See set commands)
+        self.COMMAND_SET_COLOR = 0x03  # = Set color (See set commands)
+        self.COMMAND_LOOP_BLOCK_END = 0x04  # = Loop Block end (See loops)
+        self.COMMAND_TRANSMIT_EXECUTE = 0x05  # = End transmition and execute
+        self.COMMAND_GET_STATUS = 0x06  # = Get device status (see get device status)
+        self.COMMAND_RESET = 0x07  # = Reset (See reset)
+        self.COMMAND_SAVE_NEXT = 0x08  # = Save next instruction in storage block (see storage)
+        self.COMMAND_SAVE = 0x09  # = Save storage data (See storage)
+        self.COMMAND_BATTERY_STATE = 0x0F  # = Set batery state (See set commands)
+        self.COMMAND_SET_SPEED = 0x0E  # = Set display speed (see set speed)
 
         self.RESET_TOUCH_CONTROLS = 0x01
         self.RESET_SLEEP_LIGHTS_ON = 0x02
@@ -248,18 +248,18 @@ class M15XArea51:
         self.STATE_READY = 0x10
         self.STATE_UNKNOWN_COMMAND = 0x12
 
-        self.COMMAND_END_STORAGE = 0x00# = End Storage block (See storage)
-        self.COMMAND_SET_MORPH_COLOR = 0x01# = Set morph color (See set commands)
-        self.COMMAND_SET_BLINK_COLOR = 0x02# = Set blink color (See set commands)
-        self.COMMAND_SET_COLOR = 0x03# = Set color (See set commands)
-        self.COMMAND_LOOP_BLOCK_END = 0x04# = Loop Block end (See loops)
-        self.COMMAND_TRANSMIT_EXECUTE = 0x05# = End transmition and execute
-        self.COMMAND_GET_STATUS = 0x06# = Get device status (see get device status)
-        self.COMMAND_RESET = 0x07# = Reset (See reset)
-        self.COMMAND_SAVE_NEXT = 0x08# = Save next instruction in storage block (see storage)
-        self.COMMAND_SAVE = 0x09# = Save storage data (See storage)
-        self.COMMAND_BATTERY_STATE = 0x0F# = Set batery state (See set commands)
-        self.COMMAND_SET_SPEED = 0x0E# = Set display speed (see set speed)
+        self.COMMAND_END_STORAGE = 0x00  # = End Storage block (See storage)
+        self.COMMAND_SET_MORPH_COLOR = 0x01  # = Set morph color (See set commands)
+        self.COMMAND_SET_BLINK_COLOR = 0x02  # = Set blink color (See set commands)
+        self.COMMAND_SET_COLOR = 0x03  # = Set color (See set commands)
+        self.COMMAND_LOOP_BLOCK_END = 0x04  # = Loop Block end (See loops)
+        self.COMMAND_TRANSMIT_EXECUTE = 0x05  # = End transmition and execute
+        self.COMMAND_GET_STATUS = 0x06  # = Get device status (see get device status)
+        self.COMMAND_RESET = 0x07  # = Reset (See reset)
+        self.COMMAND_SAVE_NEXT = 0x08  # = Save next instruction in storage block (see storage)
+        self.COMMAND_SAVE = 0x09  # = Save storage data (See storage)
+        self.COMMAND_BATTERY_STATE = 0x0F  # = Set batery state (See set commands)
+        self.COMMAND_SET_SPEED = 0x0E  # = Set display speed (see set speed)
 
         self.RESET_TOUCH_CONTROLS = 0x01
         self.RESET_SLEEP_LIGHTS_ON = 0x02
@@ -318,18 +318,18 @@ class M15XAllPowerfull:
         self.STATE_UNKNOWN_COMMAND = 0x12
 
         self.SUPPORTED_COMMANDS = 15
-        self.COMMAND_END_STORAGE = 0x00# = End Storage block (See storage)
-        self.COMMAND_SET_MORPH_COLOR = 0x01# = Set morph color (See set commands)
-        self.COMMAND_SET_BLINK_COLOR = 0x02# = Set blink color (See set commands)
-        self.COMMAND_SET_COLOR = 0x03# = Set color (See set commands)
-        self.COMMAND_LOOP_BLOCK_END = 0x04# = Loop Block end (See loops)
-        self.COMMAND_TRANSMIT_EXECUTE = 0x05# = End transmition and execute
-        self.COMMAND_GET_STATUS = 0x06# = Get device status (see get device status)
-        self.COMMAND_RESET = 0x07# = Reset (See reset)
-        self.COMMAND_SAVE_NEXT = 0x08# = Save next instruction in storage block (see storage)
-        self.COMMAND_SAVE = 0x09# = Save storage data (See storage)
-        self.COMMAND_BATTERY_STATE = 0x0F# = Set batery state (See set commands)
-        self.COMMAND_SET_SPEED = 0x0E# = Set display speed (see set speed)
+        self.COMMAND_END_STORAGE = 0x00  # = End Storage block (See storage)
+        self.COMMAND_SET_MORPH_COLOR = 0x01  # = Set morph color (See set commands)
+        self.COMMAND_SET_BLINK_COLOR = 0x02  # = Set blink color (See set commands)
+        self.COMMAND_SET_COLOR = 0x03  # = Set color (See set commands)
+        self.COMMAND_LOOP_BLOCK_END = 0x04  # = Loop Block end (See loops)
+        self.COMMAND_TRANSMIT_EXECUTE = 0x05  # = End transmition and execute
+        self.COMMAND_GET_STATUS = 0x06  # = Get device status (see get device status)
+        self.COMMAND_RESET = 0x07  # = Reset (See reset)
+        self.COMMAND_SAVE_NEXT = 0x08  # = Save next instruction in storage block (see storage)
+        self.COMMAND_SAVE = 0x09  # = Save storage data (See storage)
+        self.COMMAND_BATTERY_STATE = 0x0F  # = Set batery state (See set commands)
+        self.COMMAND_SET_SPEED = 0x0E  # = Set display speed (see set speed)
 
         self.RESET_TOUCH_CONTROLS = 0x01
         self.RESET_SLEEP_LIGHTS_ON = 0x02
@@ -402,18 +402,18 @@ class M17XR3:
         self.STATE_UNKNOWN_COMMAND = 0x12
 
         self.SUPPORTED_COMMANDS = 15
-        self.COMMAND_END_STORAGE = 0x00# = End Storage block (See storage)
-        self.COMMAND_SET_MORPH_COLOR = 0x01# = Set morph color (See set commands)
-        self.COMMAND_SET_BLINK_COLOR = 0x02# = Set blink color (See set commands)
-        self.COMMAND_SET_COLOR = 0x03# = Set color (See set commands)
-        self.COMMAND_LOOP_BLOCK_END = 0x04# = Loop Block end (See loops)
-        self.COMMAND_TRANSMIT_EXECUTE = 0x05# = End transmition and execute
-        self.COMMAND_GET_STATUS = 0x06# = Get device status (see get device status)
-        self.COMMAND_RESET = 0x07# = Reset (See reset)
-        self.COMMAND_SAVE_NEXT = 0x08# = Save next instruction in storage block (see storage)
-        self.COMMAND_SAVE = 0x09# = Save storage data (See storage)
-        self.COMMAND_BATTERY_STATE = 0x0F# = Set batery state (See set commands)
-        self.COMMAND_SET_SPEED = 0x0E# = Set display speed (see set speed)
+        self.COMMAND_END_STORAGE = 0x00  # = End Storage block (See storage)
+        self.COMMAND_SET_MORPH_COLOR = 0x01  # = Set morph color (See set commands)
+        self.COMMAND_SET_BLINK_COLOR = 0x02  # = Set blink color (See set commands)
+        self.COMMAND_SET_COLOR = 0x03  # = Set color (See set commands)
+        self.COMMAND_LOOP_BLOCK_END = 0x04  # = Loop Block end (See loops)
+        self.COMMAND_TRANSMIT_EXECUTE = 0x05  # = End transmition and execute
+        self.COMMAND_GET_STATUS = 0x06  # = Get device status (see get device status)
+        self.COMMAND_RESET = 0x07  # = Reset (See reset)
+        self.COMMAND_SAVE_NEXT = 0x08  # = Save next instruction in storage block (see storage)
+        self.COMMAND_SAVE = 0x09  # = Save storage data (See storage)
+        self.COMMAND_BATTERY_STATE = 0x0F  # = Set batery state (See set commands)
+        self.COMMAND_SET_SPEED = 0x0E  # = Set display speed (see set speed)
 
         self.RESET_TOUCH_CONTROLS = 0x01
         self.RESET_SLEEP_LIGHTS_ON = 0x02
@@ -488,18 +488,18 @@ class M18XR2:
         self.STATE_UNKNOWN_COMMAND = 0x12
 
         self.SUPPORTED_COMMANDS = 15
-        self.COMMAND_END_STORAGE = 0x00# = End Storage block (See storage)
-        self.COMMAND_SET_MORPH_COLOR = 0x01# = Set morph color (See set commands)
-        self.COMMAND_SET_BLINK_COLOR = 0x02# = Set blink color (See set commands)
-        self.COMMAND_SET_COLOR = 0x03# = Set color (See set commands)
-        self.COMMAND_LOOP_BLOCK_END = 0x04# = Loop Block end (See loops)
-        self.COMMAND_TRANSMIT_EXECUTE = 0x05# = End transmition and execute
-        self.COMMAND_GET_STATUS = 0x06# = Get device status (see get device status)
-        self.COMMAND_RESET = 0x07# = Reset (See reset)
-        self.COMMAND_SAVE_NEXT = 0x08# = Save next instruction in storage block (see storage)
-        self.COMMAND_SAVE = 0x09# = Save storage data (See storage)
-        self.COMMAND_BATTERY_STATE = 0x0F# = Set batery state (See set commands)
-        self.COMMAND_SET_SPEED = 0x0E# = Set display speed (see set speed)
+        self.COMMAND_END_STORAGE = 0x00  # = End Storage block (See storage)
+        self.COMMAND_SET_MORPH_COLOR = 0x01  # = Set morph color (See set commands)
+        self.COMMAND_SET_BLINK_COLOR = 0x02  # = Set blink color (See set commands)
+        self.COMMAND_SET_COLOR = 0x03  # = Set color (See set commands)
+        self.COMMAND_LOOP_BLOCK_END = 0x04  # = Loop Block end (See loops)
+        self.COMMAND_TRANSMIT_EXECUTE = 0x05  # = End transmition and execute
+        self.COMMAND_GET_STATUS = 0x06  # = Get device status (see get device status)
+        self.COMMAND_RESET = 0x07  # = Reset (See reset)
+        self.COMMAND_SAVE_NEXT = 0x08  # = Save next instruction in storage block (see storage)
+        self.COMMAND_SAVE = 0x09  # = Save storage data (See storage)
+        self.COMMAND_BATTERY_STATE = 0x0F  # = Set batery state (See set commands)
+        self.COMMAND_SET_SPEED = 0x0E  # = Set display speed (see set speed)
 
         self.RESET_TOUCH_CONTROLS = 0x01
         self.RESET_SLEEP_LIGHTS_ON = 0x02

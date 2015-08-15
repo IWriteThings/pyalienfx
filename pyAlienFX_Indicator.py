@@ -32,7 +32,7 @@ import pyAlienFX
 from AlienFX.AlienFXConfiguration import *
 
 
-PING_FREQUENCY = 10 # seconds
+PING_FREQUENCY = 10  # seconds
 
 
 class pyAlienFX_Indicator:

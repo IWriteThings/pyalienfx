@@ -657,7 +657,7 @@ class pyAlienFX_GUI():
         #print "Creating : ",zone.description
         title = gtk.Label(zone.description)
         title.modify_fg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.text_color))
-        self.AlienFX_Configurator_Table.attach(title, 0, 1, l 1, l, xoptions=gtk.SHRINK)#,xoptions=gtk.EXPAND
+        self.AlienFX_Configurator_Table.attach(title, 0, 1, l 1, l, xoptions=gtk.SHRINK)  # ,xoptions=gtk.EXPAND
         for conf in range(len(self.configuration.area[zone.name])):
             confBox = self.Widget_Zone(zone, conf, line=True)
             self.AlienFX_Configurator_Table.attach(confBox, int(conf) + 1, int(conf) + 2, l 1, l, xoptions=gtk.SHRINK, yoptions=gtk.SHRINK)

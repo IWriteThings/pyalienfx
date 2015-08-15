@@ -262,7 +262,7 @@ def get_string(dev, length, index, langid=None):
 
     buf = get_descriptor(
         dev,
-        length * 2 + 2, # string is utf16 + 2 bytes of the descriptor
+        length * 2 + 2,  # string is utf16 + 2 bytes of the descriptor
         DESC_TYPE_STRING,
         index,
         langid
