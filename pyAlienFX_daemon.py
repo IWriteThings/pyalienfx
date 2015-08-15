@@ -26,7 +26,7 @@
 #The deamon will load the driver and the controller
 #You can comunicate with the Deamon through TCP
 #You can send packet so the deamon will control the AlienFX
-#That way you can create GUI, plugins, ect to play with the AlienFX ! 
+#That way you can create GUI, plugins, ect to play with the AlienFX !
 
 
 from AlienFX.AlienFXEngine import *
@@ -64,7 +64,7 @@ ADDR = (HOST,PORT)
 	##os.seteuid(1000)     #set user "pyAlienFX"
 	##start the user program here:
 	#Daemon = ServCmd()
-        
+
 class ServCmd:
 	def __init__(s):
 		print "Initializing Driver  ..."

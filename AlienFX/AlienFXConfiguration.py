@@ -134,7 +134,7 @@ class configuration(list,AlienFXTexts):
 	
 	def remove(self,Id):
 		for i in range(Id,len(self)-1):
-			self[i].Id -= 1 
+			self[i].Id -= 1
 		del self[Id]
 		
 class element():

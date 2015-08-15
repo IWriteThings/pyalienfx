@@ -15,8 +15,8 @@
 #    You should have received a copy of the GNU General Public License
 #    along with pyAlienFX.  If not, see <http://www.gnu.org/licenses/>.
 #
-#    This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. 
-#    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter 
+#    This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+#    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter
 #    to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 #
 
@@ -122,13 +122,13 @@ class M11XR3:
 		self.BLOCK_BAT_POWER = 0x08
 		self.BLOCK_BATT_CRITICAL = 0x09
 			
-		self.REGION_RIGHT_KEYBOARD = 0x0001 
-		self.REGION_RIGHT_SPEAKER = 0x0020 
+		self.REGION_RIGHT_KEYBOARD = 0x0001
+		self.REGION_RIGHT_SPEAKER = 0x0020
 		self.REGION_LEFT_SPEAKER = 0x0040
-		self.REGION_ALIEN_NAME = 0x0100 
+		self.REGION_ALIEN_NAME = 0x0100
 		self.REGION_MEDIA_BAR = 0x0800
 		self.REGION_POWER_BUTTON = 0x6000
-		self.REGION_ALL_BUT_POWER = 0x0f9fff 
+		self.REGION_ALL_BUT_POWER = 0x0f9fff
 		
 		self.suportedMode["normal"] = AlienFXPowerMode(self.AlienFXProperties.ALIEN_FX_DEFAULT_POWER_MODE,self.AlienFXProperties.ALIEN_FX_DEFAULT_POWER_MODE, self.BLOCK_LOAD_ON_BOOT),
 		self.suportedMode["standby"] = AlienFXPowerMode(self.AlienFXProperties.STANDBY_ID, self.AlienFXTexts.STAND_BY_DESCRIPTION, self.BLOCK_STANDBY),
@@ -272,11 +272,11 @@ class M15XArea51:
 		self.BLOCK_BAT_POWER = 0x08
 		
 		self.REGION_TOUCH_PAD = 0x000001
-		self.REGION_LIGHTPIPE = 0x000020 
-		self.REGION_ALIEN_LOGO = 0x000080 
+		self.REGION_LIGHTPIPE = 0x000020
+		self.REGION_ALIEN_LOGO = 0x000080
 		self.REGION_ALIEN_HEAD = 0x000100
 		self.REGION_KEY_BOARD = 0x000400
-		self.REGION_TOUCH_PANEL = 0x010000 
+		self.REGION_TOUCH_PANEL = 0x010000
 		self.REGION_POWER_BUTTON = 0x008000
 		self.REGION_ALL_BUT_POWER = 0x0f9fff
 		
@@ -344,18 +344,18 @@ class M15XAllPowerfull:
 		self.BLOCK_BATT_CRITICAL = 0x07
 		self.BLOCK_BAT_POWER = 0x08
 		
-		self.REGION_RIGHT_KEYBOARD = 0x0001 
-		self.REGION_MIDDLE_RIGHT_KEYBOARD = 0x0002 
-		self.REGION_LEFT_KEYBOARD = 0x0004 
-		self.REGION_MIDDLE_LEFT_KEYBOARD = 0x0008 
-		self.REGION_POWER_BUTTON_2 = 0x0010 
-		self.REGION_RIGHT_SPEAKER = 0x0020 
+		self.REGION_RIGHT_KEYBOARD = 0x0001
+		self.REGION_MIDDLE_RIGHT_KEYBOARD = 0x0002
+		self.REGION_LEFT_KEYBOARD = 0x0004
+		self.REGION_MIDDLE_LEFT_KEYBOARD = 0x0008
+		self.REGION_POWER_BUTTON_2 = 0x0010
+		self.REGION_RIGHT_SPEAKER = 0x0020
 		self.REGION_LEFT_SPEAKER = 0x0040
-		self.REGION_ALIEN_HEAD = 0x0080 
-		self.REGION_ALIEN_NAME = 0x0100 
-		self.REGION_TOUCH_PAD = 0x0200 
+		self.REGION_ALIEN_HEAD = 0x0080
+		self.REGION_ALIEN_NAME = 0x0100
+		self.REGION_TOUCH_PAD = 0x0200
 		self.REGION_MEDIA_BAR = 0x1c00
-		self.REGION_POWER_BUTTON = 0x2000 
+		self.REGION_POWER_BUTTON = 0x2000
 		self.REGION_POWER_BUTTON_EYES = 0x4000
 		self.REGION_ALL_BUT_POWER = 0x0f9fff
 		
@@ -428,18 +428,18 @@ class M17XR3:
 		self.BLOCK_BATT_CRITICAL = 0x07
 		self.BLOCK_BAT_POWER = 0x08
 		
-		self.REGION_RIGHT_KEYBOARD = 0x0001 
-		self.REGION_MIDDLE_RIGHT_KEYBOARD = 0x0002 
-		self.REGION_LEFT_KEYBOARD = 0x0008 
-		self.REGION_MIDDLE_LEFT_KEYBOARD = 0x0004 
-		self.REGION_POWER_BUTTON_2 = 0x0010 
-		self.REGION_RIGHT_SPEAKER = 0x0020 
+		self.REGION_RIGHT_KEYBOARD = 0x0001
+		self.REGION_MIDDLE_RIGHT_KEYBOARD = 0x0002
+		self.REGION_LEFT_KEYBOARD = 0x0008
+		self.REGION_MIDDLE_LEFT_KEYBOARD = 0x0004
+		self.REGION_POWER_BUTTON_2 = 0x0010
+		self.REGION_RIGHT_SPEAKER = 0x0020
 		self.REGION_LEFT_SPEAKER = 0x0040
-		self.REGION_ALIEN_HEAD = 0x0080 
-		self.REGION_ALIEN_NAME = 0x0100 
-		self.REGION_TOUCH_PAD = 0x0200 
+		self.REGION_ALIEN_HEAD = 0x0080
+		self.REGION_ALIEN_NAME = 0x0100
+		self.REGION_TOUCH_PAD = 0x0200
 		self.REGION_MEDIA_BAR = 0x1c00
-		self.REGION_POWER_BUTTON = 0x2000 
+		self.REGION_POWER_BUTTON = 0x2000
 		self.REGION_POWER_BUTTON_EYES = 0x4000
 		self.REGION_ALL_BUT_POWER = 0x0f9fff
 		

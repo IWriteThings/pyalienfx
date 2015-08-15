@@ -15,8 +15,8 @@
 #    You should have received a copy of the GNU General Public License
 #    along with pyAlienFX.  If not, see <http://www.gnu.org/licenses/>.
 #
-#    This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. 
-#    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter 
+#    This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+#    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter
 #    to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 #
 
@@ -50,7 +50,7 @@ class AlienFX_Driver(AllComputers):
 		self.AlienFXTexts = AlienFXTexts()
 				
 		#Initializing !
-		# find our device 
+		# find our device
 		if not self.FindDevice():
 			print "No AlienFX USB controler found ! Go see the list of supported computer on : https://code.google.com/p/pyalienfx/wiki/SupportedComputer "
 			sys.exit(1)
@@ -84,7 +84,7 @@ class AlienFX_Driver(AllComputers):
 						else:
 							nice_packet += " %s"%hex(i).replace('0x','')
 					print "Sending : %s\nPacket : %s"%(msg.legend,nice_packet)
-					log = "" 
+					log = ""
 					for m in msg.packet:
 						if m < 16:
 							log += ("0%x "%m).replace('0x','')
@@ -432,7 +432,7 @@ class AlienFX_Constructor(list):
 		g = int(color[2:4],16)/16
 		b = int(color[4:6],16)/16
 		c = [0x00,0x00]
-		c[0] = r * 16 + g  # if r = 0xf > r*16 = 0xf0 > and b = 0xc r*16 + b 0xfc 
+		c[0] = r * 16 + g  # if r = 0xf > r*16 = 0xf0 > and b = 0xc r*16 + b 0xfc
 		c[1] = b * 16
 		return c
 

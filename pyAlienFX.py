@@ -16,8 +16,8 @@
 #    You should have received a copy of the GNU General Public License
 #    along with pyAlienFX.  If not, see <http://www.gnu.org/licenses/>.
 #
-#    This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. 
-#    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter 
+#    This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+#    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter
 #    to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 #
 
@@ -36,7 +36,7 @@ from time import sleep
 #from gi.repository import Gdk as gdk
 #from gi.repository import GObject as gobject
 
-gobject.threads_init()  
+gobject.threads_init()
 
 class pyAlienFX_GUI():
 	def __init__(self):
@@ -691,7 +691,7 @@ class pyAlienFX_GUI():
 		for zone in sorted_regions:
 			if self.computer.regions[zone].power_button:
 				power = zone
-			Id += 0x01 
+			Id += 0x01
 			if not self.computer.regions[zone].power_button:
 				nb_conf = 0
 				for conf in range(len(self.configuration.area[zone])):
@@ -758,7 +758,7 @@ class pyAlienFX_GUI():
 			self.controller.End_Transfert_Conf()
 			self.controller.Write_Conf()
 			
-			#Block 0x09 ! Critical When Sleeping ... 
+			#Block 0x09 ! Critical When Sleeping ...
 			self.controller.Set_Loop_Conf(Save,self.computer.BLOCK_BATT_CRITICAL)
 			self.controller.Add_Loop_Conf(area,"blink",color2)
 			self.controller.End_Loop_Conf()
