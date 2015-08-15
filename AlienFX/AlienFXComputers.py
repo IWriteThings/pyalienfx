@@ -63,8 +63,8 @@ class AlienFXRegion:
 
     def add_line(self, Id, mode, color1, color2):
         Id = max(self.line.keys())
-        if not self.line.has_key(Id+1):
-            self.line[Id+1] = AlienFXConfiguration(mode, color1, color2)
+        if not self.line.has_key(Id + 1):
+            self.line[Id + 1] = AlienFXConfiguration(mode, color1, color2)
             return True
         return False
 

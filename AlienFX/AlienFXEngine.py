@@ -91,7 +91,7 @@ class AlienFX_Driver(AllComputers):
                             log += ("0%x "%m).replace('0x', '')
                         else:
                             log += ("%x "%m).replace('0x', '')
-                    self.log.write(log+"\n")
+                    self.log.write(log + "\n")
                 self.dev.ctrl_transfer(self.SEND_REQUEST_TYPE, self.SEND_REQUEST, self.SEND_VALUE, self.SEND_INDEX, msg.packet)
         else:
             self.dev.ctrl_transfer(self.SEND_REQUEST_TYPE, self.SEND_REQUEST, self.SEND_VALUE, self.SEND_INDEX, MSG)
@@ -318,7 +318,7 @@ class AlienFX_Constructor(list):
     def __init__(self, driver, save=False, block=0x01):
         self.raz()
         self.computer = driver.computer
-        self.void = [self.computer.FILL_BYTE]*self.computer.DATA_LENGTH
+        self.void = [self.computer.FILL_BYTE] * self.computer.DATA_LENGTH
         self.Id = 0x01
         self.save = save
         self.block = block
@@ -343,14 +343,14 @@ class AlienFX_Constructor(list):
         legend = "Set Speed : %s"%Speed
         cmd[0] = self.computer.START_BYTE
         cmd[1] = self.computer.COMMAND_SET_SPEED
-        cmd[3] = Speed/256
-        cmd[4] = Speed - (Speed/256)*256
+        cmd[3] = Speed / 256
+        cmd[4] = Speed - (Speed / 256) * 256
         self.append(Request(legend, cmd))
 
     def Set_Blink_Color(self, Area, Color):
         self.Save()
         cmd = copy(self.void)
-        legend = "Set Blink Color, Area : %s, Color : r = %s, g = %s, b = %s"%(hex(Area[0]*65536 + Area[1]*256 + Area[2]), hex((Color[0]/16)), hex(Color[0] - (Color[0]/16)*16), hex(Color[1]/16))
+        legend = "Set Blink Color, Area : %s, Color : r = %s, g = %s, b = %s"%(hex(Area[0] * 65536 + Area[1] * 256 + Area[2]), hex((Color[0] / 16)), hex(Color[0] - (Color[0] / 16) * 16), hex(Color[1] / 16))
         cmd[0] = self.computer.START_BYTE
         cmd[1] = self.computer.COMMAND_SET_BLINK_COLOR
         cmd[2] = self.Id
@@ -366,8 +366,8 @@ class AlienFX_Constructor(list):
         self.Save()
         cmd = copy(self.void)
         print "Color2 ==== >>> ", Color2
-        legend = "Set Morph Color, Area : %s , Color1 : r = %s, g = %s, b = %s, Color2 : r = %s, g = %s, b = %s"%(hex(Area[0]*65536 + Area[1]*256 + Area[2]), hex((Color1[0]/16)), hex(Color1[0] - (Color1[0]/16)*16), hex(Color1[1]/16), hex(Color2[0]/16), hex(Color2[0] - (Color2[0]/16)*16), hex(Color2[1]/16))
-        #Color2[1] = Color2[1]/16 + (Color2[0] - (Color2[0]/16)*16)
+        legend = "Set Morph Color, Area : %s , Color1 : r = %s, g = %s, b = %s, Color2 : r = %s, g = %s, b = %s"%(hex(Area[0] * 65536 + Area[1] * 256 + Area[2]), hex((Color1[0] / 16)), hex(Color1[0] - (Color1[0] / 16) * 16), hex(Color1[1] / 16), hex(Color2[0] / 16), hex(Color2[0] - (Color2[0] / 16) * 16), hex(Color2[1] / 16))
+        #Color2[1] = Color2[1]/ 16 + (Color2[0] - (Color2[0]/ 16) * 16)
         print "Color2after ==== >>> ", Color2
         Color12 = Color1[1] + Color2[0]
         cmd[0] = self.computer.START_BYTE
@@ -392,15 +392,15 @@ class AlienFX_Constructor(list):
             area = areas
         elif type(areas) == str:
             area = int(areas, 16)
-        ret[0] = area/65536 #Takes the two first digit
-        ret[1] = area/256 - ret[0] * 256 #Takes the four first digit and remove the two first digit ret[0] = 0x12 => ret[0] * 256 = 0x1200
+        ret[0] = area / 65536 #Takes the two first digit
+        ret[1] = area / 256 - ret[0] * 256 #Takes the four first digit and remove the two first digit ret[0] = 0x12 => ret[0] * 256 = 0x1200
         ret[2] = area - ret[0] * 65536 - ret[1] * 256 #Same but remove the first 4 digit
         return ret
 
     def Set_Color(self, Area, Color, Id=0x01):
         self.Save()
         cmd = copy(self.void)
-        legend = "Set Fixed Color, Area : %s, Color : r = %s, g = %s, b = %s"%(hex(Area[0]*65536 + Area[1]*256 + Area[2]), hex((Color[0]/16)), hex(Color[0]-(Color[0] - (Color[0]/16)*16)), hex(Color[1]+16))
+        legend = "Set Fixed Color, Area : %s, Color : r = %s, g = %s, b = %s"%(hex(Area[0] * 65536 + Area[1] * 256 + Area[2]), hex((Color[0] / 16)), hex(Color[0] -(Color[0] - (Color[0] / 16) * 16)), hex(Color[1] + 16))
         cmd[0] = self.computer.START_BYTE
         cmd[1] = self.computer.COMMAND_SET_COLOR
         cmd[2] = self.Id
@@ -430,20 +430,20 @@ class AlienFX_Constructor(list):
         self.append(Request(legend, cmd))
 
     def Color(self, color):
-        r = int(color[0:2], 16)/16
-        g = int(color[2:4], 16)/16
-        b = int(color[4:6], 16)/16
+        r = int(color[0:2], 16) / 16
+        g = int(color[2:4], 16) / 16
+        b = int(color[4:6], 16) / 16
         c = [0x00, 0x00]
-        c[0] = r * 16 + g  # if r = 0xf > r*16 = 0xf0 > and b = 0xc r*16 + b 0xfc
+        c[0] = r * 16 + g  # if r = 0xf > r * 16 = 0xf0 > and b = 0xc r * 16 + b 0xfc
         c[1] = b * 16
         return c
 
     def Color2(self, color):
-        r = int(color[0:2], 16)/16
-        g = int(color[2:4], 16)/16
-        b = int(color[4:6], 16)/16
+        r = int(color[0:2], 16) / 16
+        g = int(color[2:4], 16) / 16
+        b = int(color[4:6], 16) / 16
         c = [0x00, 0x00]
-        c[0] = r  # if r = 0xf > r*16 = 0xf0 > and b = 0xc r*16 + b 0xfc
+        c[0] = r  # if r = 0xf > r * 16 = 0xf0 > and b = 0xc r * 16 + b 0xfc
         c[1] = g * 16 + b
         return c
 

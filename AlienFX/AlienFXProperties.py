@@ -34,7 +34,7 @@ class AlienFXProperties:
         #Application info
         self.ALIEN_FX_VERSION = "pre alpha"
         self.ALIEN_FX_APPLICATION_RAW_NAME = "pyAlienFX"
-        self.ALIEN_FX_APPLICATION_NAME = self.ALIEN_FX_APPLICATION_RAW_NAME +" "+ self.ALIEN_FX_VERSION
+        self.ALIEN_FX_APPLICATION_NAME = self.ALIEN_FX_APPLICATION_RAW_NAME + " " + self.ALIEN_FX_VERSION
 
         #java properties
         self.PROPERTY_OS_NAME = platform.platform()
@@ -52,7 +52,7 @@ class AlienFXProperties:
 
         #native libraries
         self.ALIENFX_NATIVE_LIBRARY_NAME = "Alien"
-        self.ALIENFX_NATIVE_LIBRARY = self.ALIENFX_NATIVE_LIBRARY_NAME+self.arch
+        self.ALIENFX_NATIVE_LIBRARY = self.ALIENFX_NATIVE_LIBRARY_NAME + self.arch
 
         #powermodes and region ids
         self.ALIEN_FX_DEFAULT_POWER_MODE = ""
