@@ -392,9 +392,9 @@ class AlienFX_Constructor(list):
             area = areas
         elif type(areas) == str:
             area = int(areas, 16)
-        ret[0] = area/65536				#Takes the two first digit
-        ret[1] = area/256 - ret[0] * 256		#Takes the four first digit and remove the two first digit ret[0] = 0x12 => ret[0] * 256 = 0x1200
-        ret[2] = area - ret[0] * 65536 - ret[1] * 256	#Same but remove the first 4 digit
+        ret[0] = area/65536 #Takes the two first digit
+        ret[1] = area/256 - ret[0] * 256 #Takes the four first digit and remove the two first digit ret[0] = 0x12 => ret[0] * 256 = 0x1200
+        ret[2] = area - ret[0] * 65536 - ret[1] * 256 #Same but remove the first 4 digit
         return ret
 
     def Set_Color(self, Area, Color, Id = 0x01):

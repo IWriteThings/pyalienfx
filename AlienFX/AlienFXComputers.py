@@ -599,7 +599,7 @@ class AllComputers():
     "M15XArea51" : AlienFXComputer("M15XArea51", 0x187c, 0x0511, M15XArea51()),
     #############################################################################
     #added by niai (start)
-    "M17XR3"	: AlienFXComputer("M17XR3", 0x187c, 0x0520, M17XR3()),
+    "M17XR3" : AlienFXComputer("M17XR3", 0x187c, 0x0520, M17XR3()),
     #added by niai (end)
     ############################################################################
     #LightHash [start]
@@ -607,7 +607,7 @@ class AllComputers():
     #"M14XR1" : AlienFXComputer("M14XR1",0x187c,0x0522,M14XLight())}
     #############################################################################
     #added by SuperTool (start)
-    "M18XR2"	: AlienFXComputer("M18XR2", 0x187c, 0x0518, M18XR2())}
+    "M18XR2" : AlienFXComputer("M18XR2", 0x187c, 0x0518, M18XR2())}
     #added by SuperTool (end)
     ############################################################################
     #LightHash [end]

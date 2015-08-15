@@ -339,10 +339,10 @@ def _setup_prototypes(lib):
 
     # int libusb_interrupt_transfer(
     #               libusb_device_handle *dev_handle,
-    #	            unsigned char endpoint,
+    #               unsigned char endpoint,
     #               unsigned char *data,
     #               int length,
-    #	            int *actual_length,
+    #               int *actual_length,
     #               unsigned int timeout
     #           );
     lib.libusb_interrupt_transfer.argtypes = [
