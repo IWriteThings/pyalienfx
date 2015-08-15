@@ -20,8 +20,8 @@ class AlienFXConfiguration:
     def Add(self, area):
         if area.name not in self.area:
             self.area[area.name] = configuration(area)
-        #else:
-            #self.area[area.name].append(configuration(area))
+        # else:
+            # self.area[area.name].append(configuration(area))
 
     def Show_Configuration(self):
         print "\t%s\n=== === === === === ===\n" % self.name
@@ -88,8 +88,8 @@ class AlienFXConfiguration:
         if self.computer != old.computer:
             print "computer"
             return False
-        #print "self.area: ",self.area
-        #print "old.area : ",old.area
+        # print "self.area: ",self.area
+        # print "old.area : ",old.area
         for area in self.area:
             if area not in old.area.keys():
                 print "AREA ERROR"
@@ -104,8 +104,8 @@ class AlienFXConfiguration:
                         return False
                 except:
                     return False
-        #if self.area != old.area:
-            #return False
+        # if self.area != old.area:
+            # return False
         return True
 
 
@@ -152,5 +152,5 @@ class element():
             "morph": "Setting morph color from %s to %s",
             "speed": "Setting Speed to %s%s",
             "endloop": "End of the loop%s%s"}
-        #print "-%s-"%self.mode
+        # print "-%s-"%self.mode
         self.text = self.Text_Conf_Type[self.mode] % (self.color1, self.color2)

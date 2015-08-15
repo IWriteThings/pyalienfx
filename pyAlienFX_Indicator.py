@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-#This file is part of pyAlienFX.
+# This file is part of pyAlienFX.
 #
 #    pyAlienFX is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -81,7 +81,7 @@ class pyAlienFX_Indicator:
 
     def on_AlienFX_Color_Clicked(self, widget, c):
         """Applying a single color profile !"""
-        #print "Color Click ! ",c
+        # print "Color Click ! ",c
         self.configuration = AlienFXConfiguration()
         self.configuration.Create("default", self.gui.computer.name, self.gui.selected_speed, "default.cfg")
         for zone in self.gui.computer.regions.keys():
@@ -102,7 +102,7 @@ class pyAlienFX_Indicator:
         print "Light off"
         if self.gui.lights:
             self.gui.controller.Reset(self.gui.computer.RESET_ALL_LIGHTS_OFF)
-            #self.gui.controller.Send_Packet()
+            # self.gui.controller.Send_Packet()
         self.gui.lights = False
 
     def main(self):

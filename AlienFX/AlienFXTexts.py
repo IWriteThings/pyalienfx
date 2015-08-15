@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-#This file is part of pyAlienFX.
+# This file is part of pyAlienFX.
 #
 #    pyAlienFX is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
 class AlienFXTexts:
 
     def __init__(self):
-        #errors:
+        # errors:
         self.ALIEN_FX_ERROR_TITLE_TEXT = "AlienFX error"
         self.DATA_LENGTH_ERROR_FORMAT = "Data length should be %d but was %d"
         self.DEVICE_NOT_PRESENT_ERROR_TEXT = "The application was unable to communicate with the alienFX device. The device is either not present, or the application lacks sufficient rights to access the device"
@@ -36,11 +36,11 @@ class AlienFXTexts:
         self.SAVE_PROFILE_ERROR_FORMAT = "Failed to save the Profile: %s\n"
         self.ALREADY_RUNNING_ERROR_TEXT = "AlienFX is already running"
 
-        #warnings
+        # warnings
         self.ALIEN_FX_WARNING_TITLE_TEXT = "AlienFX Warning"
         self.SYSTEM_TRAY_WARNING_TEXT = "It seems the system does not support system trays. The Application will not run in background."
 
-        #info messages
+        # info messages
         self.ALIEN_FX_INFO_TITLE_TEXT = "AlienFx Info"
         self.SHOW_ALIEN_FX_LITE_TEXT = "Show AlienFXLite"
         self.ALIEN_FX_BACKGROUND_TEXT = "Still running in the background"
@@ -53,12 +53,12 @@ class AlienFXTexts:
         self.HELP_TITLE = "Help"
         self.RESET_TITLE = "Reset AlienFx"
 
-        #Events
+        # Events
         self.EVENT_TURN_OFF_ALL = "Turn off AlienFX"
         self.EVENT_TURN_OFF_ALL_BUT_KEYBOARD = "Turn off All but Keyboard"
         self.EVENT_TURN_OFF_KEYBOARD = "Turn off keyboard"
 
-        #controls
+        # controls
         self.EXIT_TEXT = "Exit"
         self.PREVIEW_LABEL_TEXT = "Preview"
         self.SELECT_PROFILE_TEXT = "Please select a profile from the combobox or create a new one"
@@ -84,7 +84,7 @@ class AlienFXTexts:
 
         self.DEFAULT_PROFILE_TEXT = "Default Profile"
 
-        #Alienware devices:
+        # Alienware devices:
         self.POWER_BUTTON_DESCRIPTION = "Power Button"
         self.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION = "Powerbutton Eyes"
         self.MEDIA_BAR_DESCRIPTION = "Media Bar"

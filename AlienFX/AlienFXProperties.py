@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-#This file is part of pyAlienFX.
+# This file is part of pyAlienFX.
 #
 #    pyAlienFX is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -32,30 +32,30 @@ class AlienFXProperties:
 
         self.AUTHOR = "Blondel Leo"
 
-        #Application info
+        # Application info
         self.ALIEN_FX_VERSION = "pre alpha"
         self.ALIEN_FX_APPLICATION_RAW_NAME = "pyAlienFX"
         self.ALIEN_FX_APPLICATION_NAME = self.ALIEN_FX_APPLICATION_RAW_NAME + " " + self.ALIEN_FX_VERSION
 
-        #java properties
+        # java properties
         self.PROPERTY_OS_NAME = platform.platform()
         self.USER_HOME = os.path.expanduser('~')
         self.JAVA_ARCHITECTURE = platform.machine()
 
-        #used properties
+        # used properties
         self.arch = platform.machine()
         self.userHomePath = os.path.expanduser('~')
         self.osName = sys.platform
 
-        #OS checks
+        # OS checks
         self.WINDOWS_OS = "Windows"
         self.isWindows = self.isWindows()
 
-        #native libraries
+        # native libraries
         self.ALIENFX_NATIVE_LIBRARY_NAME = "Alien"
         self.ALIENFX_NATIVE_LIBRARY = self.ALIENFX_NATIVE_LIBRARY_NAME + self.arch
 
-        #powermodes and region ids
+        # powermodes and region ids
         self.ALIEN_FX_DEFAULT_POWER_MODE = ""
         self.POWER_BUTTON_ID = "PB"
         self.POWER_BUTTON_EYES_ID = "PBE"

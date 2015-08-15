@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-#This file is part of pyAlienFX.
+# This file is part of pyAlienFX.
 #
 #    pyAlienFX is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ class AlienFXPowerMode:
 
     def __init__(self, name, description, block):
         self.description = description
-        #self.blockId = block
+        # self.blockId = block
         self.name = name
 
 
@@ -91,7 +91,7 @@ class M11XR3:
         self.default_color = '0000FF'
         self.default_mode = "fixed"
         self.name = "M11XR3"
-        #Define Alienware M11x Device Control
+        # Define Alienware M11x Device Control
         self.STATE_BUSY = 0x11
         self.STATE_READY = 0x10
         self.STATE_UNKNOWN_COMMAND = 0x12
@@ -149,7 +149,7 @@ class M11XR3:
         self.regions[self.AlienFXProperties.MEDIA_BAR_ID] = AlienFXRegion(self.AlienFXProperties.MEDIA_BAR_ID, self.AlienFXTexts.MEDIA_BAR_DESCRIPTION, self.REGION_MEDIA_BAR, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
         self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, False, True, False, self.default_color, self.suportedMode, power_button=True)
 
-#added by LightHash [start]
+# added by LightHash [start]
 class M14XLight:
 
     def __init__(self):
@@ -231,7 +231,7 @@ class M14XLight:
         self.regions[self.AlienFXProperties.MEDIA_BAR_ID] = AlienFXRegion(self.AlienFXProperties.MEDIA_BAR_ID, self.AlienFXTexts.MEDIA_BAR_DESCRIPTION, self.REGION_MEDIA_BAR, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
         self.regions[self.AlienFXProperties.POWER_BUTTON_EYES_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_EYES_ID, self.AlienFXTexts.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION, self.REGION_POWER_BUTTON_EYES, 1, False, False, True, self.default_color, self.suportedMode)
         self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, True, True, True, self.default_color, self.suportedMode, power_button=True)
-#added by LightHash [end]
+# added by LightHash [end]
 
 
 class M15XArea51:
@@ -384,8 +384,8 @@ class M15XAllPowerfull:
         self.regions[self.AlienFXProperties.POWER_BUTTON_EYES_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_EYES_ID, self.AlienFXTexts.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION, self.REGION_POWER_BUTTON_EYES, 1, False, False, True, self.default_color, self.suportedMode)
         self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, True, True, True, self.default_color, self.suportedMode, power_button=True)
 
-#############################################################
-#added by niai (start)
+# ############################################################
+# added by niai (start)
 class M17XR3:
 
     def __init__(self):
@@ -467,11 +467,11 @@ class M17XR3:
         self.regions[self.AlienFXProperties.MEDIA_BAR_ID] = AlienFXRegion(self.AlienFXProperties.MEDIA_BAR_ID, self.AlienFXTexts.MEDIA_BAR_DESCRIPTION, self.REGION_MEDIA_BAR, self.SUPPORTED_COMMANDS, True, True, True, self.default_color, self.suportedMode)
         self.regions[self.AlienFXProperties.POWER_BUTTON_EYES_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_EYES_ID, self.AlienFXTexts.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION, self.REGION_POWER_BUTTON_EYES, 1, False, False, True, self.default_color, self.suportedMode)
         self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, True, True, True, self.default_color, self.suportedMode, power_button=True)
-#added by niai (end)
-##############################################################################################
+# added by niai (end)
+# #############################################################################################
 
-#############################################################
-#added by SuperTool (start)
+# ############################################################
+# added by SuperTool (start)
 class M18XR2:
 
     def __init__(self):
@@ -554,8 +554,8 @@ class M18XR2:
         self.regions[self.AlienFXProperties.POWER_BUTTON_EYES_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_EYES_ID, self.AlienFXTexts.ALIENWARE_POWERBUTTON_EYES_DESCRIPTION, self.REGION_POWER_BUTTON_EYES, 1, False, False, True, self.default_color, self.suportedMode)
         self.regions[self.AlienFXProperties.POWER_BUTTON_ID] = AlienFXRegion(self.AlienFXProperties.POWER_BUTTON_ID, self.AlienFXTexts.POWER_BUTTON_DESCRIPTION, self.REGION_POWER_BUTTON, 2, True, True, True, self.default_color, self.suportedMode, power_button=True)
 
-#added by SuperTool (end)
-##############################################################################################
+# added by SuperTool (end)
+# #############################################################################################
 
 
 class AlienFXComputer:
@@ -568,7 +568,7 @@ class AlienFXComputer:
 
 
 class AllComputers():
-    #Define General Device controls
+    # Define General Device controls
     ALIENFX_USER_CONTROLS = 0x01
     ALIENFX_SLEEP_LIGHTS = 0x02
     ALIENFX_ALL_OFF = 0x03
@@ -598,17 +598,17 @@ class AllComputers():
         "M11XR1": AlienFXComputer("M11XR1", 0x187c, 0x0514, M11XR3()),
         "M15XAllPowerful": AlienFXComputer("M15XAllPowerful", 0x187c, 0x0512, M15XAllPowerfull()),
         "M15XArea51": AlienFXComputer("M15XArea51", 0x187c, 0x0511, M15XArea51()),
-        #############################################################################
-        #added by niai (start)
+        # ############################################################################
+        # added by niai (start)
         "M17XR3": AlienFXComputer("M17XR3", 0x187c, 0x0520, M17XR3()),
-        #added by niai (end)
-        ############################################################################
-        #LightHash [start]
+        # added by niai (end)
+        # ###########################################################################
+        # LightHash [start]
         "M14XR1": AlienFXComputer("M14XR1", 0x187c, 0x0521, M14XLight()),
-        #"M14XR1" : AlienFXComputer("M14XR1",0x187c,0x0522,M14XLight())}
-        #############################################################################
-        #added by SuperTool (start)
+        # "M14XR1" : AlienFXComputer("M14XR1",0x187c,0x0522,M14XLight())}
+        # ############################################################################
+        # added by SuperTool (start)
         "M18XR2": AlienFXComputer("M18XR2", 0x187c, 0x0518, M18XR2())}
-    #added by SuperTool (end)
-    ############################################################################
-    #LightHash [end]
+    # added by SuperTool (end)
+    # ###########################################################################
+    # LightHash [end]

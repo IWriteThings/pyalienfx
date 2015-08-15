@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-#This file is part of pyAlienFX.
+# This file is part of pyAlienFX.
 #
 #    pyAlienFX is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -22,11 +22,11 @@
 #    to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 #
 
-#PyALienFX Deamon
-#The deamon will load the driver and the controller
-#You can comunicate with the Deamon through TCP
-#You can send packet so the deamon will control the AlienFX
-#That way you can create GUI, plugins, ect to play with the AlienFX !
+# PyALienFX Deamon
+# The deamon will load the driver and the controller
+# You can comunicate with the Deamon through TCP
+# You can send packet so the deamon will control the AlienFX
+# That way you can create GUI, plugins, ect to play with the AlienFX !
 
 
 from AlienFX.AlienFXEngine import *
@@ -38,10 +38,10 @@ BUFSIZ = 4096
 HOST = 'localhost'
 PORT = 25436  # ALIEN port as if you typed ALIEN on your phone ;)
 ADDR = (HOST, PORT)
-#LOGFILE = '/var/log/pydaemon.log'
-#PIDFILE = '/var/run/pydaemon.pid'
+# LOGFILE = '/var/log/pydaemon.log'
+# PIDFILE = '/var/run/pydaemon.pid'
 
-#class Log:
+# class Log:
 #    """file like for writes with auto flush after each write
 #       to ensure that everything is logged, even during an
 #       unexpected exit."""
@@ -53,7 +53,7 @@ ADDR = (HOST, PORT)
 #          self.f.flush()
 
 
-#def main():
+# def main():
 #    #change to data directory if needed
 #    #os.chdir("/root/data")
 #    #redirect outputs to a logfile
@@ -75,7 +75,7 @@ class ServCmd:
         s.computer = s.driver.computer
         s.__serv = socket(AF_INET, SOCK_STREAM)
         s.__serv.bind((ADDR))
-        #s.__serv.settimeout(60)
+        # s.__serv.settimeout(60)
         s.__cli = None
         s.__imlistening = 0
         s.__improcessing = 0
@@ -304,7 +304,7 @@ class ServCmd:
 if __name__ == "__main__":
     Daemon = ServCmd()
 
-#if __name__ == "__main__":
+# if __name__ == "__main__":
 #    # do the UNIX double-fork magic, see Stevens' "Advanced
 #    # Programming in the UNIX Environment" for details (ISBN 0201563177)
 #    try:
