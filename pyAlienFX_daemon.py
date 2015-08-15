@@ -187,19 +187,19 @@ class ServCmd:
                         else:
                             block = None
                         if Save and Apply and block:
-                            s.controller.Set_Color(Area, Color, Save = Save, Apply = Apply, block = block)
+                            s.controller.Set_Color(Area, Color, Save=Save, Apply=Apply, block=block)
                         elif Save and Apply:
-                            s.controller.Set_Color(Area, Color, Save = Save, Apply = Apply)
+                            s.controller.Set_Color(Area, Color, Save=Save, Apply=Apply)
                         elif Save and block:
-                            s.controller.Set_Color(Area, Color, Save = Save, block = block)
+                            s.controller.Set_Color(Area, Color, Save=Save, block=block)
                         elif Apply and block:
-                            s.controller.Set_Color(Area, Color, Apply = Apply, block = block)
+                            s.controller.Set_Color(Area, Color, Apply=Apply, block=block)
                         elif Save:
-                            s.controller.Set_Color(Area, Color, Save = Save)
+                            s.controller.Set_Color(Area, Color, Save=Save)
                         elif Apply:
-                            s.controller.Set_Color(Area, Color, Apply = Apply)
+                            s.controller.Set_Color(Area, Color, Apply=Apply)
                         elif block:
-                            s.controller.Set_Color(Area, Color, block = block)
+                            s.controller.Set_Color(Area, Color, block=block)
                     elif command == "Set_Color_Blink":
                         Area, Color = arg[0], arg[1]
                         if arg[2]:
@@ -225,19 +225,19 @@ class ServCmd:
                         else:
                             block = None
                         if Save and Apply and block:
-                            s.controller.Set_Color_Blink(Area, Color, Save = Save, Apply = Apply, block = block)
+                            s.controller.Set_Color_Blink(Area, Color, Save=Save, Apply=Apply, block=block)
                         elif Save and Apply:
-                            s.controller.Set_Color_Blink(Area, Color, Save = Save, Apply = Apply)
+                            s.controller.Set_Color_Blink(Area, Color, Save=Save, Apply=Apply)
                         elif Save and block:
-                            s.controller.Set_Color_Blink(Area, Color, Save = Save, block = block)
+                            s.controller.Set_Color_Blink(Area, Color, Save=Save, block=block)
                         elif Apply and block:
-                            s.controller.Set_Color_Blink(Area, Color, Apply = Apply, block = block)
+                            s.controller.Set_Color_Blink(Area, Color, Apply=Apply, block=block)
                         elif Save:
-                            s.controller.Set_Color_Blink(Area, Color, Save = Save)
+                            s.controller.Set_Color_Blink(Area, Color, Save=Save)
                         elif Apply:
-                            s.controller.Set_Color_Blink(Area, Color, Apply = Apply)
+                            s.controller.Set_Color_Blink(Area, Color, Apply=Apply)
                         elif block:
-                            s.controller.Set_Color_Blink(Area, Color, block = block)
+                            s.controller.Set_Color_Blink(Area, Color, block=block)
                     elif command == "Set_Color_Morph":
                         Area, Color1, Color2 = arg[0], arg[1], arg[2]
                         if arg[3]:
@@ -263,19 +263,19 @@ class ServCmd:
                         else:
                             block = None
                         if Save and Apply and block:
-                            s.controller.Set_Color_Morph(Area, Color1, Color2, Save = Save, Apply = Apply, block = block)
+                            s.controller.Set_Color_Morph(Area, Color1, Color2, Save=Save, Apply=Apply, block=block)
                         elif Save and Apply:
-                            s.controller.Set_Color_Morph(Area, Color1, Color2, Save = Save, Apply = Apply)
+                            s.controller.Set_Color_Morph(Area, Color1, Color2, Save=Save, Apply=Apply)
                         elif Save and block:
-                            s.controller.Set_Color_Morph(Area, Color1, Color2, Save = Save, block = block)
+                            s.controller.Set_Color_Morph(Area, Color1, Color2, Save=Save, block=block)
                         elif Apply and block:
-                            s.controller.Set_Color_Morph(Area, Color1, Color2, Apply = Apply, block = block)
+                            s.controller.Set_Color_Morph(Area, Color1, Color2, Apply=Apply, block=block)
                         elif Save:
-                            s.controller.Set_Color_Morph(Area, Color1, Color2, Save = Save)
+                            s.controller.Set_Color_Morph(Area, Color1, Color2, Save=Save)
                         elif Apply:
-                            s.controller.Set_Color_Morph(Area, Color1, Color2, Apply = Apply)
+                            s.controller.Set_Color_Morph(Area, Color1, Color2, Apply=Apply)
                         elif block:
-                            s.controller.Set_Color_Morph(Area, Color1, Color2, block = block)
+                            s.controller.Set_Color_Morph(Area, Color1, Color2, block=block)
                     elif command == "WaitForOk":
                         s.controller.WaitForOk()
                     elif command == "Get_State":

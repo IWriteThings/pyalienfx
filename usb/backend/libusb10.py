@@ -377,7 +377,7 @@ class _Device(object):
 # Thanks to Thomas Reitmayr.
 class _WrapDescriptor(object):
 
-    def __init__(self, desc, obj = None):
+    def __init__(self, desc, obj=None):
         self.obj = obj
         self.desc = desc
 

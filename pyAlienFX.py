@@ -227,7 +227,7 @@ class pyAlienFX_GUI():
         except:
             pass
 
-    def Create_Border(self, Type, Inside, Label = None, zone=None , confId=None):
+    def Create_Border(self, Type, Inside, Label=None, zone=None , confId=None):
         """2 type of border Advanced (type == 1) and Normal (type == 0)
         That function creates the gtk Box that contains the images border that surround the zones."""
         if Type == 0:
@@ -306,7 +306,7 @@ class pyAlienFX_GUI():
             BRi.set_from_file(self.Image_DB.AlienFX_Cadre_0_Bottom_Right)
             BR.add(BRi)
             BR.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.background_color))
-            Inside.set_size_request(width = (81+Title_width)- 33, height=-1)
+            Inside.set_size_request(width=(81+Title_width)- 33, height=-1)
             TopBox.pack_start(UL, gtk.SHRINK)
             TopBox.pack_start(UL2, gtk.SHRINK)
             TopBox.pack_start(UM, gtk.SHRINK)
@@ -504,7 +504,7 @@ class pyAlienFX_GUI():
             self.AlienFX_Preview_Eventbox.modify_bg(gtk.STATE_NORMAL, gtk.gdk.color_parse(self.background_color))
             self.AlienFX_Main_Windows.show_all()
 
-    def Widget_Zone(self, zone, confId = 0, line = False):
+    def Widget_Zone(self, zone, confId=0, line=False):
         """That function creates a gtk object.
         This object is a not advanced zone box"""
         #print "Creating : ",zone.description
@@ -778,9 +778,9 @@ class pyAlienFX_GUI():
 
     def AlienFX_Color_Panel(self):
         default_color = ["FFFFFF", "FFFF00", "FF00FF", "00FFFF", "FF0000", "00FF00", "0000FF", "000000", "select"]
-        self.AlienFX_Color_Panel_VBox = gtk.VBox(spacing = 5)
-        HBox1 = gtk.HBox(spacing = 5)
-        HBox2 = gtk.HBox(spacing = 5)
+        self.AlienFX_Color_Panel_VBox = gtk.VBox(spacing=5)
+        HBox1 = gtk.HBox(spacing=5)
+        HBox2 = gtk.HBox(spacing=5)
         n = 0
         for c in default_color:
             if c == "select":
@@ -807,7 +807,7 @@ class pyAlienFX_GUI():
         self.AlienFX_Color_Eventbox.add(self.AlienFX_Color_Panel_VBox)
         self.AlienFX_Main_Windows.show_all()
 
-    def New_Conf(self, path = None):
+    def New_Conf(self, path=None):
         if not path:
             chooser = gtk.FileChooserDialog(title=None, action=gtk.FILE_CHOOSER_ACTION_SAVE, buttons=(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_OPEN, gtk.RESPONSE_OK))
             filter = gtk.FileFilter()
@@ -849,7 +849,7 @@ class pyAlienFX_GUI():
         self.AlienFX_Choose_Profile_Name.hide()
         self.New_Conf()
 
-    def on_Profile_changed(self, widget, p = None):
+    def on_Profile_changed(self, widget, p=None):
         """Get the profile selected and changes to that profile !"""
         if not p:
             choosed_profile = widget.get_active_text()
@@ -941,10 +941,10 @@ class pyAlienFX_GUI():
     def on_AlienFX_Color_Panel_Clicked(self, widget, event, color):
         if self.set_color == 1:
             self.selected_color1 = color
-            self.configuration.area[self.selected_area.name].update_line(self.selected_Id, color1 = self.selected_color1)
+            self.configuration.area[self.selected_area.name].update_line(self.selected_Id, color1=self.selected_color1)
         else:
             self.selected_color2 = color
-            self.configuration.area[self.selected_area.name].update_line(self.selected_Id, color2 = self.selected_color2)
+            self.configuration.area[self.selected_area.name].update_line(self.selected_Id, color2=self.selected_color2)
         if self.selected_area and self.selected_mode and self.selected_color1 and self.auto_apply and self.selected_Id == 1:
             if self.selected_mode == "morph" and self.selected_color2 and not self.selected_area.power_button:
                 self.Set_color()
@@ -976,7 +976,7 @@ class pyAlienFX_GUI():
                 self.Set_color()
             elif self.selected_mode != "morph":
                 self.Set_color()
-        self.configuration.area[self.selected_area.name].update_line(self.selected_Id, mode = self.selected_mode)
+        self.configuration.area[self.selected_area.name].update_line(self.selected_Id, mode=self.selected_mode)
         self.Create_zones()
         self.Create_Line()
 

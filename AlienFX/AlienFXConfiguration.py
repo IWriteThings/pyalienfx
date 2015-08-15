@@ -116,7 +116,7 @@ class configuration(list, AlienFXTexts):
         self.description = area.description
         self.Id = 0x01
 
-    def append(self, Type, color = "", color2 = ""):
+    def append(self, Type, color="", color2=""):
         el = element(Type, color, color2)
         el.Id = self.Id
         self += [el]
@@ -141,7 +141,7 @@ class configuration(list, AlienFXTexts):
 
 class element():
 
-    def __init__(self, Type, color = "", color2 = ""):
+    def __init__(self, Type, color="", color2=""):
         self.mode = Type
         self.Id = 0x00
         self.color1 = color

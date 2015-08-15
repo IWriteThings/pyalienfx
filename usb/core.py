@@ -190,7 +190,7 @@ class _ResourceManager(object):
         for i in claimed:
             self.managed_release_interface(device, i)
 
-    def dispose(self, device, close_handle = True):
+    def dispose(self, device, close_handle=True):
         self.release_all_interfaces(device)
         if close_handle:
             self.managed_close()
@@ -225,8 +225,8 @@ class Endpoint(object):
     >>>             print e.bEndpointAddress
     """
 
-    def __init__(self, device, endpoint, interface = 0,
-                    alternate_setting = 0, configuration = 0):
+    def __init__(self, device, endpoint, interface=0,
+                 alternate_setting=0, configuration=0):
         r"""Initialize the Endpoint object.
 
         The device parameter is the device object returned by the find()
@@ -270,7 +270,7 @@ class Endpoint(object):
             )
         )
 
-    def write(self, data, timeout = None):
+    def write(self, data, timeout=None):
         r"""Write data to the endpoint.
 
         The parameter data contains the data to be sent to the endpoint and
@@ -283,7 +283,7 @@ class Endpoint(object):
         """
         return self.device.write(self.bEndpointAddress, data, self.interface, timeout)
 
-    def read(self, size, timeout = None):
+    def read(self, size, timeout=None):
         r"""Read data from the endpoint.
 
         The parameter size is the number of bytes to read and timeout is the
@@ -313,8 +313,8 @@ class Interface(object):
     >>>         print i.bInterfaceNumber
     """
 
-    def __init__(self, device, interface = 0,
-                 alternate_setting = 0, configuration = 0):
+    def __init__(self, device, interface=0,
+                 alternate_setting=0, configuration=0):
         r"""Initialize the interface object.
 
         The device parameter is the device object returned by the find()
@@ -401,7 +401,7 @@ class Configuration(object):
     >>>     print cfg.bConfigurationValue
     """
 
-    def __init__(self, device, configuration = 0):
+    def __init__(self, device, configuration=0):
         r"""Initialize the configuration object.
 
         The device parameter is the device object returned by the find()
@@ -533,7 +533,7 @@ class Device(object):
             )
         )
 
-    def set_configuration(self, configuration = None):
+    def set_configuration(self, configuration=None):
         r"""Set the active configuration.
 
         The configuration parameter is the bConfigurationValue field of the
@@ -548,7 +548,7 @@ class Device(object):
         r"""Return a Configuration object representing the current configuration set."""
         return self._ctx.get_active_configuration(self)
 
-    def set_interface_altsetting(self, interface = None, alternate_setting = None):
+    def set_interface_altsetting(self, interface=None, alternate_setting=None):
         r"""Set the alternate setting for an interface.
 
         When you want to use an interface and it has more than one alternate setting,
@@ -580,7 +580,7 @@ class Device(object):
         self._ctx.backend.reset_device(self._ctx.handle)
         self._ctx.dispose(self, True)
 
-    def write(self, endpoint, data, interface = None, timeout = None):
+    def write(self, endpoint, data, interface=None, timeout=None):
         r"""Write data to the endpoint.
 
         This method is used to send data to the device. The endpoint parameter
@@ -617,7 +617,7 @@ class Device(object):
             self.__get_timeout(timeout)
         )
 
-    def read(self, endpoint, size, interface = None, timeout = None):
+    def read(self, endpoint, size, interface=None, timeout=None):
         r"""Read data from the endpoint.
 
         This method is used to receive data from the device. The endpoint parameter
@@ -653,7 +653,7 @@ class Device(object):
         )
 
     def ctrl_transfer(self, bmRequestType, bRequest, wValue=0, wIndex=0,
-                      data_or_wLength = None, timeout = None):
+                      data_or_wLength=None, timeout=None):
         r"""Do a control transfer on the endpoint 0.
 
         This method is used to issue a control transfer over the
@@ -742,11 +742,11 @@ class Device(object):
     default_timeout = property(
         __get_def_tmo,
         __set_def_tmo,
-        doc = 'Default timeout for transfer I/O functions'
+        doc='Default timeout for transfer I/O functions'
     )
 
 
-def find(find_all=False, backend = None, custom_match = None, **args):
+def find(find_all=False, backend=None, custom_match=None, **args):
     r"""Find an USB device and return it.
 
     find() is the function used to discover USB devices.

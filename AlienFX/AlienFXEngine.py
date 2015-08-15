@@ -142,7 +142,7 @@ class AlienFX_Controller:
         time.sleep(0.1)
         self.driver.WriteDevice(action)
 
-    def Set_Loop_Conf(self, Save=False, block = 0x01):
+    def Set_Loop_Conf(self, Save=False, block=0x01):
         self.request = AlienFX_Constructor(self.driver, Save, block)
 
     def Add_Loop_Conf(self, area, mode, color1, color2=None):
@@ -159,7 +159,7 @@ class AlienFX_Controller:
         elif mode == "morph" and color2:
             self.request.Set_Morph_Color(area, color1, color2)
 
-    def Add_Speed_Conf(self, speed = 0xc800):
+    def Add_Speed_Conf(self, speed=0xc800):
         self.request.Set_Speed(speed)
 
     def End_Loop_Conf(self):
@@ -175,7 +175,7 @@ class AlienFX_Controller:
             time.sleep(0.1)
             self.driver.WriteDevice(self.request)
 
-    def Set_Color(self, Area, Color, Save = False, Apply = False, block = 0x01):
+    def Set_Color(self, Area, Color, Save=False, Apply=False, block=0x01):
         """Set the Color of an Area """
         request = AlienFX_Constructor(self.driver, Save, block)
         if type(Area) != list:
@@ -199,7 +199,7 @@ class AlienFX_Controller:
             time.sleep(0.1)
             self.driver.WriteDevice(request)
 
-    def Set_Color_Blink(self, Area, Color, Save = False, Apply = False, block = 0x01):
+    def Set_Color_Blink(self, Area, Color, Save=False, Apply=False, block=0x01):
         self.WaitForOk()
         request = AlienFX_Constructor(self.driver, Save, block)
         if type(Area) != list:
@@ -224,7 +224,7 @@ class AlienFX_Controller:
             time.sleep(0.1)
             self.driver.WriteDevice(request)
 
-    def Set_Color_Morph(self, Area, Color1, Color2, Save = False, Apply = False, block = 0x01):
+    def Set_Color_Morph(self, Area, Color1, Color2, Save=False, Apply=False, block=0x01):
         self.WaitForOk()
         request = AlienFX_Constructor(self.driver, Save, block)
         if type(Area) != list:
@@ -315,7 +315,7 @@ class AlienFX_Controller:
 
 class AlienFX_Constructor(list):
 
-    def __init__(self, driver, save = False, block = 0x01):
+    def __init__(self, driver, save=False, block=0x01):
         self.raz()
         self.computer = driver.computer
         self.void = [self.computer.FILL_BYTE]*self.computer.DATA_LENGTH
@@ -323,7 +323,7 @@ class AlienFX_Constructor(list):
         self.save = save
         self.block = block
 
-    def Save(self, end = False):
+    def Save(self, end=False):
         if self.save:
             if not end:
                 self.Set_Save_Block(self.block)
@@ -337,7 +337,7 @@ class AlienFX_Constructor(list):
                 packet += hex(j) + " "
             print "%s\t:\t%s"%(i.legend, packet)
 
-    def Set_Speed(self, Speed = 0xc800):
+    def Set_Speed(self, Speed=0xc800):
         self.Save()
         cmd = copy(self.void)
         legend = "Set Speed : %s"%Speed
@@ -397,7 +397,7 @@ class AlienFX_Constructor(list):
         ret[2] = area - ret[0] * 65536 - ret[1] * 256 #Same but remove the first 4 digit
         return ret
 
-    def Set_Color(self, Area, Color, Id = 0x01):
+    def Set_Color(self, Area, Color, Id=0x01):
         self.Save()
         cmd = copy(self.void)
         legend = "Set Fixed Color, Area : %s, Color : r = %s, g = %s, b = %s"%(hex(Area[0]*65536 + Area[1]*256 + Area[2]), hex((Color[0]/16)), hex(Color[0]-(Color[0] - (Color[0]/16)*16)), hex(Color[1]+16))
@@ -490,7 +490,7 @@ class AlienFX_Constructor(list):
         self.append(Request(legend, cmd))
 
     def End_Transfert(self):
-        self.Save(end = True)
+        self.Save(end=True)
         if not self.save:
             cmd = copy(self.void)
             legend = "End Transfert"

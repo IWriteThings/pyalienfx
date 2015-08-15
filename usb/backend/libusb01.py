@@ -525,7 +525,7 @@ class _LibUSB(usb.backend.IBackend):
                 wValue,
                 wIndex,
                 cast(data.buffer_info()[0],
-                                     c_char_p),
+                     c_char_p),
                 data_or_wLength,
                 timeout
             )))
